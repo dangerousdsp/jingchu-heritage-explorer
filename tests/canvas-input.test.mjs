@@ -1,0 +1,24 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {attachCanvasInput} from '../dist/canvas-input.mjs';
+class Mouse extends Event {
+  constructor(type,options={}){super(type,{cancelable:true,bubbles:true});for(const [key,value] of Object.entries(options)){if(!['cancelable','bubbles'].includes(key))Object.defineProperty(this,key,{value,configurable:true});}}
+}
+function setup(){
+  const view=new EventTarget();view.MouseEvent=Mouse;
+  const doc=new EventTarget();doc.defaultView=view;doc.activeElement=null;doc.hidden=false;
+  const canvas=new EventTarget();canvas.ownerDocument=doc;canvas.focus=options=>{doc.activeElement=canvas;canvas.focusOptions=options;};
+  let roaming=true,look=true;const received=[];
+  const detach=attachCanvasInput(canvas,{isRoaming:()=>roaming,isLookMode:()=>look});
+  for(const type of ['mousedown','mousemove','mouseup'])canvas.addEventListener(type,e=>received.push({type:e.type,button:e.button,buttons:e.buttons,x:e.clientX,dx:e.movementX,dy:e.movementY}));
+  const mouse=(type,options={})=>{const e=new Mouse(type,{button:0,buttons:type==='mouseup'?0:1,clientX:100,clientY:200,movementX:0,movementY:0,...options});Object.defineProperty(e,'target',{value:options.target??canvas});view.dispatchEvent(e);return e;};
+  return {view,doc,canvas,received,detach,mouse,setRoaming:v=>roaming=v,setLook:v=>look=v};
+}
+function key(canvas,value){const e=new Event('keydown',{cancelable:true});Object.defineProperty(e,'key',{value});canvas.dispatchEvent(e);return e;}
+test('left drag maps down, movement and release to right-button input',()=>{const s=setup();assert.equal(s.mouse('mousedown').defaultPrevented,true);assert.equal(s.doc.activeElement,s.canvas);s.mouse('mousemove',{clientX:130,movementX:30,movementY:-8});s.mouse('mouseup');assert.deepEqual(s.received,[{type:'mousedown',button:2,buttons:2,x:100,dx:0,dy:0},{type:'mousemove',button:2,buttons:2,x:130,dx:30,dy:-8},{type:'mouseup',button:2,buttons:0,x:100,dx:0,dy:0}]);});
+test('mapping is scoped to roaming look mode and canvas left button',()=>{const s=setup();s.setRoaming(false);assert.equal(s.mouse('mousedown').defaultPrevented,false);s.setRoaming(true);s.setLook(false);assert.equal(s.mouse('mousedown').defaultPrevented,false);s.setLook(true);assert.equal(s.mouse('mousedown',{button:2,buttons:2}).defaultPrevented,false);assert.equal(s.mouse('mousedown',{target:new EventTarget()}).defaultPrevented,false);assert.equal(s.received.length,0);});
+test('look mode prevents scene UI clicks; interaction mode preserves clicks',()=>{const s=setup();assert.equal(s.mouse('click').defaultPrevented,true);s.setLook(false);assert.equal(s.mouse('click').defaultPrevented,false);});
+test('release outside, blur, cancellation, visibility and Esc do not leave right held',()=>{for(const end of [s=>s.mouse('mouseup',{target:new EventTarget()}),s=>s.view.dispatchEvent(new Event('blur')),s=>s.view.dispatchEvent(new Event('pointercancel')),s=>{s.doc.hidden=true;s.doc.dispatchEvent(new Event('visibilitychange'));},s=>key(s.canvas,'Escape'),s=>s.detach.release(),s=>s.mouse('mousemove',{buttons:0})]){const s=setup();s.mouse('mousedown');end(s);assert.equal(s.received.at(-1).type,'mouseup');assert.equal(s.received.at(-1).buttons,0);const n=s.received.length;s.detach.release();assert.equal(s.received.length,n);}});
+test('changing mode or scene during a drag releases the mapped button',()=>{for(const change of [s=>s.setLook(false),s=>s.setRoaming(false)]){const s=setup();s.mouse('mousedown');change(s);s.mouse('mousemove');assert.equal(s.received.at(-1).type,'mouseup');assert.equal(s.received.at(-1).buttons,0);}});
+test('canvas context menu and focused game keys are guarded without swallowing Esc',()=>{const s=setup();s.canvas.dispatchEvent(new Event('pointerdown'));assert.deepEqual(s.canvas.focusOptions,{preventScroll:true});const context=new Event('contextmenu',{cancelable:true});s.canvas.dispatchEvent(context);assert.equal(context.defaultPrevented,true);assert.equal(key(s.canvas,'ArrowDown').defaultPrevented,true);assert.equal(key(s.canvas,' ').defaultPrevented,true);assert.equal(key(s.canvas,'Escape').defaultPrevented,false);s.doc.activeElement={};assert.equal(key(s.canvas,'ArrowDown').defaultPrevented,false);});
+test('detach releases held input and removes window, document and canvas hooks',()=>{const s=setup();s.mouse('mousedown');s.detach();const n=s.received.length;assert.equal(s.received.at(-1).type,'mouseup');s.mouse('mousedown');s.mouse('mousemove');s.view.dispatchEvent(new Event('blur'));assert.equal(s.received.length,n);s.doc.activeElement=null;s.canvas.dispatchEvent(new Event('pointerdown'));assert.equal(s.doc.activeElement,null);const context=new Event('contextmenu',{cancelable:true});s.canvas.dispatchEvent(context);assert.equal(context.defaultPrevented,false);});

@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {exhibits,filterExhibits,questions} from '../dist/content.mjs';
+import {STORAGE_KEY,normalizeProgress,readProgress,saveProgress,scoreQuiz} from '../dist/learning.mjs';
+test('filters combine category and Chinese name or region',()=>{assert.deepEqual(filterExhibits(exhibits,'传统技艺','  曾都 ').map(i=>i.id),['chime']);assert.deepEqual(filterExhibits(exhibits.filter(i=>i.scene),'传统美术','木').map(i=>i.id),['wood']);assert.equal(filterExhibits(exhibits,'传统美术','竹溪').length,0);});
+test('saved input is sanitized and its score cannot override answers',()=>{const saved=normalizeProgress({read:['wood','unknown','wood',null],lastQuiz:{score:99,answers:{material:0,woodgrain:0,tuning:0}}});assert.deepEqual(saved.read,['wood']);assert.equal(saved.lastQuiz.score,2);assert.equal(normalizeProgress({lastQuiz:{answers:{material:100}}}).lastQuiz,null);});
+test('quiz scores the entire current set including wrong and missing choices',()=>{assert.equal(scoreQuiz(Object.fromEntries(questions.map(q=>[q.id,q.answer]))).score,3);assert.equal(scoreQuiz({material:2,woodgrain:1,tuning:0}).score,0);assert.equal(scoreQuiz({}).score,0);});
+test('blocked or corrupt storage never breaks catalogue initialization',()=>{assert.equal(readProgress({getItem(){throw Error('blocked');}}).persistent,false);assert.deepEqual(readProgress({getItem(){return '{broken';}}).data.read,[]);assert.equal(saveProgress(null,{}),false);});
+test('reading and quiz answers round-trip and remain independent',()=>{const memory=new Map();const storage={getItem:k=>memory.get(k),setItem:(k,v)=>memory.set(k,v)};assert.equal(saveProgress(storage,{read:['pottery'],lastQuiz:null}),true);assert.equal(memory.has(STORAGE_KEY),true);assert.deepEqual(readProgress(storage).data.read,['pottery']);assert.equal(readProgress(storage).data.lastQuiz,null);});

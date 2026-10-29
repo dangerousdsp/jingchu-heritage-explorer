@@ -1,0 +1,149 @@
+/* 0.3: readable typography, complete canvas geometry and functional guide modules. */
+:root{--muted:#626f5c}
+body{font-size:16px;line-height:1.85}
+.wrap{width:min(1200px,calc(100% - 80px))}
+.site-header{min-height:118px;gap:22px}
+.brand{font-size:22px;letter-spacing:1px;gap:15px}
+.project-logo{width:83px;height:79px;object-fit:contain;mix-blend-mode:multiply;flex-shrink:0}
+.brand small{font-size:11px;letter-spacing:1.4px}
+.site-header nav{gap:25px;font-size:15px}
+.header-progress{font-size:13px;padding:7px 13px}
+.hero{min-height:625px;gap:65px;padding-block:55px 65px}
+.hero h1{font-size:clamp(44px,4.5vw,62px)}
+.hero-description{font-size:16px;line-height:2}
+.eyebrow{font-size:12px;letter-spacing:1.8px}
+.hero .eyebrow span{font-size:12px}
+.hero-actions .text-link{font-size:15px}
+.hero-note p,.hero-note>span{font-size:13px}
+.button{min-height:43px;padding:9px 19px;gap:20px;font-size:15px;border-radius:4px}
+.button.compact{min-height:38px;padding:7px 15px;font-size:14px;gap:12px}
+.text-link{font-size:15px}
+.exhibit-caption div>span,.vertical-note{font-size:13px}
+.chapter-strip .wrap{min-height:66px;font-size:16px}
+.strip-note{font-size:13px}
+.section{padding-block:72px}
+.section-heading h2{font-size:34px}
+.section-heading>p{font-size:15px;line-height:1.9;color:#626f5c}
+.collection-toolbar{align-items:center;gap:22px;padding-bottom:17px;margin-bottom:18px}
+.filter{font-size:14px;padding:6px 14px}.filter span{font-size:12px}
+.search{max-width:270px}.search input{font-size:15px}
+.collection-refine{display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-bottom:28px;color:#626f5c;font-size:14px}
+.collection-refine label{display:flex;align-items:center;gap:10px}
+select{font:inherit;color:var(--ink);background:#f8f5ee;border:1px solid #c8cebf;border-radius:4px;padding:7px 12px;max-width:100%}
+input[type=checkbox]{accent-color:var(--forest);width:16px;height:16px}
+.collection-refine .text-link{font-size:14px;margin-left:auto}
+.exhibit-grid{row-gap:38px;column-gap:28px}
+.exhibit-image-button{height:270px}.exhibit-image-button img{height:225px}
+.image-index,.card-meta{font-size:13px;letter-spacing:.5px}
+.exhibit-card h3{font-size:26px;margin:8px 0}
+.exhibit-card>p{font-size:15px;line-height:1.85;color:#626f5c;min-height:56px;margin-bottom:15px}
+.card-actions{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.card-link{font-size:15px}.favorite-button{border:0;background:none;color:#65775f;font-size:14px;padding:5px 0}
+.favorite-button[aria-pressed=true]{color:#a34432}.read-badge{display:block;margin:10px 0 0;font-size:13px}
+.caption-note{font-size:13px;color:#697461;margin-top:27px}
+.empty-state{font-size:15px;padding:30px 15px;color:#697461}
+/* Region discovery and an explicitly online itinerary. */
+.atlas-section{border-top:1px solid var(--line)}
+.atlas-layout{display:grid;grid-template-columns:minmax(0,1.75fr) minmax(275px,1fr);gap:30px}
+.map-panel{background:#e5e8db;border:1px solid #d2d9c6;border-radius:6px;overflow:hidden;padding:22px}
+.map-heading{display:flex;justify-content:space-between;gap:15px;font-size:16px;color:#41513e;align-items:center}
+.map-heading .text-link{font-size:14px}
+.heritage-map svg{display:block;width:100%;height:auto;min-height:260px}
+.map-region path{fill:#d6deca;stroke:#f5f3eb;stroke-width:2;vector-effect:non-scaling-stroke;transition:fill .15s}
+.map-region.has-topics path{fill:#a5b79c}.map-region:hover path,.map-region:focus path{fill:#7b9575}
+.map-region.selected path{fill:#b77259}.map-region:focus{outline:none}.map-region:focus path{stroke:#263f34;stroke-width:3}
+.map-region{cursor:pointer}.map-label{font:18px var(--sans);fill:#253e32;pointer-events:none;paint-order:stroke;stroke:#e9eddf;stroke-width:3px;stroke-linejoin:round}
+.map-region-list{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.map-region-list button{border:1px solid #bac8b0;background:#edf0e4;padding:5px 11px;border-radius:20px;color:#3e563c;font-size:14px}
+.map-region-list button.selected{background:#526e4c;color:#fff;border-color:#526e4c}
+.map-caption{font-size:12px;color:#63745c;line-height:1.8}.map-caption a{display:block;text-decoration:underline}
+.region-detail{padding:28px;border:1px solid var(--line);border-radius:6px}
+.region-detail h3{font:26px/1.5 var(--serif);margin:10px 0}
+.region-detail>p:not(.eyebrow){font-size:15px;color:#626f5c}
+.region-item{padding:17px 0;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;justify-content:space-between}
+.region-item div{display:grid;gap:3px}.region-item span{font-size:12px;color:#737e69}
+.region-item button{border:0;background:none;padding:0;text-align:left;color:#344c35;font-size:16px}
+.region-item>button{font-size:13px;color:#a34432;white-space:nowrap}
+.route-panel{margin-top:28px;border:1px solid var(--line);border-radius:6px;padding:27px;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;background:#efede2}
+.route-intro h3{font:25px/1.5 var(--serif);margin:9px 0 10px}.route-intro h3>span{font:13px var(--sans);color:#718167;margin-left:15px}
+.route-intro>p:not(.eyebrow){font-size:15px;color:#626f5c}.route-tools{display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-top:20px}.route-tools .text-link{font-size:14px}
+.route-stop{display:flex;gap:17px;align-items:center;padding:12px 0;border-bottom:1px solid #d7dccb}
+.stop-index{font:22px var(--serif);color:#a06149}.route-stop>div:nth-child(2){flex:1;display:grid;gap:2px}
+.route-stop button{border:0;background:none;padding:0;color:#334c35;text-align:left;font-size:15px}
+.route-stop div>span{font-size:13px;color:#728269}.stop-controls{display:flex;gap:10px}
+.stop-controls button{width:28px;height:31px;text-align:center;border:1px solid #c9d0bd;border-radius:3px}
+/* Rendering size is fixed at 960x600 in player.mjs. The whole view scales uniformly. */
+.experience-section{padding-block:58px}.section-heading.light>p{color:#c4d0bd}
+.player-panel{background:#1c3028;border:1px solid #53654f;border-radius:6px;padding:17px 20px 0}
+.scene-toolbar{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-bottom:16px}
+.scene-tabs{display:flex;flex-wrap:wrap;gap:10px}.scene-tab{background:transparent;border:1px solid #63765b;color:#d8e1cf;padding:7px 17px;font-size:15px;border-radius:4px;min-height:39px}
+.scene-tab.active{background:#e6e5d6;border-color:#e6e5d6;color:#263e31}
+.player-stage{width:min(100%,960px);margin:auto;aspect-ratio:8/5;background:#172b23;border:0;border-radius:3px;position:relative}
+.player-cover,.player-loading,.player-error{padding:28px}.cover-symbol{width:66px;height:50px;object-fit:contain;mix-blend-mode:screen;margin-bottom:15px;opacity:.9}
+.player-kicker{font-size:14px;letter-spacing:3px}
+.player-cover h3,.player-loading h3,.player-error h3{font-size:27px;margin:17px 0 12px}
+.player-cover>p,.player-loading>p,.player-error p{font-size:15px;color:#c2cfb7}
+.player-cover .button{margin-top:24px;font-size:15px;min-height:43px;padding:10px 22px}
+.download-note{font-size:13px!important;color:#aeba9f!important;max-width:580px;margin-top:18px}
+.player-controls{min-height:58px;padding:12px 0;gap:15px;align-items:center;border-bottom:0;font-size:13px}
+.player-controls>div{display:flex;gap:20px}.player-controls button{font-size:14px;padding:5px 0;color:#dde7d2}
+.canvas-host{position:absolute;inset:0;width:100%;height:100%;transform:none;aspect-ratio:8/5}
+.canvas-host canvas{display:block;width:100%;height:100%;object-fit:contain;background:#172b23}
+.visit-guide{margin-top:22px;border:1px solid #52664d;padding:14px 20px;border-radius:4px}
+.visit-guide summary{cursor:pointer;font-size:15px;color:#dce5d3}
+.visit-guide ol{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin:20px 0 5px}
+.visit-guide li{margin:0}.visit-guide h3{font-size:18px}.visit-guide li p{font-size:14px;color:#c0cdb5}
+.theater-close{background:#e8e6d8;color:#293f31;border:0;border-radius:4px;padding:8px 13px;font-size:14px;white-space:nowrap}
+body.gallery-focused{overflow:hidden}.player-panel.theater{position:fixed;z-index:100;inset:12px;display:flex;flex-direction:column;padding:16px 20px 0;box-shadow:0 0 0 20px #17271fee}
+.player-panel.theater .player-stage{width:min(100%,calc((100dvh - 160px)*1.6));max-height:calc(100dvh - 160px);flex-shrink:0;margin:auto}
+.player-panel.theater .player-controls{margin-top:auto}.player-panel.theater .scene-toolbar{flex-shrink:0}
+/* Native browser video, independent of the Unity build. */
+.media-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:40px}
+#heritage-video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#202f26;border-radius:5px}
+#video-status{font-size:14px;color:#66745e;margin-top:12px;line-height:1.8}
+.media-controls{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:16px;font-size:14px}.media-controls label{display:flex;gap:10px;align-items:center}
+.media-notes{padding:20px 0}.media-notes h3{font:27px/1.5 var(--serif);margin:10px 0 16px}.media-notes>p:not(.eyebrow){font-size:16px;color:#626f5c;margin-bottom:16px}
+.local-preview{border-top:1px solid var(--line);padding-top:22px;margin-top:25px;display:grid;gap:12px;font-size:14px}.local-preview input{max-width:100%;font-size:13px}.local-preview p{font-size:13px;color:#697963}
+/* Learning and details. */
+.learning-section{gap:65px;grid-template-columns:1fr 1.35fr;border-top:1px solid var(--line)}
+.learning-intro>p:not(.eyebrow){font-size:16px}.progress-summary>div{font-size:14px;max-width:260px}.reading-list{max-width:none}.reading-list li{font-size:15px;padding:10px 0}.reading-list button{font-size:14px}
+.small-note{font-size:13px!important}.note-actions{gap:24px}.subtle-button{font-size:14px}
+.quiz-title{margin-bottom:20px}.quiz-title>span{font-size:13px}.quiz-mode-label{display:flex;gap:12px;align-items:center;font-size:14px;margin-bottom:24px}
+.quiz-panel{padding:28px}.quiz-panel legend{font-size:16px;line-height:1.8;margin-bottom:12px}.question-number{font-size:14px}
+.quiz-options{grid-template-columns:1fr}.quiz-options label{font-size:15px;min-height:40px;padding:8px 12px;gap:10px}
+.question-feedback{font-size:14px;line-height:1.9}.quiz-panel .button{width:auto;min-width:200px;margin-top:10px}
+.quiz-result{font-size:15px}.quiz-history{border-top:1px solid #d2d8c7;margin-top:25px;padding-top:20px}
+.quiz-history h4{margin:0 0 13px;font-size:16px;font-weight:500;display:flex;justify-content:space-between;gap:15px}.quiz-history h4 span{font-size:13px;color:#677d5c}
+.quiz-history ol{list-style:none;padding:0;margin:0;font-size:13px;color:#65745e}.quiz-history li{display:flex;justify-content:space-between;gap:20px;padding:7px 0}.quiz-history strong{white-space:nowrap}
+.exhibit-dialog{width:min(960px,calc(100% - 40px))}.detail-layout{grid-template-columns:1fr 1.4fr}.detail-text{padding:45px 32px 30px}
+.detail-text h2{font-size:30px}.detail-text p,.detail-text ul{font-size:16px;line-height:1.9}.detail-sources p,.detail-sources a,.detail-visual>span{font-size:13px}
+.detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.detail-actions .button{width:auto;margin:0;font-size:14px;min-height:40px}
+.detail-next button{font-size:14px}.dialog-close{width:39px;height:39px;top:12px;right:12px}
+.about-section p:not(.eyebrow){font-size:15px;max-width:900px}.about-section .text-link{font-size:14px}
+.site-footer .brand{font-size:19px}.site-footer .project-logo{width:65px;height:62px}.site-footer>p,.site-footer>a:last-child{font-size:13px}.toast{font-size:15px;padding:12px 20px}
+@media(max-width:1100px){.wrap{width:calc(100% - 48px)}.site-header{flex-wrap:wrap;padding-block:15px;gap:15px}.site-header nav{gap:22px}.brand{font-size:21px}.project-logo{width:72px;height:69px}.header-progress{margin-left:auto}.hero{gap:35px}.atlas-layout{grid-template-columns:1.4fr 1fr}.map-panel{padding:17px}.region-detail{padding:22px}.media-layout{gap:28px}.learning-section{gap:36px}.exhibit-grid{gap:24px}.exhibit-image-button{height:245px}.exhibit-image-button img{height:205px}.exhibit-card>p{min-height:84px}}
+@media(max-width:850px){.site-header nav{order:3;width:100%;justify-content:space-between;gap:15px;font-size:15px}.hero h1{font-size:44px}.hero-description{font-size:15px}.hero-exhibit{height:400px}.atlas-layout{grid-template-columns:1fr}.region-detail{padding:24px}#region-items{display:grid;grid-template-columns:1fr 1fr;gap:0 25px}.exhibit-grid{grid-template-columns:repeat(2,1fr)}.exhibit-card>p{min-height:56px}.route-panel{gap:25px}.media-layout{grid-template-columns:1fr}.media-notes{display:block;padding:0}.learning-section{grid-template-columns:1fr}.visit-guide ol{grid-template-columns:1fr}.learning-intro h2 br{display:none}.learning-intro h2{font-size:34px}.quiz-options{grid-template-columns:repeat(3,1fr)}.quiz-options label{font-size:14px}.player-cover h3{font-size:25px}.project-logo{width:78px;height:74px}.player-stage{aspect-ratio:8/5}.player-panel.theater .scene-toolbar{flex-wrap:wrap}.player-panel.theater .player-stage{width:min(100%,calc((100dvh - 200px)*1.6))}}
+@media(max-width:600px){.wrap{width:calc(100% - 32px)}.site-header{display:flex;min-height:0;padding-block:13px;gap:10px}.brand{font-size:19px;gap:10px}.brand small{font-size:10px}.project-logo{width:68px;height:65px}.header-progress{display:block;font-size:12px;padding:5px 9px}.site-header nav{display:flex;overflow-x:auto;justify-content:flex-start;gap:22px;font-size:14px;padding-block:5px;white-space:nowrap}.site-header nav a:last-child{display:block}.hero{grid-template-columns:1fr;gap:25px;padding-block:35px}.hero h1{font-size:43px}.hero-description{font-size:16px}.hero-actions{gap:20px}.hero-actions .button{font-size:15px;padding:9px 17px}.hero-actions .text-link{font-size:14px}.eyebrow{font-size:12px}.hero-exhibit{height:340px}.exhibit-caption p{font-size:19px}.exhibit-caption div>span{font-size:12px}.vertical-note{font-size:12px}.chapter-strip .wrap{font-size:14px;gap:12px}.section{padding-block:45px}.section-heading{flex-direction:column;gap:10px}.section-heading h2{font-size:29px}.section-heading>p{font-size:15px;margin-top:0}.section-heading>p br{display:none}.collection-toolbar{gap:20px;align-items:stretch}.filters{gap:4px}.filter{font-size:13px;padding:6px 10px}.search{max-width:none}.search input{font-size:16px}.collection-refine{gap:15px;font-size:14px}.collection-refine .text-link{margin-left:0}.exhibit-grid{grid-template-columns:1fr;gap:33px}.exhibit-image-button{height:275px}.exhibit-image-button img{height:230px}.exhibit-card>p{min-height:0;font-size:16px}.card-meta,.image-index{font-size:13px}.caption-note{font-size:13px}.atlas-layout{gap:18px}.map-panel{padding:16px}.map-heading{font-size:15px;flex-wrap:wrap;gap:8px}.map-label{font-size:22px}.heritage-map svg{min-height:0}.map-region-list{gap:7px}.map-region-list button{font-size:14px;padding:5px 10px}.map-caption{font-size:12px}.region-detail{padding:20px}#region-items{grid-template-columns:1fr}.region-item button{font-size:16px}.route-panel{grid-template-columns:1fr;padding:20px;gap:20px}.route-intro h3{font-size:25px}.route-tools{gap:15px}.route-stop{gap:12px}.stop-controls{gap:6px}.stop-controls button{width:26px}.experience-section{padding-block:42px}.player-panel{padding:12px 10px 0}.scene-tabs{gap:7px}.scene-tab{font-size:13px;padding:6px 9px;min-height:35px}.scene-toolbar{margin-bottom:12px}.player-stage{aspect-ratio:8/5;min-height:0}.player-cover,.player-loading,.player-error{padding:16px}.cover-symbol{width:39px;height:29px;margin-bottom:8px}.player-kicker{font-size:11px;letter-spacing:2px}.player-cover h3,.player-loading h3,.player-error h3{font-size:19px;margin:9px 0 7px}.player-cover>p{font-size:12px}.player-cover .button{font-size:13px;min-height:36px;padding:7px 14px;margin-top:13px}.download-note{font-size:11px!important;margin-top:9px}.player-controls{font-size:12px;gap:10px;align-items:flex-start;flex-wrap:wrap;padding:12px 0;line-height:1.6}.player-controls>div{gap:17px}.player-controls button{font-size:13px;padding:4px 0}.player-panel.theater{inset:6px;padding:12px 10px 0}.player-panel.theater .player-stage{width:min(100%,calc((100dvh - 240px)*1.6));max-height:calc(100dvh - 240px)}.theater-close{font-size:13px;padding:6px 10px}.visit-guide{padding:13px 16px}.visit-guide li p{font-size:14px}.media-layout{gap:22px}.media-notes>p:not(.eyebrow){font-size:16px}.media-controls{gap:15px}.local-preview label{font-size:15px}.learning-intro h2{font-size:30px;letter-spacing:0}.learning-intro>p:not(.eyebrow){font-size:16px}.reading-list li{font-size:15px}.reading-list button{font-size:14px}.small-note{font-size:13px!important}.quiz-panel{padding:23px 18px}.quiz-options{grid-template-columns:1fr}.quiz-options label{font-size:15px}.quiz-panel legend{font-size:16px}.quiz-panel .button{width:100%;min-width:0}.quiz-history h4{flex-wrap:wrap;gap:8px}.quiz-history li{font-size:13px}.detail-layout{grid-template-columns:1fr}.detail-visual{padding:23px}.detail-visual img{height:220px}.detail-text{padding:28px 23px}.detail-text p,.detail-text ul{font-size:16px}.detail-sources p,.detail-sources a{font-size:13px}.detail-actions .button{flex:1 1 auto}.exhibit-dialog{width:calc(100% - 24px)}.about-section{gap:15px}.about-section h2{font-size:25px}.about-section p:not(.eyebrow){font-size:15px}.site-footer{flex-wrap:wrap}.site-footer .brand{display:flex;font-size:17px}.site-footer .project-logo{width:54px;height:52px}.site-footer>p{max-width:none;font-size:12px}.site-footer>a:last-child{font-size:13px}}
+/* Keep controls legible on phones while preserving the live canvas ratio. */
+@media(max-width:600px){
+  .player-stage:has(.player-cover:not([hidden])),.player-stage:has(.player-loading:not([hidden])),.player-stage:has(.player-error:not([hidden])){min-height:360px}
+  .player-cover,.player-loading,.player-error{padding:22px 16px}
+  .cover-symbol{width:54px;height:42px;margin-bottom:14px}
+  .player-kicker{font-size:13px}
+  .player-cover h3,.player-loading h3,.player-error h3{font-size:23px;margin:16px 0}
+  .player-cover>p,.player-loading>p,.player-error p{font-size:15px;line-height:1.9}
+  .player-cover .button{font-size:15px;min-height:43px;padding:9px 18px;margin-top:18px}
+  .download-note{font-size:13px!important;margin-top:15px}
+  .scene-tab{font-size:14px;padding:7px 11px}
+  .player-controls,.player-controls button{font-size:14px}
+  .experience-section .section-heading>p{font-size:15px}
+  .heritage-map .map-label{display:none}
+  .map-caption{font-size:13px}
+  .site-header nav{scrollbar-width:none}
+  .site-header nav::-webkit-scrollbar{display:none}
+  .hero .eyebrow{font-size:12px}
+}
+/* Region labels remain supplementary; city buttons below the map are full size. */
+.scene-hint{font-size:14px;line-height:1.8;color:#e1d0ac;margin:15px 0 0}
+.notes-page p,.notes-page li{font-size:16px;line-height:1.95}
+.notes-page h2{margin-top:32px}

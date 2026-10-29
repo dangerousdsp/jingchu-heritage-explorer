@@ -1,0 +1,41 @@
+{
+  "source": "湖北省非遗数据.xlsx",
+  "sha256": "02d92fe3383443e93752ecb51290236904ce3a7ad7e7c0e3a58d9c52e9745a1d",
+  "sheet": "Sheet1",
+  "records": 145,
+  "distinct_coordinate_pairs": 73,
+  "researched": 145,
+  "coordinateSystem": "not supplied; do not use these as precise visit entrances",
+  "corrections": [
+    {
+      "fid": "3444",
+      "row": 34,
+      "original": "针灸（薪春艾灸疗法）",
+      "display": "针灸（蕲春艾灸疗法）"
+    },
+    {
+      "fid": "3256",
+      "row": 48,
+      "original": "阅牍制作技艺（楚岗制作找艺）",
+      "display": "简牍制作技艺（楚简制作技艺）"
+    },
+    {
+      "fid": "3367",
+      "row": 49,
+      "original": "灯舞（五虾闹鮎）",
+      "display": "灯舞（五虾闹鲇）"
+    },
+    {
+      "fid": "3250",
+      "row": 79,
+      "original": "青钢器制作技艺（青钢编钟制作技艺）",
+      "display": "青铜器制作技艺（青铜编钟制作技艺）"
+    },
+    {
+      "fid": "3442",
+      "row": 96,
+      "original": "中医传统制剂方法（叶开本传统中药制剂方法）",
+      "display": "中医传统制剂方法（叶开泰传统中药制剂方法）"
+    }
+  ]
+}

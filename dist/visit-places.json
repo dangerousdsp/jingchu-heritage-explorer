@@ -1,0 +1,249 @@
+[
+  {
+    "id": "hubei-museum",
+    "name": "湖北省博物馆",
+    "city": "武汉市",
+    "address": "武汉市武昌区东湖路160号",
+    "lon": 114.3599912,
+    "lat": 30.5638374,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/way/363656371/full",
+    "coordinateMethod": "OpenStreetMap场馆要素边界节点的均值，仅作近似地图定位",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "从青铜器、漆木器等实物认识楚文化，可与编钟制作、楚式漆器专题对照阅读。",
+    "topicFids": [
+      3250,
+      2364
+    ],
+    "sources": [
+      {
+        "title": "湖北省文化和旅游厅 · 湖北省博物馆",
+        "url": "https://wlt.hubei.gov.cn/zfxxgk/fdzdgknr/jgjj/zsdw/202008/t20200805_2740545.shtml"
+      },
+      {
+        "title": "湖北省博物馆 · 观众服务与交通",
+        "url": "https://www.hbww.org.cn/fuwu/index.html"
+      }
+    ],
+    "visitNote": "场馆设有不同入馆方向，请按预约提示确认开放入口。编钟演奏、临时展览等安排以馆方当日公告为准。",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "yellow-crane",
+    "name": "黄鹤楼公园",
+    "city": "武汉市",
+    "address": "武汉市武昌区蛇山西坡特1号",
+    "lon": 114.297047,
+    "lat": 30.5470779,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/way/81641900/full",
+    "coordinateMethod": "OpenStreetMap场馆要素边界节点的均值，仅作近似地图定位",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "把黄鹤楼传说与楼阁、诗词、城市景观联系起来，阅读传说与历史叙述的不同。",
+    "topicFids": [
+      170
+    ],
+    "sources": [
+      {
+        "title": "武汉市园林和林业局 · 黄鹤楼公园管理处",
+        "url": "https://ylj.wuhan.gov.cn/zwgk/zwxxgkzl_12298/jggk_12304/xsdwszjzz_12308/202001/t20200110_726398.shtml"
+      },
+      {
+        "title": "中国非物质文化遗产网 · 黄鹤楼传说",
+        "url": "https://www.ihchina.cn/project_details/12348/"
+      }
+    ],
+    "visitNote": "地图点为黄鹤楼主体位置，不是购票或检票入口。园区出入口、演出和预约规则以官方渠道为准。 本站驾车规划使用公开地图标注的“黄鹤楼停车场”作为道路接驳参考，避免误落到楼下隧道；不保证停车位或入口当前开放。",
+    "verifiedAt": "2026-10-29",
+    "routingPoint": {
+      "lon": 114.30265217142858,
+      "lat": 30.54478762857143,
+      "coordinateSystem": "WGS84",
+      "label": "黄鹤楼停车场（道路接驳点）",
+      "source": "https://api.openstreetmap.org/api/0.6/way/1278674453/full"
+    }
+  },
+  {
+    "id": "guiyuan",
+    "name": "归元禅寺",
+    "city": "武汉市",
+    "address": "武汉市汉阳区翠微路20号归元禅寺",
+    "lon": 114.2538154,
+    "lat": 30.5472342,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/way/132728732/full",
+    "coordinateMethod": "OpenStreetMap场馆要素边界节点的均值，仅作近似地图定位",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "了解汉阳归元庙会所依托的地方文化空间，观察建筑、民俗与城市生活的关系。",
+    "topicFids": [
+      2949
+    ],
+    "sources": [
+      {
+        "title": "归元禅寺 · 联系我们与路线指南",
+        "url": "https://www.guiyuanchansi.com.cn/list.php?fid=141"
+      },
+      {
+        "title": "湖北省非物质文化遗产网 · 武汉地区名录",
+        "url": "https://wlt.hubei.gov.cn/hbsfwzwhycw/bhcc/fydt/whs/"
+      }
+    ],
+    "visitNote": "这是持续使用的宗教活动场所，需遵守现场规则。庙会具有时间性，不能保证每次到访都有民俗活动。",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "suizhou-museum",
+    "name": "随州市博物馆",
+    "city": "随州市",
+    "address": "湖北省随州市擂鼓墩大道98号",
+    "lon": 113.3491118,
+    "lat": 31.7288115,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/way/128803544/full",
+    "coordinateMethod": "OpenStreetMap场馆要素边界节点的均值，仅作近似地图定位",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "通过青铜器与礼乐展陈认识曾国文化，与编钟工艺、炎帝神农文化专题联系阅读。",
+    "topicFids": [
+      3250,
+      100,
+      2795
+    ],
+    "sources": [
+      {
+        "title": "湖北省科学技术协会 · 随州市博物馆（馆方供稿）",
+        "url": "https://www.hbkx.org.cn/ztzl/2026/kpjyjd/info?id=21bec294547a4fd1b65e17ae1da5b3ca"
+      },
+      {
+        "title": "湖北省外事办公室 · Suizhou Museum",
+        "url": "https://www.fohb.gov.cn/info/2018-10/20181012102600_747.html"
+      }
+    ],
+    "visitNote": "地图为博物馆建筑近似中心。预约、开馆及编钟演艺安排以馆方最新公告为准。",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "jingzhou-museum",
+    "name": "荆州博物馆",
+    "city": "荆州市",
+    "address": "湖北省荆州市荆州区荆中路166号",
+    "lon": 112.1746836,
+    "lat": 30.3558688,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/way/107160598/full",
+    "coordinateMethod": "OpenStreetMap场馆要素边界节点的均值，仅作近似地图定位",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "结合古代漆木器、丝织品等陈列，观察楚式漆器的器形、结构和纹饰。",
+    "topicFids": [
+      2364
+    ],
+    "sources": [
+      {
+        "title": "荆州古城历史文化旅游区 · 荆州博物馆",
+        "url": "https://www.jzgcly.com/tourismWeb/page/mobile/moblie_jzbwg.html"
+      },
+      {
+        "title": "荆州古城历史文化旅游区 · 电子地图与博物馆地址",
+        "url": "https://www.jzgcly.com/tourismWeb/lyfw_dzdt-en.html"
+      }
+    ],
+    "visitNote": "场馆藏品与技艺专题用于对照观察，不表示每项非遗均有固定现场表演或体验项目。到访前核对官方开放入口。",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "wudang-visitor",
+    "name": "武当山景区游客中心",
+    "city": "十堰市",
+    "address": "湖北省十堰市武当山旅游经济特区山门口游客中心",
+    "lon": 111.0889435,
+    "lat": 32.506206,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/node/8550490739",
+    "coordinateMethod": "OpenStreetMap节点坐标",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "从景区山门了解武当山的宫观空间，并联系武当武术、宫观道乐与庙会专题。",
+    "topicFids": [
+      1606,
+      416,
+      2940
+    ],
+    "sources": [
+      {
+        "title": "湖北武当山旅游股份有限公司 · 联系地址",
+        "url": "https://www.wudangshan.com/contact.html"
+      },
+      {
+        "title": "中国武当网 · 景区官方旅游咨询与游客中心",
+        "url": "https://www.chinawudang.com/live/7937.html"
+      },
+      {
+        "title": "武当山道教协会 · 宫观道乐",
+        "url": "https://www.wdsdjxh.com/detail.php?id=283"
+      }
+    ],
+    "visitNote": "该点位于山门片区，路线抵达不包含山内接驳、索道或登山路段。武术、道乐等现场活动需另行核实，不能保证随到随看。",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "enshi-museum",
+    "name": "恩施州博物馆",
+    "city": "恩施土家族苗族自治州",
+    "address": "恩施市金桂大道恩施州文化中心内",
+    "lon": 109.4920986,
+    "lat": 30.3093802,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/node/7979204905",
+    "coordinateMethod": "OpenStreetMap节点坐标",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "通过地方历史、民族民俗与土家文化展陈，建立理解摆手舞、吊脚楼等专题的地域背景。",
+    "topicFids": [
+      745,
+      2547,
+      384
+    ],
+    "sources": [
+      {
+        "title": "国家文物局 · 2015年度全国博物馆名录（广东省文旅厅公开副本）",
+        "url": "https://whly.gd.gov.cn/uploads/files/2016/1206/1480987302836001.pdf"
+      },
+      {
+        "title": "武汉工程大学材料学院 · 赴州博物馆开展土家文化研习",
+        "url": "https://mse.wit.edu.cn/info/1145/16801.htm"
+      },
+      {
+        "title": "荆楚网 · 湖北省爱国主义教育基地场馆资料",
+        "url": "https://www.cnhubei.com/xwzt/2024/hshb/hshbagzyjyjd/hshbagzyjyjdes/202502/t4750560.shtml"
+      }
+    ],
+    "visitNote": "地图点为场馆位置。题目与展陈可作文化背景关联，不保证所有相关项目均在现场固定展出。请在出发前核对馆方公告。",
+    "verifiedAt": "2026-10-29"
+  },
+  {
+    "id": "enshi-tusi",
+    "name": "恩施土司城景区",
+    "city": "恩施土家族苗族自治州",
+    "address": "恩施市土司城景区（土司路片区）",
+    "lon": 109.4690698,
+    "lat": 30.3044456,
+    "coordinateSystem": "WGS84",
+    "coordinateSource": "https://api.openstreetmap.org/api/0.6/node/4475128089",
+    "coordinateMethod": "OpenStreetMap节点坐标",
+    "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
+    "theme": "观察土家建筑和土司文化的当代展示空间，联系木构营造与民族民俗专题。",
+    "topicFids": [
+      2547,
+      745
+    ],
+    "sources": [
+      {
+        "title": "湖北省文化和旅游厅 · 恩施土司城民俗体验",
+        "url": "https://wlt.hubei.gov.cn/bmdt/szyw/es/202608/t20260817_5996085.shtml"
+      },
+      {
+        "title": "景区所属国资集团公开披露 · 土司城建设与文化定位",
+        "url": "https://static.sse.com.cn/bond/bridge2/disclosure/announcement/c/202501/7fd573_20250116_4ZL4.pdf"
+      }
+    ],
+    "visitNote": "这是现代营建的土司文化景区，不是唐崖土司城世界遗产遗址。OSM点对应原票务位置，近年新增南门，到访入口应以景区最新公告和地图服务核验为准。",
+    "verifiedAt": "2026-10-29"
+  }
+]

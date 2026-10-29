@@ -1,0 +1,10 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {exhibits,fullQuestions,filterCollection} from '../dist/content.mjs';
+import {englishCatalog} from '../dist/english-content.mjs';
+import {translateText} from '../dist/i18n.mjs';
+const chinese=/[\u3400-\u9fff]/;
+test('every cultural record has an English guide and matching observation prompts',()=>{assert.equal(Object.keys(englishCatalog).length,146);for(const item of exhibits){const e=englishCatalog[item.fid||item.id];assert.ok(e?.title&&e?.detail);assert.equal(e.observations.length,item.observations.length);assert.equal(chinese.test(e.title+e.detail+e.observations.join('')),false);assert.equal(translateText(item.detail,'en'),e.detail);}});
+test('all quiz questions, answers and explanations have English text',()=>{assert.equal(fullQuestions.length,10);for(const q of fullQuestions){for(const text of [q.title,q.explanation,...q.options])assert.equal(chinese.test(translateText(text,'en')),false,text);}});
+test('English search intersects stable Chinese category, region and saved IDs',()=>{const result=filterCollection(exhibits,{query:'wood',city:'咸宁市',favoritesOnly:true,favorites:['wood']});assert.deepEqual(result.map(e=>e.id),['wood']);assert.equal(exhibits.find(e=>e.id==='wood').title,'通山木雕');});
+test('dynamic counts, route estimates and accessible labels translate without changing values',()=>{assert.equal(translateText('已读 2 / 146','en'),'Read 2 / 146');assert.match(translateText('驾车道路全程 15.4 公里 · 估算 19 分钟 · 3站（未计游览停留与实时路况）','en'),/15.4 km.*19 min.*3 stops/);assert.equal(translateText('查看通山木雕资料','en'),'Read about Tongshan wood carving');assert.equal(translateText('一器一世界，','zh'),'一器一世界，');});
