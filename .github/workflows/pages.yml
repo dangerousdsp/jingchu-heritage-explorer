@@ -30,6 +30,18 @@ jobs:
         run: npm test
       - name: Python tests
         run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Arrange Unity data uploaded at repository root
+        shell: python
+        run: |
+          from pathlib import Path
+          import shutil
+          destination = Path('dist/runtime/Build')
+          destination.mkdir(parents=True, exist_ok=True)
+          for index in range(17):
+              source = Path(f'data-{index:02d}.bin')
+              target = destination / source.name
+              if source.is_file() and not target.exists():
+                  shutil.copy2(source, target)
       - name: Build public static site
         run: python scripts/package_release.py --public --auto-webgl --output output/github-pages
       - name: Validate public release
