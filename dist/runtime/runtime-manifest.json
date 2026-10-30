@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "compression": "gzip",
+  "bytes": 352957010,
+  "sha256": "4327be868ca71b1aa8354fba256eb3bd19621f973fb0d122ac65e0b18e558950",
+  "parts": [
+    {
+      "path": "Build/data-00.bin",
+      "bytes": 20971520,
+      "sha256": "3181b88ab3c860b156352522bd5ce9416530ced822f26f3a76c0b99d789fc0a6"
+    },
+    {
+      "path": "Build/data-01.bin",
+      "bytes": 20971520,
+      "sha256": "e6fb2de5c96d82fcd90a57590c1aab53d09ed644b7f2e330c3c2d4e0c2d820a2"
+    },
+    {
+      "path": "Build/data-02.bin",
+      "bytes": 20971520,
+      "sha256": "8464cae92df602c6b64a36344c6daee58105b231dbc15ba6c2f5b98e2c5a5bf5"
+    },
+    {
+      "path": "Build/data-03.bin",
+      "bytes": 20971520,
+      "sha256": "a2c5cee8d42d544de8fc27e5bfc04b8209663021f722ef18d0eb58a1d846930c"
+    },
+    {
+      "path": "Build/data-04.bin",
+      "bytes": 20971520,
+      "sha256": "29d112101ecec9cc8a12fc39b1e6e686a944c49e87b49198665e8e9623c15da7"
+    },
+    {
+      "path": "Build/data-05.bin",
+      "bytes": 20971520,
+      "sha256": "51ded1ccc6a9101760a61665af0e413688f0564d83cd68f0483e516f0d940819"
+    },
+    {
+      "path": "Build/data-06.bin",
+      "bytes": 20971520,
+      "sha256": "fa4ed580b849f598b5b064e4c26e4720550e9dfe736840bbbd2926334aafe034"
+    },
+    {
+      "path": "Build/data-07.bin",
+      "bytes": 20971520,
+      "sha256": "69df10650dd14abfef56e667dc37dfcab7b825a9aa2950f0452a82120e1672fe"
+    },
+    {
+      "path": "Build/data-08.bin",
+      "bytes": 20971520,
+      "sha256": "350ea2d24536758f6d9b16aec771bf98a1fad8017acc6c38ae56aba235bb237d"
+    },
+    {
+      "path": "Build/data-09.bin",
+      "bytes": 20971520,
+      "sha256": "572ac03fd434ed60a7043ad020ad28e05ef02184efcea270045c24b6c2573295"
+    },
+    {
+      "path": "Build/data-10.bin",
+      "bytes": 20971520,
+      "sha256": "8a489be9db1bc28107b998b8b6b02b7d4e051739379789b3c22c0688d675b288"
+    },
+    {
+      "path": "Build/data-11.bin",
+      "bytes": 20971520,
+      "sha256": "426061b57944cd881c52bb904570982c0d3621f7736c92d4a0c41ca58b45480c"
+    },
+    {
+      "path": "Build/data-12.bin",
+      "bytes": 20971520,
+      "sha256": "a1c386ef5f92421883820306fbb03776f7bd92089477adb6a3ac419bb5c633d1"
+    },
+    {
+      "path": "Build/data-13.bin",
+      "bytes": 20971520,
+      "sha256": "b55b043c57158ae228181d03a6ff6997b79cc5cba9a0335c8d34ae149b2c1a4e"
+    },
+    {
+      "path": "Build/data-14.bin",
+      "bytes": 20971520,
+      "sha256": "188b5b689d711cc237907e01cc670bc48cb9d127847a571ef1ddc48d0f2cccde"
+    },
+    {
+      "path": "Build/data-15.bin",
+      "bytes": 20971520,
+      "sha256": "d9415b6931a64583a665f51268dbb6492864cdf5bd8fa956092594ca93bee8d2"
+    },
+    {
+      "path": "Build/data-16.bin",
+      "bytes": 17412690,
+      "sha256": "f4cdc6b75bfc43ffae7cb1cf2a0d7abb8401d9f9bcd6d5739352fb57d0de65b8"
+    }
+  ]
+}
