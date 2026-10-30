@@ -31,7 +31,7 @@ jobs:
       - name: Python tests
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Build public static site
-        run: python scripts/package_release.py --public --output output/github-pages
+        run: python scripts/package_release.py --public --auto-webgl --output output/github-pages
       - name: Validate public release
         run: python scripts/check_release.py output/github-pages
       - name: Configure Pages
