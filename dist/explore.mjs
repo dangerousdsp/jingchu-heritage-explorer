@@ -2,7 +2,7 @@ import {initRoadmap} from './roadmap.mjs';
 import {exhibits} from './content.mjs';
 import {getJourney,updateJourney,moveStop} from './journey.mjs';
 import {RUNTIME_BASE} from './runtime.mjs';
-import {LEGACY_MEDIA_ENABLED} from './deployment.mjs';
+import {LEGACY_VIDEO_ENABLED} from './deployment.mjs';
 
 export function mapProjection(features,width=800,height=510,padding=30) {
   const points=features.flatMap(f=>f.geometry.type==='MultiPolygon'?f.geometry.coordinates.flat(2):f.geometry.coordinates.flat());
@@ -26,14 +26,14 @@ export function initExplore({openExhibit,notify,download}) {
   const originalURL=new URL('StreamingAssets/'+encodeURIComponent('花鼓戏视频.mp4'),RUNTIME_BASE).href;
   function setVideoSource(url){video.pause();video.src=url;video.load();video.playbackRate=Number($('#video-speed').value);}
   async function originalVideo(){
-    if(!LEGACY_MEDIA_ENABLED){$('#video-status').textContent='公开演示未附带原视频，仍可选择自己的视频在本地预览。';return;}
+    if(!LEGACY_VIDEO_ENABLED){$('#video-status').textContent='公开演示未附带原视频，仍可选择自己的视频在本地预览。';return;}
     try{const response=await fetch(originalURL,{method:'HEAD'});if(!response.ok)throw Error('missing');if(localURL){URL.revokeObjectURL(localURL);localURL=null;}setVideoSource(originalURL);$('#restore-video').hidden=true;$('#local-video').value='';$('#load-video').textContent='重新打开项目视频';$('#video-status').textContent='花鼓戏视频 · 项目原存档。点击画面中的播放按钮开始。';}
     catch{$('#video-status').textContent='暂未找到原视频。请用本地启动器打开，或选择自己的视频预览。';}
   }
   $('#load-video').addEventListener('click',originalVideo);$('#restore-video').addEventListener('click',originalVideo);
-  if(!LEGACY_MEDIA_ENABLED){$('#load-video').disabled=true;$('#load-video').textContent='原视频仅在本地资源版提供';$('#video-status').textContent='公开演示未附带原视频；可选择自己的视频预览，文件不会上传。';}
+  if(!LEGACY_VIDEO_ENABLED){$('#load-video').disabled=true;$('#load-video').textContent='原视频仅在本地资源版提供';$('#video-status').textContent='公开演示未附带原视频；可选择自己的视频预览，文件不会上传。';}
   $('#video-speed').addEventListener('change',()=>{video.playbackRate=Number($('#video-speed').value);});
-  $('#local-video').addEventListener('change',event=>{const file=event.target.files?.[0];if(!file)return;if(!file.type.startsWith('video/')&&!/\.(mp4|webm|ogg|mov|m4v)$/i.test(file.name)){notify('请选择可播放的视频文件。');return;}if(localURL)URL.revokeObjectURL(localURL);localURL=URL.createObjectURL(file);setVideoSource(localURL);$('#video-status').textContent=`本地预览：${file.name}。文件没有上传。`;$('#restore-video').hidden=!LEGACY_MEDIA_ENABLED;});
+  $('#local-video').addEventListener('change',event=>{const file=event.target.files?.[0];if(!file)return;if(!file.type.startsWith('video/')&&!/\.(mp4|webm|ogg|mov|m4v)$/i.test(file.name)){notify('请选择可播放的视频文件。');return;}if(localURL)URL.revokeObjectURL(localURL);localURL=URL.createObjectURL(file);setVideoSource(localURL);$('#video-status').textContent=`本地预览：${file.name}。文件没有上传。`;$('#restore-video').hidden=!LEGACY_VIDEO_ENABLED;});
   video.addEventListener('error',()=>{$('#video-status').textContent='视频未能播放，请检查文件格式或重新选择视频。';});
   window.addEventListener('pagehide',()=>{if(localURL)URL.revokeObjectURL(localURL);});
 }

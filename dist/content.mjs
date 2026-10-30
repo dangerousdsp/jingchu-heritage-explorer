@@ -1,3 +1,4 @@
+import {photoFor} from './photo-links.mjs';
 import {englishCatalog} from './english-content.mjs';
 import {translateText} from './i18n.mjs';
 import {exhibits as core,questions,fullQuestions,quizModes,filterExhibits} from './core-content.mjs';
@@ -12,7 +13,7 @@ for(const record of catalogData){
     Object.assign(existing,{fid:record.fid,year:record.year,unit:record.unit,projectNumber:record.projectNumber,sourceRow:record.sourceRow,locationReference:record.locationReference,researched:record.researched,detail:record.detail,observations:record.observations,sources:record.sources,sourceNote:record.sourceNote+(existing.scene?' 原项目模型用于外观观察。':'')});
   }else exhibits.push({...record,number:String(exhibits.length+1).padStart(2,'0'),alt:'',image:null});
 }
-for(const item of exhibits){const english=englishCatalog[item.fid||item.id];item.english=english;item.searchEnglish=[english.title,english.detail,translateText(item.region,'en'),translateText(item.city,'en'),translateText(item.category,'en')].join(' ');}
+for(const item of exhibits){item.photo=photoFor(item);if(item.photo){item.image=item.photo.src;item.alt=item.photo.title+' · '+item.photo.scope;}const english=englishCatalog[item.fid||item.id];item.english=english;item.searchEnglish=[english.title,english.detail,translateText(item.region,'en'),translateText(item.city,'en'),translateText(item.category,'en')].join(' ');}
 export const categories=[...new Set(exhibits.map(i=>i.category))];
 export function filterCollection(items,{category='all',query='',city='all',favoritesOnly=false,favorites=[]}={}){
   const q=query.trim().toLocaleLowerCase();

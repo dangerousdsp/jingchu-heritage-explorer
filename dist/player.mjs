@@ -1,3 +1,4 @@
+import {prepareRuntimeData} from './runtime-download.mjs';
 import {RUNTIME_BASE} from './runtime.mjs';
 import {LEGACY_MEDIA_ENABLED} from './deployment.mjs';
 import {attachCanvasInput} from './canvas-input.mjs';
@@ -10,7 +11,7 @@ export function initPlayer({notify}) {
   let releaseCanvasInput=()=>{};
   const lookMode=()=>$('#roam-look-mode').checked;
   const cameraHint=()=>lookMode()?'按住左键拖动调整视角':'点击交互模式 · 切回左键环视可转向';
-  function tabs(){$('#roam-input-tip').hidden=selected!==5;document.querySelectorAll('[data-scene]').forEach(button=>{const active=Number(button.dataset.scene)===selected;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));button.disabled=state==='stopping'||busy;});const hint=$('#scene-hint');hint.hidden=selected<4;hint.textContent=selected===4?'编钟沿用旧版场景，实测切换时曾出现卡顿。若长时间无响应，可关闭标签页后重新打开网页。':'戏台沿用旧版场景，仍有物理配置问题。建议先保存手记，使用电脑体验。';}
+  function tabs(){$('#roam-input-tip').hidden=selected!==5;document.querySelectorAll('[data-scene]').forEach(button=>{const active=Number(button.dataset.scene)===selected;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));button.disabled=state==='stopping'||busy;});$('#scene-hint').hidden=true;}
   function show(next) {
     state=next;
     $('#player-cover').hidden=next!=='idle';$('#player-loading').hidden=next!=='loading';$('#player-error').hidden=next!=='error';$('#canvas-host').hidden=next!=='ready';
@@ -41,6 +42,7 @@ export function initPlayer({notify}) {
     if(['loading','ready','stopping'].includes(state))return;
     const token=++epoch;show('loading');$('#load-progress').value=0;$('#slow-loading').hidden=true;
     const start=Date.now();clock=setInterval(()=>{const elapsed=Math.floor((Date.now()-start)/1000);$('#load-detail').textContent=`已等待 ${elapsed} 秒 · 正在下载资源或准备场景`;$('#slow-loading').hidden=elapsed<45;},1000);
+    let prepared;
     try {
       const response=await fetch(new URL('Build/WebGL.loader.js',RUNTIME_BASE),{method:'HEAD'});
       if(!response.ok)throw Error('missing-runtime');
@@ -49,8 +51,9 @@ export function initPlayer({notify}) {
       const canvas=document.createElement('canvas');canvas.id='unity-canvas';canvas.width=960;canvas.height=600;canvas.tabIndex=0;canvas.setAttribute('aria-label','非遗三维展馆画面，戏台左键环视模式下按住鼠标左键拖动调整视角');
       releaseCanvasInput();releaseCanvasInput=attachCanvasInput(canvas,{isRoaming:()=>selected===5,isLookMode:lookMode});
       $('#canvas-host').replaceChildren(canvas);
+      prepared=await prepareRuntimeData(RUNTIME_BASE,fraction=>{if(token===epoch){$('#load-progress').value=Math.round(fraction*70);$('#loading-title').textContent=`正在加载资源 ${Math.round(fraction*70)}%`;}});
       const instance=await window.createUnityInstance(canvas,{
-        dataUrl:new URL('Build/WebGL.data.unityweb',RUNTIME_BASE).href,
+        dataUrl:prepared.url,
         frameworkUrl:new URL('Build/WebGL.framework.js.unityweb',RUNTIME_BASE).href,
         codeUrl:new URL('Build/WebGL.wasm.unityweb',RUNTIME_BASE).href,
         streamingAssetsUrl:new URL('StreamingAssets',RUNTIME_BASE).href,
@@ -59,14 +62,16 @@ export function initPlayer({notify}) {
         // scale the complete canvas in CSS rather than resize its render target.
         matchWebGLToCanvasSize:false,devicePixelRatio:1,
         showBanner:(message,type)=>console[type==='error'?'error':'warn']('[Unity]',message)
-      },fraction=>{if(token!==epoch)return;const percent=Math.round(fraction*100);$('#load-progress').value=percent;$('#loading-title').textContent=percent>=90?'正在准备展品…':`正在加载资源 ${percent}%`;});
+      },fraction=>{if(token!==epoch)return;const percent=Math.round(70+fraction*30);$('#load-progress').value=percent;$('#loading-title').textContent=percent>=90?'正在准备展品…':`正在加载资源 ${percent}%`;});
       if(token!==epoch){await instance.Quit();return;}
+      prepared.release();prepared=null;
       unity=instance;
       // Bypass the old oversized Start/Selection menus using their existing API.
       unity.SendMessage('Canvas',sceneMessage(selected));
       await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);
       clearInterval(clock);show('ready');canvas.focus();
     } catch(error) {
+      prepared?.release();
       if(token!==epoch)return;clearInterval(clock);console.error('[Heritage runtime]',error);
       $('#error-detail').textContent=error.message==='missing-runtime'?'没有找到三维资源。请通过本地启动器打开，或按使用说明配置 runtime 目录。资料、导览和学习功能仍可使用。':'加载未完成。请检查服务、网络与内存后重试。';show('error');
     }

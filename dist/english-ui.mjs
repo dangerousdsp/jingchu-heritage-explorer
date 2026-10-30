@@ -1458,3 +1458,55 @@ export const englishUI = {
   "中国非物质文化遗产网": "China Intangible Cultural Heritage Network",
   "木雕": "Wood carving"
 };
+
+Object.assign(englishUI,{
+  "非遗影像": "Heritage photos",
+  "浏览非遗影像 ↗": "Explore the photographs ↗",
+  "资料与图片来源 ↗": "Sources & image credits ↗",
+  "返回展馆 ←": "Back to the gallery ←",
+  "在影像里，遇见传承。": "Meet living traditions through photographs.",
+  "器物的细节，舞台的瞬间，": "Details of objects, moments on stage,",
+  "还有让文化生长的地方。": "and the places where culture lives.",
+  "点击图片放大，或从相关专题继续探索。": "Enlarge an image or continue through its related cultural topics.",
+  "146条地区记录与专题，循着器物、乡音与风俗，发现荆楚百艺。": "Explore 146 regional records and topics through objects, voices and customs.",
+  "让每一种传承，都被看见。": "Let every tradition be seen.",
+  "读一篇文化故事，看一组非遗影像，沿地图开启下一站探索。": "Read a cultural story, explore the photographs and find your next stop on the map.",
+  "湖北非遗互动展馆 · 1.0.0": "Jingchu Heritage Explorer · 1.0.0",
+  "底图": "Base map",
+  "非遗分布图": "Heritage map",
+  "在线街道图": "Online streets",
+  "正在准备交互地图…": "Preparing the interactive map…",
+  "交互地图已就绪，点击数字查看非遗": "Interactive map ready · Select a number to discover heritage",
+  "街道地图加载中…": "Connecting to the street map…",
+  "街道地图已连接，点击点位查看详情": "Street map connected · Select a marker for details",
+  "街道底图未连接，已切回交互地图。": "Street tiles unavailable · Showing the interactive heritage map.",
+  "街道底图连接超时，已切回交互地图。": "Street connection timed out · Showing the interactive heritage map.",
+  "地区轮廓加载失败，点位仍可浏览。": "Regional boundaries are unavailable; the markers remain usable.",
+  "这里的非遗": "Heritage here",
+  "地区参考位置": "Regional reference location",
+  "点击数字查看地区非遗，点击菱形规划参观。": "Select a number for regional heritage, or a diamond to plan a visit.",
+  "地区轮廓 · DataV": "Regional boundaries · DataV",
+  "地点与街道 © OpenStreetMap": "Places & streets © OpenStreetMap",
+  "非遗影像 · 荆楚非遗": "Heritage photos · Jingchu Heritage",
+  "三维模型预览": "3D model preview",
+  "正在加载资源": "Loading resources"
+});
+
+Object.assign(englishUI,{
+  "资料与图片来源": "Sources & image credits",
+  "文化介绍附于各专题；摄影与艺术参考图保留作者、授权和原始链接。": "Cultural references appear in each topic. Photographs and art references retain their authors, licences and source links.",
+  "文化资料": "Cultural references",
+  "146条地区记录与专题的资料链接，可在非遗图鉴的详情中查看。": "References for all 146 regional entries and topics are available in the collection details.",
+  "返回非遗图鉴 ↗": "Back to the collection ↗",
+  "地图资料": "Map references",
+  "图片署名": "Image credits",
+  "照片经尺寸优化与WebP转换；卡片展示可能裁切。参考图的拍摄地点与适用范围见图注。": "Images are resized and converted to WebP; cards may crop them. Captions identify the actual subjects and context.",
+  "花形标志与三维展品来自荆楚非遗团队作品。": "The floral identity and 3D exhibits are from the Jingchu Heritage team project.",
+  "DataV GeoAtlas · 湖北地区轮廓": "DataV GeoAtlas · Hubei regional boundaries",
+  "© OpenStreetMap contributors · 地点与街道 / ODbL": "© OpenStreetMap contributors · Places & streets / ODbL",
+  "OSRM · 道路路线": "OSRM · Road routing"
+});
+
+Object.assign(englishUI,{"关闭图片":"Close image"});
+
+Object.assign(englishUI,{"参考影像":"Reference image","文化风景":"Cultural landscape"});
