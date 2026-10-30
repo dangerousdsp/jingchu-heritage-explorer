@@ -1,68 +1,31 @@
-# 资料和资源来源
+# 资源来源 / Resource credits
 
-## 原项目资源
+## 标志与三维 / Identity and 3D
 
-三维演示来自本地保留的 Unity 导出，生成于 Unity `2021.3.11f1c2`。模型、材质、音频、花鼓戏视频和 XDreamer/XCSJ 等插件来自早期项目；当前文件不能完整证明各项资源的原始作者及公开分发许可。没有为它们重新授予开源许可证。
+荆楚非遗花形标志、Unity场景、模型、材质及场景内音频来自原团队项目。保留Unity导出使用2021.3.11f1c2及XDreamer/XCSJ等组件。1.0仅进行网页加载适配与数据分片，不重新授予原资产或插件许可。原视频不在公开包内。
 
-`dist/assets/pottery.webp`、`wood.webp`、`chime.webp` 由本项目扫描时捕获的原版运行截图裁出展品区域并去除背景，供本地预览。这些图片的几何外观来自原模型，不能独立推导其再分发权。原始截图位于同级 `project_audit_20261029`。
+The floral identity, Unity scenes, models, materials and in-scene audio originate from the original team project. The retained build uses Unity 2021.3.11f1c2 and components including XDreamer/XCSJ. Static packaging does not relicense those assets or plugins. The archived video is excluded.
 
-本次新写的网页、服务器、测试和文档没有自动套用 MIT 等许可。选择公开许可证时，应确认个人新增代码、历史团队代码和第三方资源分别适用的范围。0.2/0.3未复制第三方库；0.4新增的本地库与许可证见下方说明。
+pottery.webp、wood.webp、chime.webp及三维截图来自原项目运行画面。透明标志根据团队提供的Logo处理；原始素材保留。
 
-## 文化内容
+## 文化资料 / Cultural references
 
-来源核对日期：2026-10-29。只进行短篇概述，并提供原文链接。
+146条地区记录与专题由简明导读、观察点与官方原文链接组成，来源保存在 `dist/catalog-data.mjs`、`dist/core-content.mjs` 及 `dist/researched-topics.json`。145条原始表格地区记录的FID与行号保留；原表不随网站分发。英文为同一批材料的简明导读。
 
-- 毛家窑背景：[人民论坛网考察文章](https://www.rmlt.com.cn/2018/1023/531042.shtml)，用于陶器与日常器用背景；不据此宣称当前名录级别。
-- 通山木雕：[中国非物质文化遗产网项目页](https://www.ihchina.cn/project_details/14141/)，用于材料纹理、浮雕与题材说明。
-- 编钟制作：[中国非物质文化遗产网项目页](https://www.ihchina.cn/project_details/23564/)，用于材料、制作工序与校音说明。
+## 摄影与艺术 / Photographs and artwork
 
-网站没有复制来源文章全文或下载其图片。来源链接与原三维模型并不构成两者一一对应的文物认定，尤其不将模型称为真实文物的精确测绘或声学复原。
+22张来自Wikimedia Commons的图片以各自CC BY、CC BY-SA、CC0或公共领域条件提供；逐张作者、原文件页、授权链接、内容范围与摘要保存在 `dist/photo-data.mjs`，网站影像页、详情与来源页均显示署名。文件优化为WebP，尺寸缩小，卡片可能裁切；各图原授权继续适用。涉及同类技艺或地域环境的图片明确标为参考。
 
-## 0.3.0 新增来源与团队标志
+The 22 Commons images retain their individual licences and attribution. Each record includes its source, author, licence, subject, scope and checksum. Images are resized and converted to WebP; cards may crop them. The original image licences continue to apply to these versions. Regional and art-form references are identified in captions.
 
-用户确认“荆楚非遗”花形标志是早期团队自行设计。本版本从原 `sharedassets0` 首页纹理中裁出完整标志与花形符号，分别保存为 project-logo.png、project-symbol.png。保持原像素设计，没有用生成图片替代。该团队标志的原始权属说明与团队协作背景应随项目保留。
+## 地图与导航 / Maps and navigation
 
-新增专题由下列官方项目页作简短概述，核对日期 2026-10-29：
+- 湖北市州轮廓：[DataV GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector)，数据源 `https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json`；原文件SHA256 `0acb559fcfe2ab2c5d2707c2477e60facdf4328ad89b8ab7d9126c5166675502`。提供方条款适用，不重新授权。
+- 地点与街道：[© OpenStreetMap contributors / ODbL](https://www.openstreetmap.org/copyright)。在线底图仅按视口加载，不预取或打包OSM瓦片，遵循[瓦片政策](https://operations.osmfoundation.org/policies/tiles/)。
+- 道路：[OSRM API](https://project-osrm.org/docs/v5.24.0/api/)。
+- 外部导航：[高德URI路线接口](https://lbs.amap.com/api/uri-api/guide/travel/route)。
 
-- 荆州花鼓戏：https://www.ihchina.cn/project_details/13279.html
-- 楚式漆器髹饰技艺：https://www.ihchina.cn/project_details/14549/
-- 宜昌丝竹：https://www.ihchina.cn/project_details/12549
+## 本地第三方库 / Vendored libraries
 
-opera.svg、lacquer.svg、music.svg 为本轮绘制的主题图形，仅为示意，没有从官网复制图片或宣称文物复原。原项目花鼓戏视频具体剧目尚未核实，未将它认定为新增专题所述剧目的实录。
-
-湖北地市边界保存为 dist/assets/hubei.geojson，2026-10-29 下载自阿里云 DataV GeoAtlas：
-
-- 数据：https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json
-- 提供方说明：https://datav.aliyun.com/portal/school/atlas/area_selector
-- 文件字节：155792；SHA256：0acb559fcfe2ab2c5d2707c2477e60facdf4328ad89b8ab7d9126c5166675502
-
-数据在界面保留来源链接，用于文化专题的地市级示意导览，专题位置根据资料所属地区关联，不代表传承人住址、场馆精确坐标或实地导航点。DataV 数据不被本项目重新授予开源许可。
-
-## 0.4 内容与地图
-
-本轮新增读取用户提供的湖北省非遗数据.xlsx，仅派生应用数据，原表保持不变。145条记录按地区子项计数，不宣称是145种互不重复的非遗项目。49条有官方直接来源的原创资料保存在 researched-topics.json；来源与修订见 docs/CONTENT_RESEARCH.md。
-
-8个参观目的地的地址、坐标和来源逐条保存在 visit-places.json。OSM数据遵循Open Database License，地图保留 OpenStreetMap contributors 可见署名和来源链接。来源：https://www.openstreetmap.org/copyright 。底图按当前视口加载，没有批量下载、预取或离线瓦片功能；遵循 https://operations.osmfoundation.org/policies/tiles/ 。
-
-街道路线使用 OSRM 公共演示服务，规则及接口：https://project-osrm.org/docs/v5.24.0/api/ ，https://github.com/Project-OSRM/osrm-backend/wiki/Api-usage-policy 。请求仅含主动选择的公共目的地，服务可用性不由本项目保证。
-
-高德导航使用公开 URI API：https://lbs.amap.com/api/uri-api/guide/travel/route 。地点确认使用 https://lbs.amap.com/api/uri-api/guide/search/search 。没有复制高德地图瓦片，也没有嵌入高德商业服务密钥。
-
-新增本地第三方代码：
-
-- Leaflet 1.9.4，BSD-2-Clause，官方 https://leafletjs.com/ ，来源由其官方推荐CDN获取，许可证保留于 dist/vendor/leaflet/LICENSE。
-- coordtransform 2.1.2，Wandergis，MIT，https://github.com/wandergis/coordtransform ，原代码及许可证保留于 dist/vendor/coordtransform，另加ESM包装用于WGS84/GCJ02转换。
-
-透明标志根据用户提供的 Logo..jpg 使用内置图像编辑处理，当前版本和提示词见 docs/BRAND_ASSETS.md；团队原有权属背景继续保留。
-
-## 0.4.1 内容覆盖补齐
-
-145条表格记录已全部补齐原创简明介绍、观察点与官方来源，共138个不同官方链接。包含地区专文与明确标注适用范围的项目通用资料。完整来源见 dist/researched-topics.json 及网页版本说明，导入与更正见 docs/CONTENT_RESEARCH.md。
-
-## 0.5 双语内容与分发范围
-
-主网页和来源说明支持中英文。英文文化导读根据同一批已引用中文资料编写为简明导读，不是逐句翻译，不增加新的史实、疗效或场次承诺；原中文与引用URL均保留。地区资料适用范围与原表更正有英文说明。详见docs/LOCALIZATION.md。
-
-English guides are concise adaptations of the same cited cultural material, rather than sentence-by-sentence translations. Source URLs, regional limitations and original records are retained. No additional historical, medical or event-availability claims are implied.
-
-本次源码包与Pages公开包不包含原Unity构建、商业插件二进制或原花鼓戏视频；保留的模型外观预览与标志仍按上述原团队资源说明处理。未自动增加统一MIT许可。许可范围见LICENSE_SCOPE.md。
+- Leaflet 1.9.4，BSD-2-Clause，[官网](https://leafletjs.com/)，许可证位于 `dist/vendor/leaflet/LICENSE`。
+- coordtransform 2.1.2，Wandergis，MIT，[源码](https://github.com/wandergis/coordtransform)，许可证位于 `dist/vendor/coordtransform/LICENSE`。

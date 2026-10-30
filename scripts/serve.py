@@ -15,7 +15,7 @@ def confined(base, relative):
     return candidate if candidate.is_relative_to(base) else None
 
 class Handler(BaseHTTPRequestHandler):
-    server_version = 'HeritageLocal/0.4'
+    server_version = 'HeritageLocal/1.0'
     def do_GET(self): self.respond(False)
     def do_HEAD(self): self.respond(True)
     def respond(self, head):
@@ -93,7 +93,9 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     parser=argparse.ArgumentParser(description='Local heritage explorer preview')
     parser.add_argument('--port',type=int,default=8767)
-    parser.add_argument('--runtime-dir',type=Path,default=Path(os.environ.get('HERITAGE_RUNTIME_DIR',str(PROJECT.parent/'WebGL'))))
+    prepared=DIST/'runtime'
+    default_runtime=prepared if (prepared/'runtime-manifest.json').is_file() else PROJECT.parent/'WebGL'
+    parser.add_argument('--runtime-dir',type=Path,default=Path(os.environ.get('HERITAGE_RUNTIME_DIR',str(default_runtime))))
     parser.add_argument('--open',action='store_true')
     args=parser.parse_args()
     # Only loopback: this is a local preview, not a public deployment service.

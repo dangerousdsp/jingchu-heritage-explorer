@@ -2,7 +2,7 @@
 
 原图：工作区根目录 Logo..jpg，由用户提供并确认为团队原创标志。原图保留。
 
-站点当前文件：dist/assets/project-logo-transparent.png，RGBA，1202×1308，alpha范围0至255。页头、页脚、封面及图标使用透明版本，不再显示原有浅色矩形底。原0.3资产仍留存便于追溯。
+站点当前文件：dist/assets/project-logo-transparent.png，RGBA，1202×1308，alpha范围0至255。页头、页脚、封面及图标使用透明版本，不再显示原有浅色矩形底。
 
 方式：内置 image_gen 图像编辑，未使用 CLI/API Key。透明背景版本是基于原图的图像编辑结果，不是新绘制的矢量母版。
 

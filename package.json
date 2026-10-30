@@ -1,11 +1,11 @@
 {
   "name": "jingchu-heritage-explorer",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "湖北非遗互动展馆，接入保留的 Unity WebGL 演示。",
+  "description": "湖北非遗双语图鉴、交互地图、文化旅行与三维展馆",
   "scripts": {
-    "test": "node --test tests/learning.test.mjs tests/explore.test.mjs tests/travel.test.mjs tests/canvas-input.test.mjs tests/i18n.test.mjs",
+    "test": "node --test tests/learning.test.mjs tests/explore.test.mjs tests/travel.test.mjs tests/canvas-input.test.mjs tests/i18n.test.mjs tests/map-runtime.test.mjs",
     "serve": "python scripts/serve.py"
   }
 }

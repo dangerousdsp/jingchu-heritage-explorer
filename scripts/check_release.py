@@ -33,10 +33,27 @@ def check_release(root):
         text=path.read_text(encoding='utf-8-sig')
         for ref in re.findall(r"(?:from\s*|import\s*)['\"]([^'\"]+)['\"]",text):
             if ref.startswith('.') and not (path.parent/ref).is_file():errors.append(f'Missing module: {path.name}: {ref}')
-    if manifest.get('profile')=='public':
-        if manifest.get('includes_legacy_runtime') or (root/'runtime').exists():errors.append('Public profile contains legacy runtime')
-        if 'LEGACY_MEDIA_ENABLED = false' not in (root/'deployment.mjs').read_text(encoding='utf-8-sig'):errors.append('Legacy inputs not disabled in public profile')
-        if any(p.suffix.lower() in {'.mp4','.unityweb','.wasm','.docx','.xlsx'} for p in root.rglob('*')):errors.append('Unexpected archive/raw resource in public profile')
+    if manifest.get('profile') in {'public','public-webgl'}:
+        webgl=manifest['profile']=='public-webgl'
+        if not webgl and (manifest.get('includes_legacy_runtime') or (root/'runtime').exists()):errors.append('Public profile contains legacy runtime')
+        config=(root/'deployment.mjs').read_text(encoding='utf-8-sig')
+        if f'LEGACY_MEDIA_ENABLED = {str(webgl).lower()}' not in config:errors.append('Incorrect 3D profile setting')
+        if 'LEGACY_VIDEO_ENABLED = false' not in config:errors.append('Archived video must not be enabled in public profile')
+        forbidden={'.mp4','.wasm','.docx','.xlsx'}|({'.unityweb'} if not webgl else set())
+        if any(p.suffix.lower() in forbidden for p in root.rglob('*')):errors.append('Unexpected archive/raw resource in public profile')
+        if webgl:
+            try:
+                runtime=root/'runtime';data=json.loads((runtime/'runtime-manifest.json').read_text(encoding='utf-8'))
+                full=hashlib.sha256();size=0
+                for part in data['parts']:
+                    target=(runtime/part['path']).resolve()
+                    if not target.is_relative_to(runtime.resolve()) or not target.is_file():raise ValueError('Invalid runtime part path')
+                    content=target.read_bytes();full.update(content);size+=len(content)
+                    if len(content)!=part['bytes'] or hashlib.sha256(content).hexdigest()!=part['sha256']:raise ValueError('Runtime part mismatch')
+                if size!=data['bytes'] or full.hexdigest()!=data['sha256']:raise ValueError('Runtime reassembly mismatch')
+                if any(p.stat().st_size>=25*1024*1024 for p in runtime.rglob('*') if p.is_file()):raise ValueError('Runtime file exceeds browser upload limit')
+                if (runtime/'Build/WebGL.data.unityweb').exists():raise ValueError('Unsplit data file included')
+            except (ValueError,KeyError,OSError) as error:errors.append('Invalid prepared runtime: '+str(error))
     return errors
 
 def main():

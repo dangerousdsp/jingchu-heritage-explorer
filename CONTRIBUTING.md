@@ -6,7 +6,7 @@ Please use Issues for interface bugs, broken source links, destination correctio
 
 ## 开发 / Development
 
-无需安装前端依赖；使用Python启动本地服务，Node执行 `npm test`，Python执行 `python -m unittest discover -s tests -p "test_*.py"`。公开版通过 `python scripts/package_release.py --public --output output/review-site` 生成，并用 `python scripts/check_release.py output/review-site` 检查。已存在的输出目录不会被覆盖。
+无需安装前端依赖；使用Python启动本地服务，Node执行 `npm test`，Python执行 `python -m unittest discover -s tests -p "test_*.py"`。公开版通过 `python scripts/package_release.py --public --auto-webgl --output output/review-site` 生成，并用 `python scripts/check_release.py output/review-site` 检查。已存在的输出目录不会被覆盖。
 
 No frontend dependency installation is needed. Run the local server with Python, execute `npm test` with Node and run the Python unittest command above. Generate a public preview with the packaging command and validate it with `check_release.py`. Existing output directories are preserved.
 

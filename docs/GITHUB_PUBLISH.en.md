@@ -1,70 +1,29 @@
-# Upload to GitHub and publish the demo
+# Publish version 1.0
 
-Version 0.5.0. GitHub documentation checked on 2026-10-29. No remote repository or live deployment has been created by preparing these files.
+Repository: https://github.com/dangerousdsp/jingchu-heritage-explorer
 
-## Packages
+Website: https://dangerousdsp.github.io/jingchu-heritage-explorer/
 
-- `heritage-explorer-source-0.5.0.zip`: the source repository. Extract it first. The contents of its inner `heritage-explorer` folder must become the repository root.
-- `heritage-explorer-pages-0.5.0.zip`: the generated public static site. This is suitable for a static host; use the source package for GitHub and the included workflow.
+The complete source includes the website, attributed photographs and prepared 3D chunks. Uploading a ZIP as a repository file does not publish its contents.
 
-The source includes bilingual READMEs, documentation, screenshots, tests and `.github/workflows/pages.yml`. It excludes the original Unity build, archived video, source workbook, proposal, recovery output and personal QA files. Uploading a ZIP alone to the Code tab does not unpack or deploy a website.
+1. Create a `release-v1.0.0` branch from the existing `main` branch.
+2. Upload the contents of each directory under `upload-batches/` in order, always starting from the repository root. Do not upload the numbered batch directory itself.
+3. Batches 01 and 02 contain code, documentation, website files and photos. Batch 03 contains the Unity loader, framework, wasm and runtime manifest. Batches 04–08 contain data-00.bin through data-16.bin under `dist/runtime/Build/`.
+4. Verify `.github/workflows/pages.yml` includes this build command:
 
-## Create an empty repository
-
-Create `jingchu-heritage-explorer` on GitHub. Suggested description:
-
-> Explore Hubei heritage through a sourced catalogue, street maps, cultural road trips and learning tools. A web continuation of an earlier Unity team project.
-
-Suggested topics: `cultural-heritage`, `hubei`, `webgis`, `leaflet`, `javascript`, `python`, `unity-webgl`, `digital-humanities`.
-
-Select Public for GitHub Free Pages hosting. Private-repository Pages availability depends on your plan. Do not initialise the remote with a README, .gitignore or a blanket licence: the package already contains the first two and documents the licensing scope. See [Pages availability](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
-
-## Upload source files
-
-With the web interface, choose “uploading an existing file” in the empty repository, or Add file → Upload files. Drag the contents of the extracted source folder, preserving its subdirectories. Confirm that `.github/workflows/pages.yml`, `dist/index.html` and `README.en.md` are present. Commit to main. The root should directly contain README.md, dist, docs, scripts, tests and .github, with no extra enclosing source folder.
-
-Alternatively, open a terminal in the source directory and use Git. Replace `YOUR_USERNAME` and use the repository you created:
-
-```sh
-git init -b main
-git add .
-git status --short
-git commit -m "Prepare bilingual heritage explorer and public demo"
-git remote add origin https://github.com/YOUR_USERNAME/jingchu-heritage-explorer.git
-git push -u origin main
+```yaml
+run: python scripts/package_release.py --public --auto-webgl --output output/github-pages
 ```
 
-Set your repository-local `user.name` and `user.email` first if Git requests a commit identity. Authenticate using your Git client or GitHub Desktop; do not put credentials in source files or remote URLs. Inspect any existing remote/history rather than force-pushing over it. See [GitHub's import guide](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
+The `--auto-webgl` option enables the prepared runtime. If browser upload skips the dot-prefixed directory, edit the existing workflow directly using the supplied file.
 
-Browser uploads allow up to 100 files at a time and 25 MiB per file; regular Git blocks individual files above 100 MiB. The lightweight source files are well below these sizes. See [upload limits](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository) and [large-file guidance](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github).
+5. Delete the obsolete files listed in the [detailed Chinese guide](GITHUB_PUBLISH.zh-CN.md) from the update branch. Browser upload replaces files but does not delete absent files.
+6. Open a pull request from `release-v1.0.0` to `main`, wait for checks, and merge it.
+7. Under Settings → Pages, keep Source set to GitHub Actions. Wait for both check and deploy in the newest Actions run to succeed.
+8. Refresh the website and verify the 1.0.0 footer, bilingual text, photo gallery, marker popups and on-demand 3D pottery/wood scenes.
 
-## Enable Pages
+Alternatively, clone the existing repository using GitHub Desktop or Git, copy the contents of `source/heritage-explorer/` into the clone, review changes and deletions, commit, push and merge. Preserve the clone's `.git` directory.
 
-1. Open the repository's **Settings → Pages**.
-2. Set **Build and deployment → Source → GitHub Actions**. Do not select docs: it holds documentation, not the generated website.
-3. Open **Actions → Check and publish Pages** and run it for main. If the first push failed before Pages was enabled, rerun all jobs after changing the setting.
-4. Wait for both `check` and `deploy` to succeed. The workflow tests JavaScript/Python, generates and validates the public static site, and then deploys it.
-5. Open the actual URL shown in Settings → Pages, normally `https://YOUR_USERNAME.github.io/jingchu-heritage-explorer/`.
-6. Put that URL in the repository's About → Website field and add the suggested topics.
+Do not upload the original unsplit WebGL.data.unityweb, workbook, Windows export or archived video. Do not use Git LFS for Pages assets. The 17 data chunks are at most 20 MiB each; the complete static site is approximately 350 MiB. The first 3D launch transfers about 348 MiB and is intended primarily for desktop use.
 
-No personal token or manually configured repository Secret is required by this workflow. See [publishing sources](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) and [custom Pages workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
-
-## Check the published result
-
-The homepage should display version 0.5.0. The Language selector switches Chinese and English, and the About link opens the bilingual project introduction. Check catalogue filtering, source links, reading records, quizzes, map attribution and a requested road route. Public services may fail; the application should show feedback and alternative navigation links.
-
-The public 3D and archived-video buttons intentionally state that those assets are not included. Local video preview remains available. The website supports Chinese and English navigation, cultural guides for all 146 entries, search, trips and quizzes. Original organisation records, external source pages, map-provided street names and internal Unity text may remain in Chinese.
-
-If Pages returns 404, check the deployment status, exact repository URL and root layout. If Actions cannot find dist or scripts, the source was probably uploaded with an extra directory level. If a source ZIP is the only file, extract it before uploading.
-
-## Create a Release and update later
-
-After a successful deployment, optionally create a GitHub Release tagged `v0.5.0` on main. Use `docs/RELEASE_NOTES_v0.5.0.md` as the body and attach the source and public-site ZIPs. Do not attach the original Unity/video archive as part of this release.
-
-For later changes, edit the maintained source, run tests, commit and push to main. Pages redeploys automatically. When releasing a new version, update version references and the changelog before packaging. Existing outputs are never overwritten. Do not maintain changes only in generated output folders.
-
-## Full legacy 3D hosting
-
-Pages does not execute the Python server. The public profile disables missing legacy resources rather than producing broken runtime downloads. The existing large, compressed Unity export also needs correct gzip and Wasm response headers; uploading files alone does not establish a working deployment. See [Unity deployment guidance](https://docs.unity3d.com/2020.2/Documentation/Manual/webgl-deploying.html). Git LFS cannot be used with Pages sites; see [GitHub LFS documentation](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage).
-
-For now, run `python scripts/serve.py --runtime-dir "/path/to/WebGL" --open` locally. A future full 3D web release requires appropriate redistribution permissions and a resource host with verified HTTPS, CORS, compression/MIME headers and paths. No such remote runtime deployment has been configured or validated in this release.
+GitHub's browser upload limit is 25 MiB per file and 100 files at a time; Pages sites must stay below 1 GB. See the official [upload guide](https://docs.github.com/en/repositories/working-with-files/managing-files/adding-a-file-to-a-repository) and [Pages limits](https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits).
