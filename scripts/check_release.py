@@ -39,8 +39,15 @@ def check_release(root):
         config=(root/'deployment.mjs').read_text(encoding='utf-8-sig')
         if f'LEGACY_MEDIA_ENABLED = {str(webgl).lower()}' not in config:errors.append('Incorrect 3D profile setting')
         if 'LEGACY_VIDEO_ENABLED = false' not in config:errors.append('Archived video must not be enabled in public profile')
-        forbidden={'.mp4','.wasm','.docx','.xlsx'}|({'.unityweb'} if not webgl else set())
+        forbidden={'.wasm','.docx','.xlsx'}|({'.unityweb'} if not webgl else set())
         if any(p.suffix.lower() in forbidden for p in root.rglob('*')):errors.append('Unexpected archive/raw resource in public profile')
+        # The short, named web preview is allowed; the 339 MB archive and arbitrary MP4s are not.
+        for video in root.rglob('*.mp4'):
+            if video.relative_to(root).as_posix()!='assets/media/opera-preview.mp4':
+                errors.append('Unexpected archive/raw video in public profile');continue
+            with video.open('rb') as stream:header=stream.read(12)
+            if not 1024<video.stat().st_size<20*1024*1024 or header[4:8]!=b'ftyp':
+                errors.append('Invalid or oversized public video preview')
         if webgl:
             try:
                 runtime=root/'runtime';data=json.loads((runtime/'runtime-manifest.json').read_text(encoding='utf-8'))

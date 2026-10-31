@@ -2,11 +2,23 @@
 
 ## 标志与三维 / Identity and 3D
 
-荆楚非遗花形标志、Unity场景、模型、材质及场景内音频来自原团队项目。保留Unity导出使用2021.3.11f1c2及XDreamer/XCSJ等组件。1.0仅进行网页加载适配与数据分片，不重新授予原资产或插件许可。原视频不在公开包内。
+荆楚非遗花形标志、Unity场景、模型、材质及场景内音频来自原团队项目。保留Unity导出使用2021.3.11f1c2及XDreamer/XCSJ等组件。1.0仅进行网页加载适配与数据分片，不重新授予原资产或插件许可。完整原视频不在公开包内；网页节选见下文。
 
-The floral identity, Unity scenes, models, materials and in-scene audio originate from the original team project. The retained build uses Unity 2021.3.11f1c2 and components including XDreamer/XCSJ. Static packaging does not relicense those assets or plugins. The archived video is excluded.
+The floral identity, Unity scenes, models, materials and in-scene audio originate from the original team project. The retained build uses Unity 2021.3.11f1c2 and components including XDreamer/XCSJ. Static packaging does not relicense those assets or plugins. The full archived video is excluded; the short preview is described below.
 
 pottery.webp、wood.webp、chime.webp及三维截图来自原项目运行画面。透明标志根据团队提供的Logo处理；原始素材保留。
+
+## 戏曲视频案例 / Opera video example
+
+`dist/assets/media/opera-preview.mp4` 来自项目提供的 `WebGL/StreamingAssets/花鼓戏视频.mp4`，取前180秒，保留片头与原画面署名，缩至854×480并转为适合网页播放的H.264/AAC MP4；没有改动原文件。原存档约30分51秒、339565368字节，SHA256为 `4fbb3336cd851db5501a5e235cbf2366b5fd0b344884d03ecd92d8b8f51c3230`。
+
+片头确认剧目为荆州花鼓戏《三官堂》选段，属于“名家传戏——当代戏曲名家收徒传艺工程（2018年）”。出品单位：湖北省花鼓戏艺术研究院；主教老师：孙世安；秦香莲：马红丽（徒）；韩琪：丁明安；春哥：夏良益；冬妹：张芳。以上按原画面署名记录。
+
+这是项目早期从网络收集的第三方演出录像，不声明为荆楚非遗团队原创，不额外授予演出或录音录像许可。截至2026年10月31日，按剧目、演员及工程名称检索，尚未核实同一录像的原发布网址；不能将同名剧目的其他表演、一般机构介绍或转载列表当作该录像来源。网页“视频来源”保留这一核实状态。完整原视频不随公开站点发布。
+
+The web preview contains the first 180 seconds of the supplied recording, with original on-screen credits preserved. The opening identifies Jingzhou Huagu opera Sanguantang, part of the 2018 “名家传戏” apprenticeship programme, and credits 湖北省花鼓戏艺术研究院 as producer. The teacher is 孙世安; cast credits are 马红丽 (student), 丁明安, 夏良益 and 张芳. These details are transcribed from the video itself.
+
+This is third-party performance material collected online for the earlier project, not a new team production. This package does not grant additional rights to the performance or recording. A search by title, cast and programme has not verified the original publication URL for this same recording as of 31 October 2026; a different recording or a general organisation page is not substituted as its source. The full source file remains unchanged and is excluded from the public site.
 
 ## 文化资料 / Cultural references
 

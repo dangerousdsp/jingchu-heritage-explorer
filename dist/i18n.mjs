@@ -87,5 +87,12 @@ export function initLanguage(){
   }
   select.addEventListener('change',()=>{language=select.value==='en'?'en':'zh';try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}try{localStorage.setItem(LANGUAGE_KEY,language);}catch{}apply();window.dispatchEvent(new CustomEvent('heritage:languagechange',{detail:{language}}));});
   apply();
+  // The three bilingual pages share this entry point. The optional guide never blocks translation.
+  const startGuide=()=>{
+    if(document.getElementById('jingchu-assistant'))return;
+    import('./assistant.mjs').then(({mountAssistant})=>mountAssistant()).catch(()=>console.warn('Local heritage guide could not be loaded.'));
+  };
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',startGuide,{once:true});
+  else queueMicrotask(startGuide);
   return ()=>observer.disconnect();
 }
