@@ -57,6 +57,7 @@ class Handler(BaseHTTPRequestHandler):
         else:
             kind = mimetypes.guess_type(str(target))[0] or 'application/octet-stream'
             if target.suffix in ('.mjs','.js'):kind='application/javascript'
+            if target.suffix.lower()=='.webp':kind='image/webp'
             if kind.startswith('text/') or kind=='application/javascript':kind+='; charset=utf-8'
         start, end, status = 0, length-1, 200
         range_header = self.headers.get('Range')

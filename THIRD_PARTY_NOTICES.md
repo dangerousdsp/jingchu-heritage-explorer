@@ -30,6 +30,16 @@ This is third-party performance material collected online for the earlier projec
 
 The 22 Commons images retain their individual licences and attribution. Each record includes its source, author, licence, subject, scope and checksum. Images are resized and converted to WebP; cards may crop them. The original image licences continue to apply to these versions. Regional and art-form references are identified in captions.
 
+## 团队专题制图 / Team cartographic works
+
+`dist/map-works.html`展示从容面队地图制图组提供的六幅既有作品：湖北省部分非遗分布图、图说湖北非遗，以及“衣、食、住、行”四个专题。原件保留在项目上级的“从容面队地图制图组制图作品图片”文件夹。《图说》原图署名为王元依；其他作者分工和制作日期未据文件推定。
+
+三张实际为PNG、扩展名为.jpg的原图制成同尺寸无损WebP；三张真实JPEG按原字节复制。六张网页图均核对解码后的RGB像素与原件一致，不改变图中文字、地图边界、署名或截图浮层。网页副本在`dist/assets/map-works/`，中文与英文介绍在地图集页面内。
+
+图中“373项”等统计、重复类别文字与截图遮挡按原作保留，统计时期和范围尚待复核，不作为当前146条地区记录与专题的实时计数。地图编排是原团队成果，作品内第三方素材的原有权利继续适用；本网站不额外授予其许可。
+
+Six existing cartographic works were supplied by the 从容面队 map-making group. The infographic credits 王元依; other individual responsibilities and creation dates are not inferred. Three PNG sources with .jpg names are represented by same-size lossless WebP files; three genuine JPEGs are copied unchanged. Decoded RGB pixels were checked against all six originals. Original labels, credits, boundaries and screenshot artefacts are retained. The works' dates and statistical definitions have not been verified; their figures are not the current site's catalogue totals. Existing rights to third-party material within the compositions remain applicable.
+
 ## 地图与导航 / Maps and navigation
 
 - 湖北市州轮廓：[DataV GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector)，数据源 `https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json`；原文件SHA256 `0acb559fcfe2ab2c5d2707c2477e60facdf4328ad89b8ab7d9126c5166675502`。提供方条款适用，不重新授权。
