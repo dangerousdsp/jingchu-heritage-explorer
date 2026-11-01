@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {answerQuestion,KNOWLEDGE_CARDS,KNOWLEDGE_STATS,normalise} from '../dist/assistant-knowledge.mjs';
-import {safeLink,homeLink} from '../dist/assistant.mjs';
+import {safeLink,homeLink,normaliseDock,guideDockPoint,guidePanelRect} from '../dist/assistant.mjs';
 import {exhibits} from '../dist/content.mjs';
 const places=JSON.parse(await readFile(new URL('../dist/visit-places.json',import.meta.url),'utf8'));
 const ask=(q,options={})=>answerQuestion(q,{places,...options});
@@ -93,4 +93,24 @@ test('core answering makes no fetch calls even for unknown and everyday requests
 test('source cards and all output actions resolve to known local data',()=>{
  const queries=['通山木雕','编钟','武汉有哪些非遗','哪些展品能看三维','我想看汉绣图片','什么是非遗','参观目的地'];
  for(const q of queries){const r=ask(q);for(const a of r.actions){if(a.id)assert.ok(exhibits.some(e=>e.id===a.id));if(a.scene)assert.ok([2,3,4].includes(a.scene));}for(const s of r.sources)assert.ok(safeLink(s.url));}
+});
+
+
+test('guide docking normalises corrupt storage and clamps relative height',()=>{
+ assert.deepEqual(normaliseDock(null),{side:'right',ratio:.58});assert.deepEqual(normaliseDock({side:'middle',ratio:'0.3'}),{side:'right',ratio:.58});assert.deepEqual(normaliseDock({side:'left',ratio:-3}),{side:'left',ratio:0});assert.deepEqual(normaliseDock({side:'right',ratio:Infinity}),{side:'right',ratio:.58});assert.equal(normaliseDock({side:'left',ratio:3}).ratio,1);
+});
+test('guide rests only at the left or right edge, below the sticky navigation',()=>{
+ const view={width:1440,height:1000,header:86},size={width:72,height:84};const left=guideDockPoint(view,size,{side:'left',ratio:.4}),right=guideDockPoint(view,size,{side:'right',ratio:.4});assert.equal(left.x,20);assert.equal(right.x,1348);assert.equal(left.y,right.y);assert.ok(left.y>=96&&left.y+84<=980);
+});
+test('stored dock height adapts to changed viewport sizes and offsets',()=>{
+ for(const view of [{left:0,top:0,width:390,height:844,header:108},{left:10,top:220,width:390,height:400,header:108}]){for(const ratio of [0,.5,1]){const p=guideDockPoint(view,{width:66,height:78},{side:'right',ratio});assert.equal(p.x,view.left+390-66-12);assert.ok(p.y>=view.top+12);assert.ok(p.y+78<=view.top+view.height-12);}}
+});
+test('guide panel remains visible for either dock side and extreme anchor heights',()=>{
+ for(const width of [390,768,1440])for(const side of ['left','right'])for(const ratio of [0,1]){const view={width,height:844,header:110},size={width:66,height:78},p=guideDockPoint(view,size,{side,ratio}),r=guidePanelRect(view,{...p,...size},side);assert.ok(r.left>=12&&r.left+r.width<=width-12);assert.ok(r.top>=12&&r.top+r.height<=832);}
+});
+test('guide panel fits a keyboard-sized viewport without a minimum-height overflow',()=>{
+ const view={left:0,top:0,width:390,height:320,header:108},size={width:66,height:78},p=guideDockPoint(view,size,{side:'left',ratio:1}),r=guidePanelRect(view,{...p,...size},'left');assert.ok(r.top>=12);assert.ok(r.top+r.height<=308);assert.ok(r.height>=120);
+});
+test('panel placement respects a shifted mobile visual viewport',()=>{
+ const view={left:8,top:180,width:390,height:420,header:100},size={width:66,height:78},p=guideDockPoint(view,size,{side:'left',ratio:.8}),r=guidePanelRect(view,{...p,...size},'left');assert.equal(r.left,20);assert.ok(r.top>=192&&r.top+r.height<=588);
 });

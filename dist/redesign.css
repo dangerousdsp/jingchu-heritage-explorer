@@ -147,3 +147,42 @@ body.gallery-focused{overflow:hidden}.player-panel.theater{position:fixed;z-inde
 .scene-hint{font-size:14px;line-height:1.8;color:#e1d0ac;margin:15px 0 0}
 .notes-page p,.notes-page li{font-size:16px;line-height:1.95}
 .notes-page h2{margin-top:32px}
+
+
+/* Jingchu Reverie: a persistent, compact navigation and a quiet calligraphic identity. */
+:root{--art-serif:STXingkai,"华文行楷",STKaiti,KaiTi,"Songti SC",serif;--site-header-height:86px}
+html{scroll-padding-top:calc(var(--site-header-height,86px) + 14px)}
+main section[id]{scroll-margin-top:12px}
+:root body>header.site-header{position:sticky;top:0;z-index:1200;display:grid;grid-template-columns:auto minmax(0,1fr) auto auto;align-items:center;gap:14px;min-height:86px;padding-block:9px;background:#f4f0e7f5;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid #d0d6c7;box-shadow:0 9px 18px #253d3506}
+:root body>header.site-header>.brand{grid-column:1;grid-row:1;gap:10px;min-width:0;white-space:nowrap;font-family:var(--art-serif);font-size:28px;letter-spacing:2px;font-weight:400}
+:root body>header.site-header .project-logo{width:54px;height:58px}
+:root body>header.site-header .brand small{font-family:var(--sans);font-size:9px;letter-spacing:1.8px;line-height:1.7;margin-top:2px}
+:root body>header.site-header nav{grid-row:1;grid-column:2;display:flex;gap:20px;justify-content:center;overflow-x:auto;min-width:0;max-width:100%;white-space:nowrap;font-size:14px;line-height:1.8;scrollbar-width:none;padding:5px 0}
+:root body>header.site-header nav::-webkit-scrollbar{display:none}
+:root body>header.site-header nav a{position:relative;flex:none;padding:5px 2px;transition:color .18s}
+:root body>header.site-header nav a:after{content:'';position:absolute;left:2px;right:2px;bottom:1px;height:1px;background:#a34432;transform:scaleX(0);transition:transform .2s}
+:root body>header.site-header nav a:hover:after,:root body>header.site-header nav a:focus-visible:after{transform:scaleX(1)}
+:root body>header.site-header .language-link{margin:0;white-space:nowrap;font-size:12px;gap:5px}
+:root body>header.site-header .language-link select{font-size:12px;padding:5px;max-width:105px}
+:root body>header.site-header .header-progress{font-size:12px;padding:6px 10px}
+body.gallery-focused>header.site-header{visibility:hidden;pointer-events:none}
+.hero .reverie-heading{margin:24px 0;letter-spacing:0;line-height:1.15}
+.hero .reverie-title-art{width:min(100%,520px);height:auto;display:block;filter:drop-shadow(0 2px 0 #fff5)}
+.hero .reverie-title-en{display:none;font-family:Georgia,"Times New Roman",serif;font-size:clamp(44px,4.8vw,72px);line-height:1.04;letter-spacing:-.035em;color:#253d35}
+.hero .reverie-title-en em{color:#aa4938;font-weight:400}
+html[lang="en"] .hero .reverie-title-art{display:none}
+html[lang="en"] .hero .reverie-title-en{display:block}
+:root main .section-heading h2,:root main .learning-intro h2,:root main .about-section h2,:root main .group-heading h2,:root main.photo-page h1,:root main.notes-page h1{font-family:var(--art-serif);font-weight:400;letter-spacing:2px;line-height:1.5}
+:root main .section-heading h2{font-size:39px}
+:root main.photo-page h1,:root main.notes-page h1{font-size:43px}
+:root main .group-heading h2{font-size:31px}
+html[lang="en"] main .section-heading h2,html[lang="en"] main .learning-intro h2,html[lang="en"] main .group-heading h2,html[lang="en"] main.photo-page h1,html[lang="en"] main.notes-page h1{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.02em;line-height:1.35}
+.filter,.button,.quiz-options label,.photo-card button,.exhibit-image-button{transition:background-color .18s,border-color .18s,box-shadow .18s,transform .18s}
+.exhibit-image-button:hover,.photo-card button:hover{box-shadow:0 9px 26px #2a442412}
+.quiz-options label:hover{border-color:#94a486;background:#f5f6eb}
+@media(max-width:1100px){:root body>header.site-header{grid-template-columns:minmax(0,1fr) auto auto;gap:7px 16px;min-height:0;padding-block:9px}:root body>header.site-header nav{grid-row:2;grid-column:1/-1;justify-content:flex-start;padding:2px 0;gap:25px}:root body>header.site-header .header-progress{justify-self:end}}
+@media(max-width:600px){:root{--site-header-height:110px}:root body>header.site-header{grid-template-columns:minmax(0,1fr) auto;gap:7px 10px;padding-block:8px}:root body>header.site-header .project-logo{width:43px;height:46px}:root body>header.site-header>.brand{font-size:25px;gap:8px}:root body>header.site-header .brand small{font-size:8px;letter-spacing:1.2px}:root body>header.site-header .language-link{grid-column:2;grid-row:1;justify-self:end;font-size:0;gap:0}:root body>header.site-header .language-link select{font-size:12px;max-width:85px;padding:5px 3px}:root body>header.site-header .header-progress{display:none!important}:root body>header.site-header nav{grid-row:2;grid-column:1/-1;font-size:14px;gap:22px;white-space:nowrap;height:33px}:root body>header.site-header>a.text-link{grid-column:1/-1;grid-row:2;font-size:13px}.hero .reverie-heading{margin:18px 0 24px}.hero .reverie-title-art{width:min(100%,420px)}.hero .reverie-title-en{font-size:51px}:root main .section-heading h2{font-size:32px}:root main .group-heading h2{font-size:28px}:root main.photo-page h1,:root main.notes-page h1{font-size:34px}}
+@media(prefers-reduced-motion:reduce){:root body>header.site-header nav a,:root body>header.site-header nav a:after,.filter,.button,.quiz-options label,.photo-card button,.exhibit-image-button{transition:none}}
+@media print{:root body>header.site-header{position:static;box-shadow:none;background:none;backdrop-filter:none}}
+
+:root body>header.site-header .brand-label{display:block;width:180px;line-height:1}:root body>header.site-header .brand-wordmark{display:block;width:180px;height:47px;object-fit:contain}:root body>header.site-header .brand-wordmark-en{display:none;font-family:Georgia,serif;font-size:22px;font-style:italic;line-height:1.4;letter-spacing:-.02em}html[lang="en"] body>header.site-header .brand-wordmark{display:none}html[lang="en"] body>header.site-header .brand-wordmark-en{display:block}@media(max-width:600px){:root body>header.site-header .brand-label{width:140px}:root body>header.site-header .brand-wordmark{width:140px;height:37px}:root body>header.site-header .brand-wordmark-en{font-size:19px}}

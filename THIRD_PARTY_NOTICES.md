@@ -32,13 +32,19 @@ The 22 Commons images retain their individual licences and attribution. Each rec
 
 ## 团队专题制图 / Team cartographic works
 
-`dist/map-works.html`展示从容面队地图制图组提供的六幅既有作品：湖北省部分非遗分布图、图说湖北非遗，以及“衣、食、住、行”四个专题。原件保留在项目上级的“从容面队地图制图组制图作品图片”文件夹。《图说》原图署名为王元依；其他作者分工和制作日期未据文件推定。
+作品由长江大学地球科学学院从容面队地图制图组提供，团队成员主要有佘彭宇、王元依、郑子悦、黄悦娇、崔静茹。
 
-三张实际为PNG、扩展名为.jpg的原图制成同尺寸无损WebP；三张真实JPEG按原字节复制。六张网页图均核对解码后的RGB像素与原件一致，不改变图中文字、地图边界、署名或截图浮层。网页副本在`dist/assets/map-works/`，中文与英文介绍在地图集页面内。
+地图集保留六幅原作的完整画面与原图署名；三张实际PNG制成同尺寸无损WebP，三张JPEG保留原字节，解码像素核对一致。网页中按提供者要求展示上述团队署名。原作自身的统计、文字与插画没有因为这次界面调整而重绘；作品内第三方素材的原有权利继续适用。
 
-图中“373项”等统计、重复类别文字与截图遮挡按原作保留，统计时期和范围尚待复核，不作为当前146条地区记录与专题的实时计数。地图编排是原团队成果，作品内第三方素材的原有权利继续适用；本网站不额外授予其许可。
+Works provided by the 从容面队 Cartography Group, School of Geosciences, Yangtze University. Team members include 佘彭宇, 王元依, 郑子悦, 黄悦娇 and 崔静茹.
 
-Six existing cartographic works were supplied by the 从容面队 map-making group. The infographic credits 王元依; other individual responsibilities and creation dates are not inferred. Three PNG sources with .jpg names are represented by same-size lossless WebP files; three genuine JPEGs are copied unchanged. Decoded RGB pixels were checked against all six originals. Original labels, credits, boundaries and screenshot artefacts are retained. The works' dates and statistical definitions have not been verified; their figures are not the current site's catalogue totals. Existing rights to third-party material within the compositions remain applicable.
+Six compositions and their original in-image credits remain unchanged. Three PNG sources use same-size lossless WebP derivatives; three JPEGs are copied unchanged. Decoded RGB pixels were checked against the supplied files. Existing rights to material within the compositions remain applicable.
+
+## 品牌字形 / Brand lettering
+
+“荆风楚韵，云上梦回”为原项目名称中的八字，本轮以“荆风楚韵”为网站短名。`dist/assets/jingchu-reverie-title.svg`将本机华文行楷的这八个字轮廓转成矢量路径，不分发字体文件，不依赖访客安装该字体。原花形Logo保留。
+
+The title artwork renders eight characters from the original project name as vector outlines. No font file is distributed. The original project emblem is retained.
 
 ## 地图与导航 / Maps and navigation
 
@@ -51,3 +57,9 @@ Six existing cartographic works were supplied by the 从容面队 map-making gro
 
 - Leaflet 1.9.4，BSD-2-Clause，[官网](https://leafletjs.com/)，许可证位于 `dist/vendor/leaflet/LICENSE`。
 - coordtransform 2.1.2，Wandergis，MIT，[源码](https://github.com/wandergis/coordtransform)，许可证位于 `dist/vendor/coordtransform/LICENSE`。
+
+## 小楚角色插画 / Xiaochu character illustration
+
+`dist/assets/xiaochu-hanfu-sprite.webp`为本轮使用内置imagegen在开发阶段生成的透明底汉服女孩双姿态素材，包含静候与挥手。原始生成PNG保留在本地工作目录；网页副本仅进行尺寸与格式优化，保留透明通道。角色腰间复用既有花形标志，未增加运行时图像或语言模型接口。
+
+The transparent Hanfu guide sprite was created with the built-in image-generation tool during development. It contains standing and waving poses and is optimised in size and format for the website. The original generated PNG is preserved locally. The character reuses the existing floral emblem; displaying it does not call an image or language-model API at runtime.

@@ -31,7 +31,7 @@ const dynamic=[
 export function translateText(text,locale=language){
   if(locale!=='en'||typeof text!=='string')return text;
   const s=text.trim();if(!s)return text;
-  let result=englishUI[s];
+  let result=({'荆风楚韵':'Jingchu Reverie','荆风楚韵 · 1.0.0':'Jingchu Reverie · 1.0.0','荆风楚韵，云上梦回':'Jingchu Reverie — traditions in a dreamlike journey','荆风楚韵 · 非遗地图与互动展馆':'Jingchu Reverie · Heritage maps and interactive gallery','非遗影像 · 荆风楚韵':'Photographs · Jingchu Reverie','资料与图片来源 · 荆风楚韵':'Sources and credits · Jingchu Reverie'})[s]??englishUI[s];
   if(result===undefined){for(const [pattern,replacement] of dynamic){if(pattern.test(s)){result=s.replace(pattern,replacement);break;}}}
   if(result===undefined)result=s.replace(termsPattern,matched=>englishUI[matched]);
   result=result.replace(/向(东北|东南|西南|西北|东|西|南|北)/g,(_,dir)=>`towards ${englishUI[dir]}`)
@@ -47,6 +47,8 @@ export function translateText(text,locale=language){
 export function initLanguage(){
   const select=document.querySelector('#language-select');
   if(!select)return;
+  const pageHeader=document.querySelector('body > .site-header');
+  if(pageHeader&&!pageHeader.dataset.stickyMeasured){pageHeader.dataset.stickyMeasured='true';const measure=()=>document.documentElement.style.setProperty('--site-header-height',Math.ceil(pageHeader.getBoundingClientRect().height)+'px');measure();new ResizeObserver(measure).observe(pageHeader);}
   const query=new URLSearchParams(location.search).get('lang');
   let saved;try{saved=localStorage.getItem(LANGUAGE_KEY);}catch{}
   language=['zh','en'].includes(query)?query:['zh','en'].includes(saved)?saved:navigator.language?.toLowerCase().startsWith('zh')?'zh':'en';
@@ -87,7 +89,7 @@ export function initLanguage(){
   }
   select.addEventListener('change',()=>{language=select.value==='en'?'en':'zh';try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url);}catch{}try{localStorage.setItem(LANGUAGE_KEY,language);}catch{}apply();window.dispatchEvent(new CustomEvent('heritage:languagechange',{detail:{language}}));});
   apply();
-  // The three bilingual pages share this entry point. The optional guide never blocks translation.
+  // The bilingual pages share this entry point. The optional guide never blocks translation.
   const startGuide=()=>{
     if(document.getElementById('jingchu-assistant'))return;
     import('./assistant.mjs').then(({mountAssistant})=>mountAssistant()).catch(()=>console.warn('Local heritage guide could not be loaded.'));
