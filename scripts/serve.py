@@ -40,9 +40,16 @@ class Handler(BaseHTTPRequestHandler):
         is_runtime = path.startswith('/runtime/')
         if is_runtime:
             relative = path[len('/runtime/'):]
-            if not (relative.startswith('Build/') or relative.startswith('StreamingAssets/')):
+            if not (relative=='runtime-manifest.json' or relative.startswith('Build/') or relative.startswith('StreamingAssets/')):
                 self.send_error(404); return
             target = confined(self.server.runtime_dir, relative)
+            # Older repository uploads stored listed data parts at the source root.
+            manifest=self.server.runtime_dir/'runtime-manifest.json'
+            if target is not None and not target.is_file() and re.fullmatch(r'Build/data-\d{2}\.bin',relative) and manifest.is_file():
+                try:
+                    listed={part['path'] for part in json.loads(manifest.read_text(encoding='utf-8'))['parts']}
+                    if relative in listed:target=confined(PROJECT,Path(relative).name)
+                except (OSError,ValueError,KeyError,TypeError):pass
         else:
             target = confined(DIST, path.lstrip('/') or 'index.html')
         if target is None:

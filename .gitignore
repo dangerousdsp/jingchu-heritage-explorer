@@ -1,0 +1,69 @@
+# Immutable legacy build and optional local tools are deliberately separate.
+
+runtime.local.json
+recovery-private/
+.tools/
+output/
+qa/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+node_modules/
+.env
+.env.*
+!.env.example
+# Optional historical archives and raw inputs must stay outside this repository.
+/WebGL/
+/Windows/
+/project_audit_*/
+/Logo..jpg
+*.unityweb
+*.wasm
+*.mp4
+*.xlsx
+*.docx
+*.zip
+
+# Prepared static Unity payload: split data and loader only.
+!dist/runtime/Build/*.unityweb
+
+# The attributed three-minute website preview is part of the release.
+!dist/assets/media/opera-preview.mp4
+
+# Owner-only material and credentials are never public source.
+/.venv/
+/本地维护资料/
+/项目技术与面试报告/
+**/.env
+**/.env.*
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa
+id_ed25519
+/docs/GITHUB_PUBLISH.*
+/docs/GITEE_PUBLISH.*
+/docs/BRAND_ASSETS.md
+/docs/CAMERA_INPUT.md
+/docs/VALIDATION.md
+/docs/LOCALIZATION.md
+/docs/PROJECT_OVERVIEW.md
+/docs/RELEASE_NOTES_*.md
+/docs/ROADMAP.md
+/scripts/extract_legacy_brand.py
+/scripts/prepare_previews.cjs
+/scripts/redesign_v03.py
+
+# Local development records are not public project files.
+/docs/
+/tests/
+/CHANGELOG.md
+/CONTRIBUTING.md
+/scripts/build_catalog.py
+/scripts/check_release.py
+/scripts/package_release.py
+/scripts/package_source.py
+/scripts/package_webgl.py
+/scripts/public_files.py

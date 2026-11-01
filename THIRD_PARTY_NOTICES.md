@@ -1,65 +1,37 @@
-# 资源来源 / Resource credits
+# 素材与依赖署名 / Resource credits
 
-## 标志与三维 / Identity and 3D
+## 团队作品 / Team works
 
-荆楚非遗花形标志、Unity场景、模型、材质及场景内音频来自原团队项目。保留Unity导出使用2021.3.11f1c2及XDreamer/XCSJ等组件。1.0仅进行网页加载适配与数据分片，不重新授予原资产或插件许可。完整原视频不在公开包内；网页节选见下文。
+荆楚非遗花形标志、原Unity场景、模型、材质与场景音频来自原团队项目，相关资产及XDreamer/XCSJ等组件的原有权利继续适用。
 
-The floral identity, Unity scenes, models, materials and in-scene audio originate from the original team project. The retained build uses Unity 2021.3.11f1c2 and components including XDreamer/XCSJ. Static packaging does not relicense those assets or plugins. The full archived video is excluded; the short preview is described below.
+作品由长江大学地球科学学院从容面队地图制图组提供，团队成员主要有佘彭宇、王元依、郑子悦、黄悦娇、崔静茹。六幅专题地图保留原图内容和署名。
 
-pottery.webp、wood.webp、chime.webp及三维截图来自原项目运行画面。透明标志根据团队提供的Logo处理；原始素材保留。
+The floral identity and original 3D assets retain their team and component ownership. Cartographic works are provided by the 从容面队 Cartography Group, School of Geosciences, Yangtze University; the members listed above retain their credits.
 
-## 戏曲视频案例 / Opera video example
+## 摄影 / Photographs
 
-`dist/assets/media/opera-preview.mp4` 来自项目提供的 `WebGL/StreamingAssets/花鼓戏视频.mp4`，取前180秒，保留片头与原画面署名，缩至854×480并转为适合网页播放的H.264/AAC MP4；没有改动原文件。原存档约30分51秒、339565368字节，SHA256为 `4fbb3336cd851db5501a5e235cbf2366b5fd0b344884d03ecd92d8b8f51c3230`。
+22张Wikimedia Commons图片按各自CC BY、CC BY-SA、CC0或公共领域条件展示。逐张作者、原文件页、授权与主题范围记录在[photo-data.mjs](dist/photo-data.mjs)，并显示在网站图片与来源页中。图片经尺寸和格式优化，卡片可能裁切。
 
-片头确认剧目为荆州花鼓戏《三官堂》选段，属于“名家传戏——当代戏曲名家收徒传艺工程（2018年）”。出品单位：湖北省花鼓戏艺术研究院；主教老师：孙世安；秦香莲：马红丽（徒）；韩琪：丁明安；春哥：夏良益；冬妹：张芳。以上按原画面署名记录。
+The 22 photographs retain their individual author credits, source links, subject scope and permissions in the image records and website. Resizing, format conversion and card crops do not replace the original licences.
 
-这是项目早期从网络收集的第三方演出录像，不声明为荆楚非遗团队原创，不额外授予演出或录音录像许可。截至2026年10月31日，按剧目、演员及工程名称检索，尚未核实同一录像的原发布网址；不能将同名剧目的其他表演、一般机构介绍或转载列表当作该录像来源。网页“视频来源”保留这一核实状态。完整原视频不随公开站点发布。
+## 戏曲录像 / Opera recording
 
-The web preview contains the first 180 seconds of the supplied recording, with original on-screen credits preserved. The opening identifies Jingzhou Huagu opera Sanguantang, part of the 2018 “名家传戏” apprenticeship programme, and credits 湖北省花鼓戏艺术研究院 as producer. The teacher is 孙世安; cast credits are 马红丽 (student), 丁明安, 夏良益 and 张芳. These details are transcribed from the video itself.
+网页节选为荆州花鼓戏《三官堂》前180秒，保留原片片头署名。片头标注“名家传戏——当代戏曲名家收徒传艺工程（2018年）”，出品单位为湖北省花鼓戏艺术研究院。
 
-This is third-party performance material collected online for the earlier project, not a new team production. This package does not grant additional rights to the performance or recording. A search by title, cast and programme has not verified the original publication URL for this same recording as of 31 October 2026; a different recording or a general organisation page is not substituted as its source. The full source file remains unchanged and is excluded from the public site.
+主教老师：孙世安；秦香莲：马红丽（徒）；韩琪：丁明安；春哥：夏良益；冬妹：张芳。原发布网址尚未核实，不声明录像为团队原创，也不新增授予演出或录像许可。
 
-## 文化资料 / Cultural references
+The Sanguantang excerpt preserves the original opening credits for the 2018 apprenticeship programme and 湖北省花鼓戏艺术研究院. Teacher and cast are credited above. The original publication URL has not been verified; the recording is not claimed as a team production or relicensed by this project.
 
-146条地区记录与专题由简明导读、观察点与官方原文链接组成，来源保存在 `dist/catalog-data.mjs`、`dist/core-content.mjs` 及 `dist/researched-topics.json`。145条原始表格地区记录的FID与行号保留；原表不随网站分发。英文为同一批材料的简明导读。
+## 地图与代码依赖 / Maps and libraries
 
-## 摄影与艺术 / Photographs and artwork
+- 地区轮廓：[DataV GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector)，原提供方条款适用。
+- 地点与街道：[© OpenStreetMap contributors](https://www.openstreetmap.org/copyright)，ODbL。
+- 道路路线：[OSRM](https://project-osrm.org/)。导航链接：[高德地图](https://lbs.amap.com/api/uri-api/guide/travel/route)。
+- Leaflet 1.9.4，BSD-2-Clause：[许可证](dist/vendor/leaflet/LICENSE)。
+- coordtransform 2.1.2，MIT：[许可证](dist/vendor/coordtransform/LICENSE)。
 
-22张来自Wikimedia Commons的图片以各自CC BY、CC BY-SA、CC0或公共领域条件提供；逐张作者、原文件页、授权链接、内容范围与摘要保存在 `dist/photo-data.mjs`，网站影像页、详情与来源页均显示署名。文件优化为WebP，尺寸缩小，卡片可能裁切；各图原授权继续适用。涉及同类技艺或地域环境的图片明确标为参考。
+## 品牌与角色 / Branding and character
 
-The 22 Commons images retain their individual licences and attribution. Each record includes its source, author, licence, subject, scope and checksum. Images are resized and converted to WebP; cards may crop them. The original image licences continue to apply to these versions. Regional and art-form references are identified in captions.
+网站短名“荆风楚韵”及“云上梦回”沿用原项目题名。标题为矢量轮廓，未分发字体文件。小楚插画由生成式图像工具辅助制作，腰间沿用团队花形标志；网页展示与知识问答不调用生成模型接口。
 
-## 团队专题制图 / Team cartographic works
-
-作品由长江大学地球科学学院从容面队地图制图组提供，团队成员主要有佘彭宇、王元依、郑子悦、黄悦娇、崔静茹。
-
-地图集保留六幅原作的完整画面与原图署名；三张实际PNG制成同尺寸无损WebP，三张JPEG保留原字节，解码像素核对一致。网页中按提供者要求展示上述团队署名。原作自身的统计、文字与插画没有因为这次界面调整而重绘；作品内第三方素材的原有权利继续适用。
-
-Works provided by the 从容面队 Cartography Group, School of Geosciences, Yangtze University. Team members include 佘彭宇, 王元依, 郑子悦, 黄悦娇 and 崔静茹.
-
-Six compositions and their original in-image credits remain unchanged. Three PNG sources use same-size lossless WebP derivatives; three JPEGs are copied unchanged. Decoded RGB pixels were checked against the supplied files. Existing rights to material within the compositions remain applicable.
-
-## 品牌字形 / Brand lettering
-
-“荆风楚韵，云上梦回”为原项目名称中的八字，本轮以“荆风楚韵”为网站短名。`dist/assets/jingchu-reverie-title.svg`将本机华文行楷的这八个字轮廓转成矢量路径，不分发字体文件，不依赖访客安装该字体。原花形Logo保留。
-
-The title artwork renders eight characters from the original project name as vector outlines. No font file is distributed. The original project emblem is retained.
-
-## 地图与导航 / Maps and navigation
-
-- 湖北市州轮廓：[DataV GeoAtlas](https://datav.aliyun.com/portal/school/atlas/area_selector)，数据源 `https://geo.datav.aliyun.com/areas_v3/bound/420000_full.json`；原文件SHA256 `0acb559fcfe2ab2c5d2707c2477e60facdf4328ad89b8ab7d9126c5166675502`。提供方条款适用，不重新授权。
-- 地点与街道：[© OpenStreetMap contributors / ODbL](https://www.openstreetmap.org/copyright)。在线底图仅按视口加载，不预取或打包OSM瓦片，遵循[瓦片政策](https://operations.osmfoundation.org/policies/tiles/)。
-- 道路：[OSRM API](https://project-osrm.org/docs/v5.24.0/api/)。
-- 外部导航：[高德URI路线接口](https://lbs.amap.com/api/uri-api/guide/travel/route)。
-
-## 本地第三方库 / Vendored libraries
-
-- Leaflet 1.9.4，BSD-2-Clause，[官网](https://leafletjs.com/)，许可证位于 `dist/vendor/leaflet/LICENSE`。
-- coordtransform 2.1.2，Wandergis，MIT，[源码](https://github.com/wandergis/coordtransform)，许可证位于 `dist/vendor/coordtransform/LICENSE`。
-
-## 小楚角色插画 / Xiaochu character illustration
-
-`dist/assets/xiaochu-hanfu-sprite.webp`为本轮使用内置imagegen在开发阶段生成的透明底汉服女孩双姿态素材，包含静候与挥手。原始生成PNG保留在本地工作目录；网页副本仅进行尺寸与格式优化，保留透明通道。角色腰间复用既有花形标志，未增加运行时图像或语言模型接口。
-
-The transparent Hanfu guide sprite was created with the built-in image-generation tool during development. It contains standing and waving poses and is optimised in size and format for the website. The original generated PNG is preserved locally. The character reuses the existing floral emblem; displaying it does not call an image or language-model API at runtime.
+The title retains the original project wording and uses vector outlines without distributing font files. Xiaochu uses an assisted-generation illustration and the team's floral emblem. The website does not call generative-model APIs at runtime.

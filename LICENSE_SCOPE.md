@@ -1,8 +1,8 @@
 # 许可与归属 / Licensing and attribution
 
-本项目未选定覆盖所有内容的统一开源许可证。新增网页、服务、测试与文档的公开不改变原团队资产、第三方库、地图或图片各自的权属与许可。
+本项目未选定覆盖所有内容的统一开源许可证。网页与服务代码的公开不改变原团队资产、第三方库、地图或图片各自的权属与许可。
 
-No single open-source licence covers the entire project. Publishing the new website, server, tests and documentation does not change the ownership or licences of team assets, third-party libraries, map data or photographs.
+No single open-source licence covers the entire project. Publishing the website and server code does not change the ownership or licences of team assets, third-party libraries, map data or photographs.
 
 | 范围 / Scope | 说明 / Notes |
 | --- | --- |

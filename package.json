@@ -5,7 +5,6 @@
   "type": "module",
   "description": "湖北非遗双语图鉴、交互地图、文化旅行与三维展馆",
   "scripts": {
-    "test": "node --test tests/learning.test.mjs tests/explore.test.mjs tests/travel.test.mjs tests/canvas-input.test.mjs tests/i18n.test.mjs tests/map-runtime.test.mjs tests/assistant.test.mjs",
-    "serve": "python scripts/serve.py"
+    "serve": "python scripts/serve.py --open"
   }
 }

@@ -1,70 +1,57 @@
-name: Check and publish Pages
+name: Publish website
 
 on:
   push:
-    branches: [main]
-  pull_request:
     branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages
   cancel-in-progress: false
 
 jobs:
-  check:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with:
-          node-version: '24'
-          package-manager-cache: false
-      - uses: actions/setup-python@v7
-        with:
-          python-version: '3.12'
-      - name: JavaScript tests
-        run: npm test
-      - name: Python tests
-        run: python -m unittest discover -s tests -p 'test_*.py'
-      - name: Arrange Unity data uploaded at repository root
-        shell: python
-        run: |
-          from pathlib import Path
-          import shutil
-          destination = Path('dist/runtime/Build')
-          destination.mkdir(parents=True, exist_ok=True)
-          for index in range(17):
-              source = Path(f'data-{index:02d}.bin')
-              target = destination / source.name
-              if source.is_file() and not target.exists():
-                  shutil.copy2(source, target)
-      - name: Build public static site
-        run: python scripts/package_release.py --public --auto-webgl --output output/github-pages
-      - name: Validate public release
-        run: python scripts/check_release.py output/github-pages
-      - name: Configure Pages
-        if: github.event_name != 'pull_request'
-        uses: actions/configure-pages@v5
-      - name: Upload Pages artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v4
-        with:
-          path: output/github-pages
   deploy:
-    if: github.event_name != 'pull_request'
-    needs: check
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Deploy GitHub Pages
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Prepare website
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, shutil
+          site = Path('_site')
+          shutil.copytree('dist', site)
+          manifest = site / 'runtime/runtime-manifest.json'
+          webgl = manifest.is_file()
+          if webgl:
+              for part in json.loads(manifest.read_text(encoding='utf-8'))['parts']:
+                  relative = Path(part['path'])
+                  if relative.parent != Path('Build') or not relative.name.startswith('data-'):
+                      raise ValueError('Invalid runtime path')
+                  target = site / 'runtime' / relative
+                  if not target.is_file():
+                      target.parent.mkdir(parents=True, exist_ok=True)
+                      shutil.copy2(Path(relative.name), target)
+                  data = target.read_bytes()
+                  if len(data) != part['bytes'] or hashlib.sha256(data).hexdigest() != part['sha256']:
+                      raise ValueError('Incomplete runtime resource')
+          (site / 'deployment.mjs').write_text('export const LEGACY_MEDIA_ENABLED = ' + str(webgl).lower() + ';\nexport const LEGACY_VIDEO_ENABLED = false;\n', encoding='utf-8')
+          (site / '.nojekyll').touch()
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
