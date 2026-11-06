@@ -1,0 +1,153 @@
+{
+  "verifiedAt": "2026-11-06",
+  "assets": [
+    {
+      "assetId": "smithsonian-winged-monster",
+      "titleZh": "跪姿翼兽·响堂山石雕",
+      "titleEn": "Kneeling winged monster",
+      "dateZh": "北齐（550—577）",
+      "dateEn": "550-577; Period of Division, Northern Qi dynasty",
+      "originZh": "中国河北 · 北响堂山",
+      "originEn": "Northern Xiangtangshan, Middle Cave, Hebei province, China",
+      "medium": "Limestone freestanding sculpture",
+      "institution": "National Museum of Asian Art, Smithsonian Institution",
+      "creatorZh": "原作者未署名；数字化：Smithsonian Institution",
+      "creatorEn": "Original sculptor unidentified; digitization: Smithsonian Institution",
+      "recordId": "edanmdm:fsg_F1916.345",
+      "sourceUrl": "https://asia.si.edu/object/F1916.345/",
+      "modelSource": "https://3d-api.si.edu/voyager/3d_package:0dc68216-3651-44c7-99cf-18e5d4d1eb9f",
+      "downloadUrl": "https://3d-api.si.edu/content/document/3d_package:0dc68216-3651-44c7-99cf-18e5d4d1eb9f/resources/kneeling-winged-monster-150k-2048-medium-100k-2048_std_draco.glb",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mediaUsageEvidence": {
+        "model": {
+          "text": "",
+          "codes": "",
+          "access": "CC0"
+        },
+        "poster": {
+          "access": "CC0"
+        },
+        "api": "https://api.si.edu/openaccess/api/v1.0/search?api_key=DEMO_KEY&q=F1916.345"
+      },
+      "verifiedAt": "2026-11-06",
+      "modelUrl": "assets/museum/models/smithsonian-winged-monster.glb",
+      "posterUrl": "assets/museum/posters/smithsonian-winged-monster.jpg",
+      "posterSource": "https://ids.si.edu/ids/deliveryService?id=FS-5971_01&max=1000",
+      "bytes": 2089400,
+      "posterBytes": 103594,
+      "triangles": 100000,
+      "materials": 1,
+      "textures": 3,
+      "extensions": [
+        "KHR_draco_mesh_compression"
+      ],
+      "nodes": [
+        {
+          "mesh": 0
+        }
+      ],
+      "sha256": "1fd82dcc69cba0070fe9a993520d0fdac3ff438cbac7f81694331a9967575a6b",
+      "posterSha256": "05c859581c62b60f0e7b5286af208a8c068138c3172e469f9598cb990ce6d99a",
+      "modifications": "Official standardized Draco GLB unchanged; renamed for static website deployment. Official poster photograph downscaled by source delivery service.",
+      "relatedExhibitIds": [
+        "hb-1931"
+      ],
+      "culturalScopeZh": "中国石雕工艺对照：河北响堂山原件，并非大冶石雕实物。",
+      "culturalScopeEn": "Chinese stone-carving comparison: an object from Xiangtangshan, Hebei; not a specimen of Daye stone carving.",
+      "descriptionNotes": [
+        "This mythical, composite animal and the similar one on the opposite side of the doorway are guardian-demons whose repellent ugliness was believed to avert evil. They were created as pillar bases, or architectural supports, inside the Buddhist cave-temple of the northern Chinese site known as Xiangtangshan, which straddles the border of Hebei and Henan provinces. The presence of these guardians beneath a row of Buddha images in Cave 7 at Xiangtangshan signaled their role as protectors of Buddhist Law.",
+        "Cave 7 originally contained at least twenty-four similar sculptures, but they proved so appealing to Japanese and Western collectors that most of them were removed in the early twentieth century for sale. Many museums bought pairs of the guardian figures. Charles Lang Freer purchased only one (in 1916), but the Freer Gallery of Art purchased an additional two in the 1950s, and the gallery was later given two more in the 1970s. Each sculpture is slightly different."
+      ],
+      "validation": {
+        "tool": "Khronos glTF Validator2.0.0-dev.3.10",
+        "errors": 0,
+        "warnings": 1,
+        "notes": [
+          "UNSUPPORTED_EXTENSION",
+          "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "UNUSED_OBJECT"
+        ]
+      },
+      "culturalAudit": {
+        "originZh": "中国河北北响堂山",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "北齐响堂山石雕；可观察圆雕纹样，与大冶石雕无已核实直接传承关系。"
+      }
+    },
+    {
+      "assetId": "smithsonian-amitabha-relief",
+      "titleZh": "西方净土浮雕·响堂山石雕",
+      "titleEn": "Western Paradise of the Buddha Amitabha",
+      "dateZh": "北齐（550—577）",
+      "dateEn": "550-577; Northern Qi dynasty",
+      "originZh": "中国河北 · 南响堂山",
+      "originEn": "southern Xiangtangshan, Cave 2, Hebei province, China",
+      "medium": "Limestone with traces of pigment",
+      "institution": "National Museum of Asian Art, Smithsonian Institution",
+      "creatorZh": "原作者未署名；数字化：Smithsonian Institution",
+      "creatorEn": "Original sculptor unidentified; digitization: Smithsonian Institution",
+      "recordId": "edanmdm:fsg_F1921.2",
+      "sourceUrl": "https://asia.si.edu/object/F1921.2/",
+      "modelSource": "https://3d-api.si.edu/voyager/3d_package:727b4bb6-ce87-40de-b07d-d492c1404221",
+      "downloadUrl": "https://3d-api.si.edu/content/document/3d_package:727b4bb6-ce87-40de-b07d-d492c1404221/resources/f1921_2-high_res-100k-2048_std_draco.glb",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "mediaUsageEvidence": {
+        "model": {
+          "text": "",
+          "codes": "",
+          "access": "CC0"
+        },
+        "poster": {
+          "access": "CC0"
+        },
+        "api": "https://api.si.edu/openaccess/api/v1.0/search?api_key=DEMO_KEY&q=F1921.2"
+      },
+      "verifiedAt": "2026-11-06",
+      "modelUrl": "assets/museum/models/smithsonian-amitabha-relief.glb",
+      "posterUrl": "assets/museum/posters/smithsonian-amitabha-relief.jpg",
+      "posterSource": "https://ids.si.edu/ids/deliveryService?id=FS-F1921.2_001&max=1200",
+      "bytes": 2485428,
+      "posterBytes": 224774,
+      "triangles": 149967,
+      "materials": 1,
+      "textures": 3,
+      "extensions": [
+        "KHR_draco_mesh_compression"
+      ],
+      "nodes": [
+        {
+          "mesh": 0
+        }
+      ],
+      "sha256": "54f988525bf44d9ce913817b5c150c8926978e251991562d775f208b2b9c6ff7",
+      "posterSha256": "64ce96f7e433ddf6f89947c6d81bcd625f13aefd1937f3649dbcb70aa84b6089",
+      "modifications": "Official standardized Draco GLB unchanged; renamed for static website deployment. Official poster photograph downscaled by source delivery service.",
+      "relatedExhibitIds": [
+        "hb-1931"
+      ],
+      "culturalScopeZh": "中国石雕工艺对照：河北响堂山原件，并非大冶石雕实物。",
+      "culturalScopeEn": "Chinese stone-carving comparison: an object from Xiangtangshan, Hebei; not a specimen of Daye stone carving.",
+      "descriptionNotes": [
+        "High relief carving of Western Paradise. Amitabha presides over a lotus pond that contains flowers opening to reveal newborn souls. Numerous deities and celestial attendants fill in the tableau.",
+        "The Buddha of Infinite Light (Sanskrit, Amitabha), is lord of the Pure Land called the Western Paradise. Devotees believe that absolute faith in Amitabha entitles a person to be reborn in that paradise. In this mural, Amitabha presides over a pond and welcomes newly reborn souls who emerge from within lotus blossoms. This mural is among the earliest known depictions of the Western Paradise in Chinese art. It is from the Southern Xiangtangshan Buddhist cave-temple site, Cave 2. The Xiangtangshan caves were located close to the city of Ye, the capital of the Northern Qi dynasty. Their carving was an imperially sponsored project. A related object in the Freer collection is F1921.1."
+      ],
+      "validation": {
+        "tool": "Khronos glTF Validator2.0.0-dev.3.10",
+        "errors": 0,
+        "warnings": 1,
+        "notes": [
+          "UNSUPPORTED_EXTENSION",
+          "MESH_PRIMITIVE_GENERATED_TANGENT_SPACE",
+          "UNUSED_OBJECT"
+        ]
+      },
+      "culturalAudit": {
+        "originZh": "中国河北南响堂山",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "北齐响堂山浮雕；可观察浮雕层次，与大冶石雕无已核实直接传承关系。"
+      }
+    }
+  ]
+}

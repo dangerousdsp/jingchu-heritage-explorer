@@ -19,3 +19,6 @@ export function filterCollection(items,{category='all',query='',city='all',favor
   const q=query.trim().toLocaleLowerCase();
   return items.filter(item=>(category==='all'||item.category===category)&&(city==='all'||item.city===city)&&(!favoritesOnly||favorites.includes(item.id))&&(!q||[item.title,item.region,item.city,item.category,item.unit,item.detail,item.searchEnglish].filter(Boolean).join(' ').toLocaleLowerCase().includes(q)));
 }
+
+// Only the original bell retains a subject-specific 3D entry.
+for(const item of exhibits)if(['pottery','wood'].includes(item.id))delete item.scene;

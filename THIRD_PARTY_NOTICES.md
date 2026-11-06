@@ -1,8 +1,31 @@
 # 素材与依赖署名 / Resource credits
 
+## 轻量展馆模型 / Lightweight gallery objects
+
+- **原项目青铜钟 / Original project bronze bell**：由项目维护者提供原MAX与贴图，本地转换为网页GLB；原资产权利继续适用，不重新授予CC0或其他开放许可。提供6万面轻量版和12万面高清版，材质为网页显示近似。模型用于外观观察，具体文物身份未经确认；原文件保留不变。来源记录见[USER_CHIME_SOURCE.json](dist/assets/museum/models/USER_CHIME_SOURCE.json)。
+- **青花人物纹盖瓶 / Baluster vase, from a five-piece garniture**：National Museum of Asian Art, Smithsonian Institution，馆藏F1980.191a-c，景德镇，清康熙时期。原作者未署名；3D digitization and collection: Smithsonian Institution / National Museum of Asian Art。[馆藏记录](https://asia.si.edu/object/F1980.191a-c/)，[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。
+- **嵌金银及宝石博山香炉 / Lidded incense burner (xianglu)**：National Museum of Asian Art, Smithsonian Institution，馆藏F1947.15a-b，中国河南或河北，西汉早期。原作者未署名；3D digitization and collection: Smithsonian Institution / National Museum of Asian Art。[馆藏记录](https://asia.si.edu/object/F1947.15a-b/)，[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。
+
+Smithsonian开放模型与照片依据官方CC0记录使用，保留各自名称和真实产地。原始模型保持不变；展厅总览另有减面及贴图压缩版本。来源、作者、下载记录见[SOURCES.json](dist/assets/museum/models/SOURCES.json)、[新增藏品](dist/assets/museum/models/NEW_COLLECTION_SOURCES.json)及[总览版本](dist/assets/museum/models/ROOM_ASSETS.json)。
+
+Poly Haven木地板、细木纹与粉刷墙面材质采用CC0，贴图转为WebP。作者及各文件记录见[材质署名](dist/assets/museum/materials/MATERIAL_SOURCES.json)。
+
+The original project bell retains its existing rights. The two Smithsonian models and their matching photographs are CC0 according to the official records checked on 6 November 2026. Official standardised GLB contents are unchanged and renamed for deployment. These comparison objects retain their original identities and origins.
+
+展厅外壳、陶器/浮雕/钟形/戏台几何示意由网页程序构成，用于展陈和观察，不对应具体实物。编钟试听是Web Audio合成音色示意，不是文物录音。
+
+## 轻量三维运行库 / Browser 3D libraries
+
+- Three.js 0.180.0，MIT：[许可证](dist/vendor/three/LICENSE)。
+- Draco，Apache-2.0：[许可证](dist/vendor/three/third-party-licenses/Draco-LICENSE)。
+- meshoptimizer decoder 0.22，MIT：[许可证](dist/vendor/three/third-party-licenses/Meshoptimizer-LICENSE.md)。
+- Basis Universal，Apache-2.0：[许可证](dist/vendor/three/third-party-licenses/BasisUniversal-LICENSE)。
+- ktx-parse，MIT：[许可证](dist/vendor/three/third-party-licenses/KTXParse-LICENSE)。
+- zstddec：[许可证与上游声明](dist/vendor/three/third-party-licenses/ZSTDDec-LICENSE)。
+
 ## 团队作品 / Team works
 
-荆楚非遗花形标志、原Unity场景、模型、材质与场景音频来自原团队项目，相关资产及XDreamer/XCSJ等组件的原有权利继续适用。
+荆楚非遗花形标志与原项目编钟来自原团队项目；旧Unity版本已移至本地备份，相关资产及XDreamer/XCSJ等组件的原有权利继续适用。
 
 作品由长江大学地球科学学院从容面队地图制图组提供，团队成员主要有佘彭宇、王元依、郑子悦、黄悦娇、崔静茹。六幅专题地图保留原图内容和署名。
 

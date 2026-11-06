@@ -1,0 +1,89 @@
+{
+  "verifiedAt": "2026-11-06",
+  "assets": [
+    {
+      "assetId": "smithsonian-baluster-vase",
+      "titleZh": "青花人物纹盖瓶（五供之一）",
+      "titleEn": "Baluster vase, from a five-piece garniture (F1980.190-.194)",
+      "dateZh": "清康熙（1662—1722）",
+      "dateEn": "1662-1722; Qing dynasty, Kangxi reign",
+      "originZh": "中国江西景德镇",
+      "originEn": "Jingdezhen, Jiangxi province, China",
+      "creatorZh": "原作者未署名；三维数字化：Smithsonian Institution",
+      "creatorEn": "Original maker unidentified; 3D digitization: Smithsonian Institution",
+      "institution": "National Museum of Asian Art, Smithsonian Institution",
+      "recordId": "edanmdm:fsg_F1980.191a-c",
+      "sourceUrl": "https://asia.si.edu/object/F1980.191a-c/",
+      "modelSource": "https://3d-api.si.edu/voyager/3d_package:d8c6393a-4ebc-11ea-b77f-2e728ce88125",
+      "downloadUrl": "https://3d-api.si.edu/content/document/3d_package:d8c6393a-4ebc-11ea-b77f-2e728ce88125/resources/f1980_191-mesh-smooth-textured-150k-2048-medium-100k-2048_std_draco.glb",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verifiedAt": "2026-11-06",
+      "mediaUsageEvidence": {
+        "model": "CC0",
+        "poster": "CC0",
+        "api": "https://api.si.edu/openaccess/api/v1.0/search?api_key=DEMO_KEY&q=F1980.191a-c"
+      },
+      "modelUrl": "assets/museum/models/smithsonian-baluster-vase.glb",
+      "posterUrl": "assets/museum/posters/smithsonian-baluster-vase.jpg",
+      "posterSource": "https://ids.si.edu/ids/deliveryService?id=FS-8102_03&max=800",
+      "bytes": 947044,
+      "posterBytes": 43150,
+      "triangles": 99999,
+      "materials": 1,
+      "textures": 3,
+      "sha256": "436d590a787e5ba64bc3a779de1276bb5c41d440c434dbf42eb24ec2c187f19f",
+      "posterSha256": "fd37abfc0d48d9019b1b79bceae90be38d669f3cc4458f9a6582b2360e543145",
+      "modifications": "Official standardized Draco GLB unchanged; renamed for local deployment.",
+      "culturalScope": "Chinese craft comparison object. Not a reconstruction or specimen of the Hubei heritage project.",
+      "medium": "Porcelain with cobalt pigment under clear colorless glaze",
+      "culturalAudit": {
+        "originZh": "中国江西景德镇",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "景德镇青花瓷；与湖北毛家窑等地方制陶项目无已核实直接对应关系。"
+      }
+    },
+    {
+      "assetId": "smithsonian-boshan-incense-burner",
+      "titleZh": "嵌金银及宝石博山香炉",
+      "titleEn": "Lidded incense burner (xianglu) with geometric decoration and narrative scenes",
+      "dateZh": "西汉早期（约公元前2世纪）",
+      "dateEn": "ca. 2nd century BCE; Early Western Han dynasty",
+      "originZh": "中国河南或河北",
+      "originEn": "Henan or Hebei province, China",
+      "creatorZh": "原作者未署名；三维数字化：Smithsonian Institution",
+      "creatorEn": "Original maker unidentified; 3D digitization: Smithsonian Institution",
+      "institution": "National Museum of Asian Art, Smithsonian Institution",
+      "recordId": "edanmdm:fsg_F1947.15a-b",
+      "sourceUrl": "https://asia.si.edu/object/F1947.15a-b/",
+      "modelSource": "https://3d-api.si.edu/voyager/3d_package:ce850625-2cf1-4c6f-9086-0d5845d9a664",
+      "downloadUrl": "https://3d-api.si.edu/content/document/3d_package:ce850625-2cf1-4c6f-9086-0d5845d9a664/resources/incense-burner-in-the-form-of-a-mountain-(boshanlu)-150k-2048-medium-100k-2048_std_draco.glb",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "verifiedAt": "2026-11-06",
+      "mediaUsageEvidence": {
+        "model": "CC0",
+        "poster": "CC0",
+        "api": "https://api.si.edu/openaccess/api/v1.0/search?api_key=DEMO_KEY&q=F1947.15a-b"
+      },
+      "modelUrl": "assets/museum/models/smithsonian-boshan-incense-burner.glb",
+      "posterUrl": "assets/museum/posters/smithsonian-boshan-incense-burner.jpg",
+      "posterSource": "https://ids.si.edu/ids/deliveryService?id=FS-F1947.15a-b_001&max=800",
+      "bytes": 1470208,
+      "posterBytes": 53165,
+      "triangles": 100000,
+      "materials": 1,
+      "textures": 3,
+      "sha256": "59ddfb7ee98f86b219dc05a65959bc9571654ceb19ffe9bdd5ff185208282755",
+      "posterSha256": "bc22ad3409eda3d2b0aa50ba5a9af2e91c5f565af4b1007056fc9c5655fc9095",
+      "modifications": "Official standardized Draco GLB unchanged; renamed for local deployment.",
+      "culturalScope": "Chinese craft comparison object. Not a reconstruction or specimen of the Hubei heritage project.",
+      "medium": "Bronze with gold, silver, turquoise, and carnelian inlay",
+      "culturalAudit": {
+        "originZh": "中国河南或河北",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "可观察中国青铜器装饰和器型；与湖北地方非遗项目无已核实直接对应关系。"
+      }
+    }
+  ]
+}

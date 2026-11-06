@@ -5,6 +5,7 @@
   "type": "module",
   "description": "湖北非遗双语图鉴、交互地图、文化旅行与三维展馆",
   "scripts": {
-    "serve": "python scripts/serve.py --open"
+    "serve": "node scripts/serve-node.mjs --open",
+    "museum": "node scripts/serve-node.mjs --open --page museum.html?exhibit=chime"
   }
 }

@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-06",
+  "purpose": "Textured room-overview variants; original inspection models are preserved.",
+  "assets": [
+    {
+      "assetId": "user-original-chime-low-room",
+      "modelUrl": "assets/museum/models/user-original-chime-low-room.glb",
+      "parentModelUrl": "assets/museum/models/user-original-chime-low.glb",
+      "parentSha256": "dcbd8e150cf8c282d3e1f8113dc434ea18379070ecaa7acee34ee27d603da97f",
+      "parentBytes": 2946372,
+      "parentTriangles": 60000,
+      "sha256": "f3539e742ed088c0c53018ea6896bf60d9cec2a31595edcaf3abbbcca76095ef",
+      "bytes": 376652,
+      "triangles": 20000,
+      "vertices": 13360,
+      "drawCalls": 1,
+      "textures": [
+        {
+          "slots": [
+            "baseColorTexture"
+          ],
+          "width": 1024,
+          "height": 1024,
+          "bytes": 223519,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "metallicRoughnessTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 37088,
+          "format": "image/jpeg"
+        }
+      ],
+      "license": "Original asset rights retained; not CC0",
+      "licenseUrl": null,
+      "licenseInheritance": "Same rights as the parent model. Room optimization does not change asset ownership or grant new rights.",
+      "processing": {
+        "tool": "@gltf-transform/core/extensions/functions4.2.1; draco3dgltf1.5.7; meshoptimizer0.23.0; Pillow",
+        "targetTriangles": 20000,
+        "simplificationErrorLimit": 0.01,
+        "geometry": "Weld, meshoptimizer simplify, deduplicate/prune; Draco re-encode through registered Khronos extension.",
+        "textures": "Existing texture content resized/re-encoded to JPEG; base color max1024, other maps max512.",
+        "pose": "Geometry coordinates and node transforms preserved; parent viewer pose corrections still apply.",
+        "dracoQuantization": {
+          "position": 18,
+          "texcoord": 14,
+          "normal": 10
+        }
+      },
+      "verification": {
+        "dracoRoundTrip": "passed",
+        "parentUnchanged": true,
+        "trianglesBeforeEncoding": 20000,
+        "collapsedPositionFacesBeforeEncoding": 0,
+        "collapsedFacesRemovedByEncoder": 0
+      },
+      "culturalAudit": {
+        "originZh": "用户提供原项目模型；具体文物、出土地和制作地域未核实",
+        "hubeiAssociation": "unverified",
+        "conclusionZh": "可用于观察钟体造型；不足以认定为湖北非遗实物或某套出土编钟。"
+      }
+    },
+    {
+      "assetId": "smithsonian-baluster-vase-room",
+      "modelUrl": "assets/museum/models/smithsonian-baluster-vase-room.glb",
+      "parentModelUrl": "assets/museum/models/smithsonian-baluster-vase.glb",
+      "parentSha256": "436d590a787e5ba64bc3a779de1276bb5c41d440c434dbf42eb24ec2c187f19f",
+      "parentBytes": 947044,
+      "parentTriangles": 99999,
+      "sha256": "e23805aa99f5bc88b75a39556b1e47af4244732bc1ab122ebab75b31819aad13",
+      "bytes": 341492,
+      "triangles": 19995,
+      "vertices": 11742,
+      "drawCalls": 1,
+      "textures": [
+        {
+          "slots": [
+            "baseColorTexture"
+          ],
+          "width": 1024,
+          "height": 1024,
+          "bytes": 218353,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "occlusionTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 20335,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "normalTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 16475,
+          "format": "image/jpeg"
+        }
+      ],
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseInheritance": "Same rights as the parent model. Room optimization does not change asset ownership or grant new rights.",
+      "processing": {
+        "tool": "@gltf-transform/core/extensions/functions4.2.1; draco3dgltf1.5.7; meshoptimizer0.23.0; Pillow",
+        "targetTriangles": 20000,
+        "simplificationErrorLimit": 0.01,
+        "geometry": "Weld, meshoptimizer simplify, deduplicate/prune; Draco re-encode through registered Khronos extension.",
+        "textures": "Existing texture content resized/re-encoded to JPEG; base color max1024, other maps max512.",
+        "pose": "Geometry coordinates and node transforms preserved; parent viewer pose corrections still apply.",
+        "dracoQuantization": {
+          "position": 18,
+          "texcoord": 14,
+          "normal": 10
+        }
+      },
+      "verification": {
+        "dracoRoundTrip": "passed",
+        "parentUnchanged": true,
+        "trianglesBeforeEncoding": 20000,
+        "collapsedPositionFacesBeforeEncoding": 5,
+        "collapsedFacesRemovedByEncoder": 5
+      },
+      "culturalAudit": {
+        "originZh": "中国江西景德镇",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "景德镇青花瓷；与湖北毛家窑等地方制陶项目无已核实直接对应关系。"
+      }
+    },
+    {
+      "assetId": "smithsonian-boshan-incense-burner-room",
+      "modelUrl": "assets/museum/models/smithsonian-boshan-incense-burner-room.glb",
+      "parentModelUrl": "assets/museum/models/smithsonian-boshan-incense-burner.glb",
+      "parentSha256": "59ddfb7ee98f86b219dc05a65959bc9571654ceb19ffe9bdd5ff185208282755",
+      "parentBytes": 1470208,
+      "parentTriangles": 100000,
+      "sha256": "e5c7b6d21afd6bf409f81b4e89b029356e666fd6f58cb5f181513c8f0e15fe49",
+      "bytes": 404644,
+      "triangles": 21974,
+      "vertices": 14558,
+      "drawCalls": 1,
+      "textures": [
+        {
+          "slots": [
+            "baseColorTexture"
+          ],
+          "width": 1024,
+          "height": 1024,
+          "bytes": 208905,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "occlusionTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 51026,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "normalTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 38907,
+          "format": "image/jpeg"
+        }
+      ],
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseInheritance": "Same rights as the parent model. Room optimization does not change asset ownership or grant new rights.",
+      "processing": {
+        "tool": "@gltf-transform/core/extensions/functions4.2.1; draco3dgltf1.5.7; meshoptimizer0.23.0; Pillow",
+        "targetTriangles": 22000,
+        "simplificationErrorLimit": 0.01,
+        "geometry": "Weld, meshoptimizer simplify, deduplicate/prune; Draco re-encode through registered Khronos extension.",
+        "textures": "Existing texture content resized/re-encoded to JPEG; base color max1024, other maps max512.",
+        "pose": "Geometry coordinates and node transforms preserved; parent viewer pose corrections still apply.",
+        "dracoQuantization": {
+          "position": 18,
+          "texcoord": 14,
+          "normal": 10
+        }
+      },
+      "verification": {
+        "dracoRoundTrip": "passed",
+        "parentUnchanged": true,
+        "trianglesBeforeEncoding": 21999,
+        "collapsedPositionFacesBeforeEncoding": 25,
+        "collapsedFacesRemovedByEncoder": 25
+      },
+      "culturalAudit": {
+        "originZh": "中国河南或河北",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "可观察中国青铜器装饰和器型；与湖北地方非遗项目无已核实直接对应关系。"
+      }
+    },
+    {
+      "assetId": "smithsonian-winged-monster-room",
+      "modelUrl": "assets/museum/models/smithsonian-winged-monster-room.glb",
+      "parentModelUrl": "assets/museum/models/smithsonian-winged-monster.glb",
+      "parentSha256": "1fd82dcc69cba0070fe9a993520d0fdac3ff438cbac7f81694331a9967575a6b",
+      "parentBytes": 2089400,
+      "parentTriangles": 100000,
+      "sha256": "e34bf3ad77d6a23a82839c3b5fc555dd68f867091d8b3ab35f3f2ae8e602f161",
+      "bytes": 517692,
+      "triangles": 21983,
+      "vertices": 13964,
+      "drawCalls": 1,
+      "textures": [
+        {
+          "slots": [
+            "baseColorTexture"
+          ],
+          "width": 1024,
+          "height": 1024,
+          "bytes": 296603,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "occlusionTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 57241,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "normalTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 56408,
+          "format": "image/jpeg"
+        }
+      ],
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseInheritance": "Same rights as the parent model. Room optimization does not change asset ownership or grant new rights.",
+      "processing": {
+        "tool": "@gltf-transform/core/extensions/functions4.2.1; draco3dgltf1.5.7; meshoptimizer0.23.0; Pillow",
+        "targetTriangles": 22000,
+        "simplificationErrorLimit": 0.01,
+        "geometry": "Weld, meshoptimizer simplify, deduplicate/prune; Draco re-encode through registered Khronos extension.",
+        "textures": "Existing texture content resized/re-encoded to JPEG; base color max1024, other maps max512.",
+        "pose": "Geometry coordinates and node transforms preserved; parent viewer pose corrections still apply.",
+        "dracoQuantization": {
+          "position": 18,
+          "texcoord": 14,
+          "normal": 10
+        }
+      },
+      "verification": {
+        "dracoRoundTrip": "passed",
+        "parentUnchanged": true,
+        "trianglesBeforeEncoding": 22000,
+        "collapsedPositionFacesBeforeEncoding": 17,
+        "collapsedFacesRemovedByEncoder": 17
+      },
+      "culturalAudit": {
+        "originZh": "中国河北北响堂山",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "北齐响堂山石雕；可观察圆雕纹样，与大冶石雕无已核实直接传承关系。"
+      }
+    },
+    {
+      "assetId": "smithsonian-amitabha-relief-room",
+      "modelUrl": "assets/museum/models/smithsonian-amitabha-relief-room.glb",
+      "parentModelUrl": "assets/museum/models/smithsonian-amitabha-relief.glb",
+      "parentSha256": "54f988525bf44d9ce913817b5c150c8926978e251991562d775f208b2b9c6ff7",
+      "parentBytes": 2485428,
+      "parentTriangles": 149967,
+      "sha256": "21494cce112f69bc2c50b3b71090f110fccac487fc19106a3b86c9fe0a838ee0",
+      "bytes": 490732,
+      "triangles": 22385,
+      "vertices": 19290,
+      "drawCalls": 1,
+      "textures": [
+        {
+          "slots": [
+            "baseColorTexture"
+          ],
+          "width": 1024,
+          "height": 1024,
+          "bytes": 261564,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "occlusionTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 62753,
+          "format": "image/jpeg"
+        },
+        {
+          "slots": [
+            "normalTexture"
+          ],
+          "width": 512,
+          "height": 512,
+          "bytes": 43266,
+          "format": "image/jpeg"
+        }
+      ],
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseInheritance": "Same rights as the parent model. Room optimization does not change asset ownership or grant new rights.",
+      "processing": {
+        "tool": "@gltf-transform/core/extensions/functions4.2.1; draco3dgltf1.5.7; meshoptimizer0.23.0; Pillow",
+        "targetTriangles": 26000,
+        "simplificationErrorLimit": 0.01,
+        "geometry": "Weld, meshoptimizer simplify, deduplicate/prune; Draco re-encode through registered Khronos extension.",
+        "textures": "Existing texture content resized/re-encoded to JPEG; base color max1024, other maps max512.",
+        "pose": "Geometry coordinates and node transforms preserved; parent viewer pose corrections still apply.",
+        "dracoQuantization": {
+          "position": 18,
+          "texcoord": 14,
+          "normal": 10
+        }
+      },
+      "verification": {
+        "dracoRoundTrip": "passed",
+        "parentUnchanged": true,
+        "trianglesBeforeEncoding": 25997,
+        "collapsedPositionFacesBeforeEncoding": 3612,
+        "collapsedFacesRemovedByEncoder": 3612
+      },
+      "culturalAudit": {
+        "originZh": "中国河北南响堂山",
+        "hubeiAssociation": "general-craft-observation-only",
+        "conclusionZh": "北齐响堂山浮雕；可观察浮雕层次，与大冶石雕无已核实直接传承关系。"
+      }
+    }
+  ]
+}

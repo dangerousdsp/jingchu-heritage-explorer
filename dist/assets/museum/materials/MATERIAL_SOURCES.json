@@ -1,0 +1,113 @@
+{
+  "verifiedAt": "2026-11-06",
+  "assets": [
+    {
+      "id": "wood_floor",
+      "name": "Wood Floor",
+      "authors": {
+        "Dimitrios Savva": "All"
+      },
+      "source": "https://polyhaven.com/a/wood_floor",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "files": [
+        {
+          "map": "Diffuse",
+          "file": "assets/museum/materials/wood_floor-diffuse.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_floor/wood_floor_diff_1k.jpg",
+          "bytes": 122212,
+          "sha256": "3b85d1780bdb3d95b714767c1a8b03bc802957fa25ec2043812e9fda14d97c92",
+          "sourceFile": "assets/museum/materials/wood_floor-diffuse.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        },
+        {
+          "map": "Rough",
+          "file": "assets/museum/materials/wood_floor-rough.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_floor/wood_floor_rough_1k.jpg",
+          "bytes": 71810,
+          "sha256": "0acd9046747de32f90f14b1b091337a39e281c0dfd5f00d0e4275005bda3e4fb",
+          "sourceFile": "assets/museum/materials/wood_floor-rough.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        },
+        {
+          "map": "nor_gl",
+          "file": "assets/museum/materials/wood_floor-nor_gl.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/wood_floor/wood_floor_nor_gl_1k.jpg",
+          "bytes": 14724,
+          "sha256": "7806d167a043e00db6793333cb579baa205dc419cfa98d1009b5248dd9529ea1",
+          "sourceFile": "assets/museum/materials/wood_floor-nor_gl.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        }
+      ]
+    },
+    {
+      "id": "fine_grained_wood",
+      "name": "Fine Grained Wood",
+      "authors": {
+        "Rob Tuytel": "All"
+      },
+      "source": "https://polyhaven.com/a/fine_grained_wood",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "files": [
+        {
+          "map": "Diffuse",
+          "file": "assets/museum/materials/fine_grained_wood-diffuse.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/fine_grained_wood/fine_grained_wood_col_1k.jpg",
+          "bytes": 71104,
+          "sha256": "7507405d0b8783f359ad96bb60bb57b4080c4a2d21c91d19d379fef1908a3714",
+          "sourceFile": "assets/museum/materials/fine_grained_wood-diffuse.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        },
+        {
+          "map": "Rough",
+          "file": "assets/museum/materials/fine_grained_wood-rough.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/fine_grained_wood/fine_grained_wood_rough_1k.jpg",
+          "bytes": 41096,
+          "sha256": "928fceabf03d0c627d8dbb9fe0f05c9a70b0de477ed23d27b7fe835876e3b9ed",
+          "sourceFile": "assets/museum/materials/fine_grained_wood-rough.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        },
+        {
+          "map": "nor_gl",
+          "file": "assets/museum/materials/fine_grained_wood-nor_gl.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/fine_grained_wood/fine_grained_wood_nor_gl_1k.jpg",
+          "bytes": 27602,
+          "sha256": "630d59330617f1bc7ab153db0cfe20deb08d34227dd21b2c12ec45a5a1e90152",
+          "sourceFile": "assets/museum/materials/fine_grained_wood-nor_gl.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        }
+      ]
+    },
+    {
+      "id": "painted_plaster_wall",
+      "name": "Painted Plaster Wall",
+      "authors": {
+        "Amal Kumar": "All"
+      },
+      "source": "https://polyhaven.com/a/painted_plaster_wall",
+      "license": "CC0 1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "files": [
+        {
+          "map": "Diffuse",
+          "file": "assets/museum/materials/painted_plaster_wall-diffuse.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_diff_1k.jpg",
+          "bytes": 142092,
+          "sha256": "b0fbc6b89d613d4dad46169258aafba359dad1560fb7ccd566f2bd856a9b8da1",
+          "sourceFile": "assets/museum/materials/painted_plaster_wall-diffuse.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        },
+        {
+          "map": "Rough",
+          "file": "assets/museum/materials/painted_plaster_wall-rough.webp",
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/painted_plaster_wall/painted_plaster_wall_rough_1k.jpg",
+          "bytes": 4792,
+          "sha256": "7ebbd559f4fde575a2e4b0d77f24c87584f1afcde56b9f4e9a99427da83f38db",
+          "sourceFile": "assets/museum/materials/painted_plaster_wall-rough.jpg",
+          "modification": "Official 1K JPEG re-encoded as WebP for web material delivery; no content changes."
+        }
+      ]
+    }
+  ]
+}

@@ -7,19 +7,21 @@
 - **文化图鉴**：146条地区记录与专题，支持搜索、筛选、收藏和学习手记。
 - **地图与旅行**：点选非遗分布，查看文化目的地，规划多站道路行程。
 - **影像与作品**：非遗照片、六幅专题地图与戏曲视频节选。
-- **三维展示**：陶器、木雕、编钟与戏台场景，支持鼠标交互。
+- **云上展馆**：Three.js轻量展厅、原项目青铜钟、青花瓷、圆雕与浮雕，支持旋转、观察热点、双语与观察手记；高清模型按需加载。
 - **小楚助手**：基于本地知识库回答问题，支持双语与上下文追问。
 
-**主要技术**：HTML / CSS / JavaScript、Leaflet、OSRM、Unity WebGL。
+**主要技术**：HTML / CSS / JavaScript、Three.js、Leaflet、OSRM。
 
 ## 本地运行（可选）
 
-需要Python 3.10+和现代浏览器，在项目根目录执行：
+需要Node.js 18+和现代浏览器，在项目根目录执行：
 
 ```sh
-python scripts/serve.py --open
+npm run serve
 ```
 
-无需安装Unity。首次进入三维约加载348 MiB资源，建议使用电脑。
+直接打开编钟展区可运行 `npm run museum`，Windows也可双击“打开轻量展馆.cmd”。已有Python 3.10+时仍可运行 `python scripts/serve.py --open`。
+
+新版无需安装Unity，首页不加载三维库或模型。原编钟轻量版约2.81 MiB，高清版约4.47 MiB；另有注明真实产地的Smithsonian开放藏品。旧版Unity已移出网站，仅作本地备份。
 
 素材归属见[资源署名](THIRD_PARTY_NOTICES.md)，使用范围见[许可说明](LICENSE_SCOPE.md)。

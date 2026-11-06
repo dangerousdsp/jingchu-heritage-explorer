@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7"><meta name="description" content="荆风楚韵轻量展馆：细看器物、探索工艺、收藏观察。">
+  <title>云上展馆 · 荆风楚韵</title>
+  <link rel="icon" href="assets/project-symbol.png"><link rel="stylesheet" href="museum.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three/build/three.module.min.js","three/addons/":"./vendor/three/examples/jsm/"}}</script>
+  <script type="module" src="museum.mjs"></script>
+</head>
+<body data-no-i18n>
+  <a class="skip" href="#museum-info">跳到展品说明 / Skip to exhibit</a>
+  <header class="museum-header">
+    <a class="museum-brand" href="index.html#experience"><img src="assets/project-symbol.png" width="50" height="50" alt="荆风楚韵"><span>荆风楚韵<small>JINGCHU REVERIE</small></span></a>
+    <nav aria-label="展馆导航"><a id="back-home" href="index.html#experience" data-i="back">返回网站</a><a id="map-link" href="index.html#atlas" data-i="map">非遗地图</a><label class="locale">语言 / Language <select id="language-select" aria-label="语言 / Language"><option value="zh">中文</option><option value="en">English</option></select></label></nav>
+  </header>
+  <main class="museum-wrap">
+    <section class="museum-intro"><div><p class="eyebrow">JINGCHU · OBJECTS & CRAFTS</p><h1 data-i="title">器物有形，技艺可寻。</h1><p data-i="intro">选一件器物，换一个视角。让每次细看，都成为一次发现。</p></div><div class="mode-switch" role="group" aria-label="观看方式"><button id="view-room" data-i="room" aria-pressed="false">展厅总览</button><button id="view-object" data-i="object" aria-pressed="true">单件细看</button></div></section>
+    <div class="museum-layout">
+      <section class="museum-visual" aria-label="三维画面与展品选择">
+        <div class="visual-top"><span id="visual-label">01 / 陶器与生活</span><button id="fullscreen" data-i="expand">放大画面</button></div>
+        <div id="canvas-stage" class="canvas-stage">
+          <div id="canvas-host"></div><div id="hotspot-layer" class="hotspot-layer" aria-label="模型观察点"></div><button id="exit-fullscreen" class="exit-fullscreen" hidden data-i="collapse">收起画面</button>
+          <div id="stage-message" class="stage-message" role="status"><span class="loading-ring" aria-hidden="true"></span><h2 data-i="preparing">正在准备器物…</h2><p data-i="loadingHint">展品独立加载，资料随时可读。</p></div>
+          <div id="stage-fallback" class="stage-fallback" hidden><img id="fallback-poster" alt=""><h2 id="fallback-title"></h2><p id="fallback-copy"></p><button id="retry-model" data-i="retry">重试当前展品</button></div>
+          <div class="stage-caption"><span id="input-hint" data-i="gesture">拖动旋转 · 滚轮或双指缩放</span></div>
+        </div>
+        <div class="view-tools"><div role="group" aria-label="预设视角"><button data-camera="front" data-i="front">正面</button><button data-camera="side" data-i="side">侧面</button><button data-camera="top" data-i="top">俯视</button><button data-camera="reset" data-i="reset">复位</button></div><label><input id="show-hotspots" type="checkbox"><span data-i="hotspots">观察点</span></label><button id="auto-rotate" aria-pressed="false" data-i="rotate">自动旋转</button><button id="model-quality" hidden>高清细看</button></div>
+        <div id="theme-list" class="theme-list" aria-label="选择主题"></div>
+        <div class="tour-strip"><span data-i="tourLead">沿着器物，走一段荆楚。</span><button id="tour-toggle" aria-pressed="false" data-i="tour">开启主题导览</button><button id="tour-next" hidden data-i="next">下一展 →</button></div>
+      </section>
+      <aside class="museum-info" id="museum-info">
+        <p id="theme-region" class="eyebrow"></p><h2 id="theme-title"></h2><p id="theme-description" class="theme-description"></p>
+        <label class="asset-picker"><span data-i="chooseAsset">本次观察</span><select id="asset-select"></select></label>
+        
+        <div class="info-tabs" role="tablist" aria-label="展品信息"><button id="tab-observe" role="tab" aria-selected="true" aria-controls="panel-observe" data-panel="observe" data-i="observe">细看</button><button id="tab-process" role="tab" aria-selected="false" aria-controls="panel-process" data-panel="process" data-i="process">技艺</button><button id="tab-source" role="tab" aria-selected="false" aria-controls="panel-source" data-panel="source" data-i="source">来处</button></div>
+        <section id="panel-observe" role="tabpanel" aria-labelledby="tab-observe"><div id="point-list" class="point-list"></div><div class="observation" aria-live="polite"><p id="point-title"></p><p id="point-body"></p></div><div id="listening" class="listening" hidden><button id="play-tone" data-i="listen">听一声青铜 · 音色示意</button></div></section>
+        <section id="panel-process" role="tabpanel" aria-labelledby="tab-process" hidden><ol id="process-list" class="process-list"></ol></section>
+        <section id="panel-source" role="tabpanel" aria-labelledby="tab-source" hidden><h3 id="source-title"></h3><p id="source-description"></p><dl id="source-details" class="source-details"></dl><div id="source-links" class="source-links"></div></section>
+        <div class="museum-actions"><a id="heritage-link" href="index.html" data-i="entry">阅读非遗专题 ↗</a><button id="favorite" aria-pressed="false" data-i="save">收藏专题</button></div>
+        <details class="note-box"><summary data-i="noteTitle">把这次发现，记下来</summary><label for="observation-note" data-i="noteLabel">我的观察</label><textarea id="observation-note" maxlength="500" rows="3"></textarea><button id="save-note" data-i="saveNote">保存观察手记</button><p id="note-status" role="status"></p><button id="export-notes" class="text-button" data-i="exportNotes">导出观察手记 ↓</button></details>
+      </aside>
+    </div>
+    <footer class="museum-footer"><p data-i="footer">从器物出发，回到人的技艺与生活。</p><div><a id="learning-link" href="index.html#learn" data-i="notes">学习手记</a><a href="project-notes.html" data-i="credits">资料与来源</a></div></footer>
+  </main>
+  <div id="museum-toast" role="status" class="museum-toast" hidden></div>
+  <noscript><p>请启用 JavaScript 查看三维，或<a href="index.html#collection">返回图鉴阅读资料</a>。</p></noscript>
+</body>
+</html>

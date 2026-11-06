@@ -7,19 +7,21 @@ A bilingual exhibition of Hubei's intangible cultural heritage, connecting cultu
 - **Cultural collection**: 146 regional entries and topics, with search, filters, favourites and learning notes.
 - **Maps and trips**: selectable heritage locations, cultural destinations and multi-stop road routes.
 - **Images and artworks**: heritage photographs, six thematic maps and an opera excerpt.
-- **3D exhibits**: pottery, wood carving, bronze chimes and theatre scenes with mouse interaction.
+- **Cloud gallery**: a lightweight Three.js room, the original project bell, a porcelain vase and two stone carvings, with orbit controls, observation points, bilingual notes and optional higher detail.
 - **Xiaochu assistant**: local knowledge retrieval, bilingual answers and contextual follow-ups.
 
-**Core technologies**: HTML / CSS / JavaScript, Leaflet, OSRM and Unity WebGL.
+**Core technologies**: HTML / CSS / JavaScript, Three.js, Leaflet and OSRM. 
 
 ## Run locally (optional)
 
-Use Python 3.10+ and a modern browser. From the project root:
+Use Node.js 18+ and a modern browser. From the project root:
 
 ```sh
-python scripts/serve.py --open
+npm run serve
 ```
 
-Unity installation is not required. The first 3D launch loads approximately 348 MiB; a desktop browser is recommended.
+Run `npm run museum` to open the bell directly. On Windows, use “打开轻量展馆.cmd”. Python 3.10+ remains supported with `python scripts/serve.py --open`.
+
+The homepage does not load the 3D library or models. The original bell is approximately 2.81 MiB, with an optional 4.47 MiB version. Smithsonian open collection objects retain their actual origins. Unity files are kept in a local backup outside the website.
 
 See [resource credits](THIRD_PARTY_NOTICES.md) and [permissions](LICENSE_SCOPE.md).

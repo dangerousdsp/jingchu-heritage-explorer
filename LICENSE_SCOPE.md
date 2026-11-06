@@ -12,6 +12,8 @@ No single open-source licence covers the entire project. Publishing the website 
 | 文化资料 / Cultural guides | 简明导读附来源，原表不附带 / Short guides with references; original workbook excluded |
 | Leaflet | BSD-2-Clause，许可证保留于dist/vendor/leaflet/LICENSE |
 | coordtransform | MIT，许可证保留于dist/vendor/coordtransform/LICENSE |
+| 轻量展馆 / Lightweight gallery | 原项目编钟保留原权利；Smithsonian对照模型及照片分别采用CC0 1.0；详见素材署名 / Original bell rights retained; Smithsonian objects and photographs are CC0 1.0 |
+| Three.js与解码工具 / Three.js and decoders | 依赖各自开源许可适用，文本保留于dist/vendor/three/ / Individual open-source licences retained in dist/vendor/three/ |
 | OSM地图与地点 / OSM maps and places | ODbL，保留来源链接 / ODbL attribution retained |
 | DataV边界 / DataV boundaries | 原提供方条款适用 / Provider terms apply |
 

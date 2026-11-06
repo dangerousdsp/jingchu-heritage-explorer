@@ -29,24 +29,10 @@ jobs:
         shell: python
         run: |
           from pathlib import Path
-          import hashlib, json, shutil
+          import shutil
           site = Path('_site')
           shutil.copytree('dist', site)
-          manifest = site / 'runtime/runtime-manifest.json'
-          webgl = manifest.is_file()
-          if webgl:
-              for part in json.loads(manifest.read_text(encoding='utf-8'))['parts']:
-                  relative = Path(part['path'])
-                  if relative.parent != Path('Build') or not relative.name.startswith('data-'):
-                      raise ValueError('Invalid runtime path')
-                  target = site / 'runtime' / relative
-                  if not target.is_file():
-                      target.parent.mkdir(parents=True, exist_ok=True)
-                      shutil.copy2(Path(relative.name), target)
-                  data = target.read_bytes()
-                  if len(data) != part['bytes'] or hashlib.sha256(data).hexdigest() != part['sha256']:
-                      raise ValueError('Incomplete runtime resource')
-          (site / 'deployment.mjs').write_text('export const LEGACY_MEDIA_ENABLED = ' + str(webgl).lower() + ';\nexport const LEGACY_VIDEO_ENABLED = false;\n', encoding='utf-8')
+          (site / 'deployment.mjs').write_text('export const VIDEO_ENABLED = false;\n', encoding='utf-8')
           (site / '.nojekyll').touch()
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

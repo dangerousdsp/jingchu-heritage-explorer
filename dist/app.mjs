@@ -2,7 +2,8 @@ import {initLanguage,getLanguage} from './i18n.mjs';
 import {exhibits,questions,quizModes,filterCollection,categories} from './content.mjs';
 import {normalizeProgress,readProgress,saveProgress,scoreQuiz} from './learning.mjs';
 import {getJourney,updateJourney} from './journey.mjs';
-import {initPlayer} from './player.mjs';
+import {initMuseumEntry as initPlayer} from './museum-entry.mjs';
+import {readMuseumNotes,readMuseumFavorites} from './museum-notes.mjs';
 import {initExplore} from './explore.mjs';
 import {TRAVEL_KEY} from './travel.mjs';
 const $=selector=>document.querySelector(selector);
@@ -68,7 +69,7 @@ $('#quiz-mode').addEventListener('change',()=>renderQuiz($('#quiz-mode').value))
 $('#quiz-form').addEventListener('submit',event=>{event.preventDefault();const form=new FormData(event.currentTarget);const answers=Object.fromEntries(activeQuestions.map(q=>[q.id,Number(form.get(q.id))]));const result=scoreQuiz(answers,activeQuestions);activeQuestions.forEach((q,i)=>{const line=$(`#feedback-${q.id}`);line.textContent=`${result.details[i].correct?'✓ 回答正确':'正确答案：'+q.options[q.answer]}。${q.explanation}`;line.classList.toggle('incorrect',!result.details[i].correct);line.hidden=false;});$('#quiz-result').textContent=`答对 ${result.score} / ${result.total}，正确率 ${Math.round(result.score/result.total*100)}%。`;progress.lastQuiz={answers,questionIds:activeQuestions.map(q=>q.id),score:result.score,total:result.total,completedAt:new Date().toISOString()};progress.attempts=[...(progress.attempts||[]),progress.lastQuiz].slice(-20);persist();});
 $('#quiz-form').addEventListener('change',()=>{$('#quiz-result').textContent='答案已调整，重新提交后查看解析。';document.querySelectorAll('.question-feedback').forEach(e=>e.hidden=true);});
 function download(data,name){const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-$('#export-progress').addEventListener('click',()=>{download({project:'荆楚非遗',exportedAt:new Date().toISOString(),learning:progress,journey:getJourney(),travel:(()=>{try{return JSON.parse(storage?.getItem(TRAVEL_KEY)||'null');}catch{return null;}})()},'荆楚非遗-学习手记.json');notify('学习手记已导出。');});
+$('#export-progress').addEventListener('click',()=>{download({project:'荆楚非遗',exportedAt:new Date().toISOString(),learning:progress,journey:getJourney(),museumObservations:readMuseumNotes(storage),museumFavorites:readMuseumFavorites(storage),travel:(()=>{try{return JSON.parse(storage?.getItem(TRAVEL_KEY)||'null');}catch{return null;}})()},'荆楚非遗-学习手记.json');notify('学习手记已导出。');});
 $('#reset-progress').addEventListener('click',()=>$('#reset-dialog').showModal());$('#cancel-reset').addEventListener('click',()=>$('#reset-dialog').close());$('#confirm-reset').addEventListener('click',()=>{progress=normalizeProgress(null);persist();renderQuiz($('#quiz-mode').value);$('#reset-dialog').close();notify('阅读和答题记录已清空，收藏与路线继续保留。');});
 window.addEventListener('heritage:languagechange',()=>{renderProgress();if($('#exhibit-dialog').open)$('#detail-content').innerHTML=detailHTML(exhibits.find(e=>e.id===currentExhibit));});
 initExplore({openExhibit,notify,download});renderProgress();

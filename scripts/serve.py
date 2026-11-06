@@ -1,4 +1,4 @@
-"""Standard-library local server with a read-only mount for the legacy Unity build."""
+"""Loopback-only static preview with optional road routing."""
 from pathlib import Path
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import unquote, urlsplit, parse_qs
@@ -31,41 +31,16 @@ class Handler(BaseHTTPRequestHandler):
             except RoutingError as error:result={'error':str(error)};status=503
             body=json.dumps(result,ensure_ascii=False).encode('utf-8')
             self.send_response(status);self.send_header('Content-Type','application/json; charset=utf-8');self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
-        if path == '/api/runtime':
-            available = (self.server.runtime_dir / 'Build/WebGL.loader.js').is_file()
-            body = json.dumps({'available': available, 'version':'2021.3.11f1c2'}).encode()
-            self.send_response(200); self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(body)));self.end_headers()
-            if not head:self.wfile.write(body)
-            return
-        is_runtime = path.startswith('/runtime/')
-        if is_runtime:
-            relative = path[len('/runtime/'):]
-            if not (relative=='runtime-manifest.json' or relative.startswith('Build/') or relative.startswith('StreamingAssets/')):
-                self.send_error(404); return
-            target = confined(self.server.runtime_dir, relative)
-            # Older repository uploads stored listed data parts at the source root.
-            manifest=self.server.runtime_dir/'runtime-manifest.json'
-            if target is not None and not target.is_file() and re.fullmatch(r'Build/data-\d{2}\.bin',relative) and manifest.is_file():
-                try:
-                    listed={part['path'] for part in json.loads(manifest.read_text(encoding='utf-8'))['parts']}
-                    if relative in listed:target=confined(PROJECT,Path(relative).name)
-                except (OSError,ValueError,KeyError,TypeError):pass
-        else:
-            target = confined(DIST, path.lstrip('/') or 'index.html')
+        target = confined(DIST, path.lstrip('/') or 'index.html')
         if target is None:
             self.send_error(403); return
         if not target.is_file():
             self.send_error(404, 'Resource unavailable'); return
         length = target.stat().st_size
-        compressed = target.name.endswith('.unityweb')
-        if compressed:
-            # Bytes are already gzip-compressed. Native decoding avoids the JS fallback.
-            kind = 'application/wasm' if '.wasm.' in target.name else 'application/javascript' if '.js.' in target.name else 'application/octet-stream'
-        else:
-            kind = mimetypes.guess_type(str(target))[0] or 'application/octet-stream'
-            if target.suffix in ('.mjs','.js'):kind='application/javascript'
-            if target.suffix.lower()=='.webp':kind='image/webp'
-            if kind.startswith('text/') or kind=='application/javascript':kind+='; charset=utf-8'
+        kind = mimetypes.guess_type(str(target))[0] or "application/octet-stream"
+        if target.suffix in (".mjs", ".js"):kind="application/javascript"
+        if target.suffix == ".glb":kind="model/gltf-binary"
+        if kind.startswith("text/") or kind=="application/javascript":kind+="; charset=utf-8"
         start, end, status = 0, length-1, 200
         range_header = self.headers.get('Range')
         if range_header and target.suffix.lower()=='.mp4':
@@ -82,9 +57,8 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header('Content-Length',str(end-start+1))
         self.send_header('X-Content-Type-Options','nosniff')
         self.send_header('Referrer-Policy','strict-origin-when-cross-origin')
-        self.send_header('Cache-Control','public, max-age=3600' if is_runtime else 'no-cache')
+        self.send_header('Cache-Control','no-cache')
         self.send_header('Last-Modified',self.date_time_string(target.stat().st_mtime))
-        if compressed:self.send_header('Content-Encoding','gzip')
         if target.suffix.lower()=='.mp4':self.send_header('Accept-Ranges','bytes')
         if status==206:self.send_header('Content-Range',f'bytes {start}-{end}/{length}')
         self.end_headers()
@@ -101,18 +75,13 @@ class Handler(BaseHTTPRequestHandler):
 def main():
     parser=argparse.ArgumentParser(description='Local heritage explorer preview')
     parser.add_argument('--port',type=int,default=8767)
-    prepared=DIST/'runtime'
-    default_runtime=prepared if (prepared/'runtime-manifest.json').is_file() else PROJECT.parent/'WebGL'
-    parser.add_argument('--runtime-dir',type=Path,default=Path(os.environ.get('HERITAGE_RUNTIME_DIR',str(default_runtime))))
     parser.add_argument('--open',action='store_true')
     args=parser.parse_args()
     # Only loopback: this is a local preview, not a public deployment service.
     server=ThreadingHTTPServer(('127.0.0.1',args.port),Handler)
-    server.runtime_dir=args.runtime_dir.resolve()
     url=f'http://127.0.0.1:{args.port}/'
     version=json.loads((PROJECT/'package.json').read_text(encoding='utf-8'))['version']
     print(f'Jingchu Heritage Explorer {version}\nLocal: {url}',flush=True)
-    print('Runtime: '+('available' if (server.runtime_dir/'Build/WebGL.loader.js').is_file() else 'missing; catalogue and learning remain available'),flush=True)
     print('Press Ctrl+C to stop.',flush=True)
     if args.open:webbrowser.open(url)
     try:server.serve_forever()

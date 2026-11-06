@@ -25,8 +25,6 @@ node_modules/
 *.docx
 *.zip
 
-# Prepared static Unity payload: split data and loader only.
-!dist/runtime/Build/*.unityweb
 
 # The attributed three-minute website preview is part of the release.
 !dist/assets/media/opera-preview.mp4
@@ -67,3 +65,6 @@ id_ed25519
 /scripts/package_source.py
 /scripts/package_webgl.py
 /scripts/public_files.py
+
+# Browser model decoders are required website source assets.
+!dist/vendor/three/**/*.wasm
