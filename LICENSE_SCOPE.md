@@ -7,12 +7,12 @@ No single open-source licence covers the entire project. Publishing the website 
 | 范围 / Scope | 说明 / Notes |
 | --- | --- |
 | 网页与服务 / Web code and server | 尚未指定开源许可证 / No open-source licence selected |
-| 标志与三维 / Identity and 3D | 保留原团队与相应资源、插件权利人归属；不重新授权 / Original team and asset/plugin ownership retained |
+| 标志与三维 / Identity and 3D | 团队标志及三维素材的权属以各素材署名为准 / Ownership follows the individual team and asset credits |
 | 图片 / Photographs | 各图片自身授权适用，详见photo-data.mjs与影像页 / Individual licences and credits in photo-data.mjs and gallery |
 | 文化资料 / Cultural guides | 简明导读附来源，原表不附带 / Short guides with references; original workbook excluded |
 | Leaflet | BSD-2-Clause，许可证保留于dist/vendor/leaflet/LICENSE |
 | coordtransform | MIT，许可证保留于dist/vendor/coordtransform/LICENSE |
-| 轻量展馆 / Lightweight gallery | 原项目编钟保留原权利；Smithsonian对照模型及照片分别采用CC0 1.0；详见素材署名 / Original bell rights retained; Smithsonian objects and photographs are CC0 1.0 |
+| 轻量展馆 / Lightweight gallery | 青铜钟模型保留原有权利。史密森尼开放模型及照片采用 CC0 1.0 / Existing rights apply to the bell model. Smithsonian models and photographs are CC0 1.0 |
 | Three.js与解码工具 / Three.js and decoders | 依赖各自开源许可适用，文本保留于dist/vendor/three/ / Individual open-source licences retained in dist/vendor/three/ |
 | OSM地图与地点 / OSM maps and places | ODbL，保留来源链接 / ODbL attribution retained |
 | DataV边界 / DataV boundaries | 原提供方条款适用 / Provider terms apply |

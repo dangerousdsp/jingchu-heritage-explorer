@@ -1211,7 +1211,7 @@ export const englishCatalog = {
   },
   "pottery": {
     "title": "Zhuxi Maojia kiln pottery",
-    "detail": "This original-project topic preserves a pottery model's outline and surface texture. Compare rim, neck and body before rotating it in 3D, and consider how vessel shapes connect ceramic craft with everyday use and local memory.",
+    "detail": "Compare the proportions of the rim, neck and body of Maojia kiln pottery. Look at the vessel shape and surface texture to see how ceramic craft relates to everyday use in Zhuxi.",
     "observations": [
       "Compare rim, neck and body proportions.",
       "Observe the surface under different light.",

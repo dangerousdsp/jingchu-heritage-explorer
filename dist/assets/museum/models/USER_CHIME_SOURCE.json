@@ -1,10 +1,8 @@
 {
   "assetId": "user-original-chime",
-  "titleZh": "青铜钟·原项目模型",
-  "titleEn": "Bronze bell · original project model",
-  "source": "用户本次提供的原项目模型",
-  "sourceDirectory": "汉代文物+青铜编钟",
-  "sourceArchive": "汉代文物+青铜编钟.rar",
+  "titleZh": "青铜钟",
+  "titleEn": "Bronze bell",
+  "source": "项目维护者提供",
   "originalRights": "原资产权利继续适用；不适用CC0。",
   "rightsEn": "Original asset rights retained; not CC0.",
   "specificObjectAttribution": "Not verified; do not identify as a particular excavated relic or Zeng Hou Yi bell.",
@@ -36,26 +34,8 @@
   ],
   "poster": {
     "file": "assets/museum/posters/user-original-chime.jpg",
-    "sourceFile": "w3.jpg",
     "bytes": 99754,
     "sha256": "ebdb99e7d1106059c61f639208089a5becf885482970faba885bc123cee22422"
   },
-  "sourceMesh": {
-    "objects": 1,
-    "vertices": 249982,
-    "triangles": 500000,
-    "uvVertices": 259126,
-    "uvFaces": 500000,
-    "materialCount": 1
-  },
-  "processing": [
-    "Binary mesh and UV extraction using io_scene_max GPL parser locally; no MAX scripts executed.",
-    "Z-up converted to Y-up, UV V flipped for glTF, smooth vertex normals calculated.",
-    "Meshoptimizer0.23.0 with UV/normal-aware simplification to60k/120k triangles.",
-    "Original diffuse PNG converted to JPEG2048; supplied roughness image packed to glTF green channel in JPEG1024.",
-    "Standard material converted to PBR display approximation (metallicFactor0.3).",
-    "Six degenerate/cancelling source normal vectors assigned outward unit fallback; reduced accessor bounds recalculated; Khronos validator0 errors0 warnings."
-  ],
-  "inspection": "Matched shape against user supplied w1-w7 reference renders. Final browser rendering still needs visual QA.",
   "verifiedAt": "2026-11-06"
 }

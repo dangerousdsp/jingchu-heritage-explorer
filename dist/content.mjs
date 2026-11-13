@@ -10,7 +10,7 @@ for(const record of catalogData){
   const existing=exhibits.find(item=>item.id===bindings.get(record.fid));
   if(existing){
     // Keep the established IDs, personal history, 3D bindings and original preview art.
-    Object.assign(existing,{fid:record.fid,year:record.year,unit:record.unit,projectNumber:record.projectNumber,sourceRow:record.sourceRow,locationReference:record.locationReference,researched:record.researched,detail:record.detail,observations:record.observations,sources:record.sources,sourceNote:record.sourceNote+(existing.scene?' 原项目模型用于外观观察。':'')});
+    Object.assign(existing,{fid:record.fid,year:record.year,unit:record.unit,projectNumber:record.projectNumber,sourceRow:record.sourceRow,locationReference:record.locationReference,researched:record.researched,detail:record.detail,observations:record.observations,sources:record.sources,sourceNote:record.sourceNote});
   }else exhibits.push({...record,number:String(exhibits.length+1).padStart(2,'0'),alt:'',image:null});
 }
 for(const item of exhibits){item.photo=photoFor(item);if(item.photo){item.image=item.photo.src;item.alt=item.photo.title+' · '+item.photo.scope;}const english=englishCatalog[item.fid||item.id];item.english=english;item.searchEnglish=[english.title,english.detail,translateText(item.region,'en'),translateText(item.city,'en'),translateText(item.category,'en')].join(' ');}

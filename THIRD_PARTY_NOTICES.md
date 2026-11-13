@@ -2,17 +2,17 @@
 
 ## 轻量展馆模型 / Lightweight gallery objects
 
-- **原项目青铜钟 / Original project bronze bell**：由项目维护者提供原MAX与贴图，本地转换为网页GLB；原资产权利继续适用，不重新授予CC0或其他开放许可。提供6万面轻量版和12万面高清版，材质为网页显示近似。模型用于外观观察，具体文物身份未经确认；原文件保留不变。来源记录见[USER_CHIME_SOURCE.json](dist/assets/museum/models/USER_CHIME_SOURCE.json)。
+- **青铜钟 / Bronze bell**。模型由项目维护者提供，作者及对应文物身份尚未核实。模型保留原有权利。The model is supplied by the project maintainer and retains its existing rights. [模型来源 / Model record](dist/assets/museum/models/USER_CHIME_SOURCE.json)
 - **青花人物纹盖瓶 / Baluster vase, from a five-piece garniture**：National Museum of Asian Art, Smithsonian Institution，馆藏F1980.191a-c，景德镇，清康熙时期。原作者未署名；3D digitization and collection: Smithsonian Institution / National Museum of Asian Art。[馆藏记录](https://asia.si.edu/object/F1980.191a-c/)，[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。
 - **嵌金银及宝石博山香炉 / Lidded incense burner (xianglu)**：National Museum of Asian Art, Smithsonian Institution，馆藏F1947.15a-b，中国河南或河北，西汉早期。原作者未署名；3D digitization and collection: Smithsonian Institution / National Museum of Asian Art。[馆藏记录](https://asia.si.edu/object/F1947.15a-b/)，[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)。
 
-Smithsonian开放模型与照片依据官方CC0记录使用，保留各自名称和真实产地。原始模型保持不变；展厅总览另有减面及贴图压缩版本。来源、作者、下载记录见[SOURCES.json](dist/assets/museum/models/SOURCES.json)、[新增藏品](dist/assets/museum/models/NEW_COLLECTION_SOURCES.json)及[总览版本](dist/assets/museum/models/ROOM_ASSETS.json)。
+史密森尼模型与照片采用馆藏记录标注的 CC0。圆雕、浮雕及展厅总览模型的来源分别见[石雕来源](dist/assets/museum/models/NEW_COLLECTION_SOURCES.json)和[展厅模型记录](dist/assets/museum/models/ROOM_ASSETS.json)。青花瓷和博山香炉的详细记录见[馆藏来源](dist/assets/museum/models/SOURCES.json)。
 
 Poly Haven木地板、细木纹与粉刷墙面材质采用CC0，贴图转为WebP。作者及各文件记录见[材质署名](dist/assets/museum/materials/MATERIAL_SOURCES.json)。
 
-The original project bell retains its existing rights. The two Smithsonian models and their matching photographs are CC0 according to the official records checked on 6 November 2026. Official standardised GLB contents are unchanged and renamed for deployment. These comparison objects retain their original identities and origins.
+Smithsonian models and photographs carry the CC0 terms recorded in their collection entries. The links above include provenance for the sculptures, relief and gallery overview models.
 
-展厅外壳、陶器/浮雕/钟形/戏台几何示意由网页程序构成，用于展陈和观察，不对应具体实物。编钟试听是Web Audio合成音色示意，不是文物录音。
+编钟试听使用 Web Audio 合成音色。The bell sounds are synthesised with Web Audio.
 
 ## 轻量三维运行库 / Browser 3D libraries
 
@@ -25,11 +25,11 @@ The original project bell retains its existing rights. The two Smithsonian model
 
 ## 团队作品 / Team works
 
-荆楚非遗花形标志与原项目编钟来自原团队项目；旧Unity版本已移至本地备份，相关资产及XDreamer/XCSJ等组件的原有权利继续适用。
+花形标志由项目团队提供。
 
 作品由长江大学地球科学学院从容面队地图制图组提供，团队成员主要有佘彭宇、王元依、郑子悦、黄悦娇、崔静茹。六幅专题地图保留原图内容和署名。
 
-The floral identity and original 3D assets retain their team and component ownership. Cartographic works are provided by the 从容面队 Cartography Group, School of Geosciences, Yangtze University; the members listed above retain their credits.
+The floral emblem is provided by the project team. Cartographic works are provided by the 从容面队 Cartography Group, School of Geosciences, Yangtze University; the members listed above retain their credits.
 
 ## 摄影 / Photographs
 
@@ -55,6 +55,6 @@ The Sanguantang excerpt preserves the original opening credits for the 2018 appr
 
 ## 品牌与角色 / Branding and character
 
-网站短名“荆风楚韵”及“云上梦回”沿用原项目题名。标题为矢量轮廓，未分发字体文件。小楚插画由生成式图像工具辅助制作，腰间沿用团队花形标志；网页展示与知识问答不调用生成模型接口。
+“荆风楚韵”及“云上梦回”题字采用矢量轮廓。小楚插画由生成式图像工具辅助制作，腰间沿用团队花形标志；网页展示与知识问答不调用生成模型接口。
 
-The title retains the original project wording and uses vector outlines without distributing font files. Xiaochu uses an assisted-generation illustration and the team's floral emblem. The website does not call generative-model APIs at runtime.
+The title lettering uses vector outlines. Xiaochu uses an assisted-generation illustration and the team's floral emblem. The website does not call generative-model APIs at runtime.

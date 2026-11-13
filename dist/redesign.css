@@ -97,7 +97,7 @@ input[type=checkbox]{accent-color:var(--forest);width:16px;height:16px}
 body.gallery-focused{overflow:hidden}.player-panel.theater{position:fixed;z-index:100;inset:12px;display:flex;flex-direction:column;padding:16px 20px 0;box-shadow:0 0 0 20px #17271fee}
 .player-panel.theater .player-stage{width:min(100%,calc((100dvh - 160px)*1.6));max-height:calc(100dvh - 160px);flex-shrink:0;margin:auto}
 .player-panel.theater .player-controls{margin-top:auto}.player-panel.theater .scene-toolbar{flex-shrink:0}
-/* Native browser video, independent of the Unity build. */
+/* Video player */
 .media-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:40px}
 #heritage-video{display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#202f26;border-radius:5px}
 #video-status{font-size:14px;color:#66745e;margin-top:12px;line-height:1.8}
@@ -186,3 +186,7 @@ html[lang="en"] main .section-heading h2,html[lang="en"] main .learning-intro h2
 @media print{:root body>header.site-header{position:static;box-shadow:none;background:none;backdrop-filter:none}}
 
 :root body>header.site-header .brand-label{display:block;width:180px;line-height:1}:root body>header.site-header .brand-wordmark{display:block;width:180px;height:47px;object-fit:contain}:root body>header.site-header .brand-wordmark-en{display:none;font-family:Georgia,serif;font-size:22px;font-style:italic;line-height:1.4;letter-spacing:-.02em}html[lang="en"] body>header.site-header .brand-wordmark{display:none}html[lang="en"] body>header.site-header .brand-wordmark-en{display:block}@media(max-width:600px){:root body>header.site-header .brand-label{width:140px}:root body>header.site-header .brand-wordmark{width:140px;height:37px}:root body>header.site-header .brand-wordmark-en{font-size:19px}}
+
+.site-footer-details{min-width:0;color:var(--ink);font-size:13px}
+.site-footer-contact{display:flex;flex-wrap:wrap;gap:2px 14px;margin-top:5px;font-style:normal}
+.site-footer-contact a{text-decoration:underline;text-underline-offset:2px}
