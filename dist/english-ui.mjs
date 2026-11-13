@@ -1,5 +1,10 @@
 // Reviewed English UI, cultural-guide and source-scope mappings.
 export const englishUI = {
+  "荆风楚韵 | Jingchu Reverie · 湖北非遗数字展馆": "Hubei Intangible Cultural Heritage Gallery · Jingchu Reverie | 荆风楚韵",
+  "通过湖北非遗图鉴、交互地图和三维展馆，了解曾都编钟、通山木雕与毛家窑陶器，规划自己的文化之旅。": "Discover Zengdu chime bells, Tongshan woodcarving and Maojiayao pottery through the Hubei intangible cultural heritage catalogue, interactive maps and 3D gallery. Plan your own cultural journey.",
+  "如有问题请联系 QQ": "Questions? Contact us on QQ at",
+  "，或发送邮件至": ", or email",
+  "项目介绍 ↗": "About this project ↗",
   "荆楚非遗 · 湖北非遗图鉴与文化旅行": "Jingchu Heritage · Hubei culture and trips",
   "跳到展品": "Skip to collection",
   "荆楚非遗首页": "Jingchu Heritage home",
