@@ -395,5 +395,43 @@ export const photos=[
     "height": 640,
     "changes": "Resized and converted to WebP; display may crop.",
     "sha256": "2e57c9975bd5120942744b1aef1f38044afe77dc952725fc51d067ff0b8bf300"
+  },
+  {
+    "id": "pottery-reference",
+    "src": "assets/photos/pottery-reference.webp",
+    "title": "唐代釉陶罐",
+    "titleEn": "Tang dynasty glazed stoneware jar",
+    "scope": "器形参考 · 克利夫兰艺术博物馆藏",
+    "scopeEn": "Vessel-form reference · Cleveland Museum of Art collection",
+    "author": "The Cleveland Museum of Art",
+    "license": "CC0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:China,_Tang_dynasty_-_Jar_-_1930.323_-_Cleveland_Museum_of_Art.tif",
+    "originalURL": "https://openaccess-cdn.clevelandart.org/1930.323/1930.323_web.jpg",
+    "fileTitle": "Jar (1930.323)",
+    "width": 807,
+    "height": 900,
+    "changes": "Resized and converted to WebP; card display may crop.",
+    "sha256": "da745801a3679cf9b56b22bb6560bf2f8f645fef56ccca4c1dff1e102d47bb1f",
+    "fit": "contain"
+  },
+  {
+    "id": "woodcarving-reference",
+    "src": "assets/photos/woodcarving-reference.webp",
+    "title": "清代建筑木雕板",
+    "titleEn": "Qing dynasty carved architectural panels",
+    "scope": "工艺参考 · 摄于浙江省博物馆",
+    "scopeEn": "Craft reference · photographed at Zhejiang Provincial Museum",
+    "author": "Gary Todd",
+    "license": "CC0",
+    "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "source": "https://commons.wikimedia.org/wiki/File:Qing_Architecture_Carved_Wood_Panels_(17114137111).jpg",
+    "originalURL": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Qing_Architecture_Carved_Wood_Panels_%2817114137111%29.jpg",
+    "fileTitle": "File:Qing Architecture Carved Wood Panels (17114137111).jpg",
+    "width": 1200,
+    "height": 800,
+    "changes": "Resized and converted to WebP; card display may crop.",
+    "sha256": "f03d610fa6a173a1af854d633d3b0d356ccfabc1c187bf29840bcf92b033660c",
+    "fit": "cover"
   }
 ];

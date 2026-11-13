@@ -1003,7 +1003,7 @@ export const englishCatalog = {
   },
   "1957": {
     "title": "Tongshan wood carving",
-    "detail": "Tongshan carvers use grain, colour and relief to depict people, scenery and stories. Natural wood features participate in the composition, while depth and visual emphasis provide narrative clues.",
+    "detail": "Tongshan carvers use grain, colour and relief to depict people, scenery and stories. Natural wood features participate in the composition, while depth and visual emphasis provide narrative clues. Hengshi Village in Jiugongshan Town has a training base for the craft.",
     "observations": [
       "Observe grain within carved forms.",
       "Find foreground, background and emphasis."
@@ -1211,10 +1211,10 @@ export const englishCatalog = {
   },
   "pottery": {
     "title": "Zhuxi Maojia kiln pottery",
-    "detail": "Compare the proportions of the rim, neck and body of Maojia kiln pottery. Look at the vessel shape and surface texture to see how ceramic craft relates to everyday use in Zhuxi.",
+    "detail": "Maojiayao pottery is a local craft of Longjiaba Village in Longba Town, Zhuxi County. Look at the proportions of the rim, neck and body to see how these vessels were shaped for everyday uses such as holding and storing goods.",
     "observations": [
       "Compare rim, neck and body proportions.",
-      "Observe the surface under different light.",
+      "Examine the glaze and the texture of the vessel.",
       "Consider how a vessel serves daily life."
     ]
   }

@@ -421,7 +421,7 @@ export const englishUI = {
   "想一想：一种器形可以怎样服务日常生活？": "Consider how a vessel serves daily life.",
   "人民论坛网 · 龙坝镇毛家窑陶文化考察与思考": "People’s Tribune — Zhuxi Maojia kiln pottery (Chinese source)",
   "通山木雕": "Tongshan wood carving",
-  "通山木雕善于利用木材纹理与色彩，运用浮雕等方式表现人物、景物和故事。艺人把题材、构图与材料相结合，使木材天然特征参与造型。欣赏时可以沿前后层次寻找叙事线索，也可比较雕刻部分与保留木纹的关系。": "Tongshan carvers use grain, colour and relief to depict people, scenery and stories. Natural wood features participate in the composition, while depth and visual emphasis provide narrative clues.",
+  "通山木雕善于利用木材纹理与色彩，运用浮雕等方式表现人物、景物和故事。艺人把题材、构图与材料相结合，使木材天然特征参与造型。欣赏时可以沿前后层次寻找叙事线索，也可比较雕刻部分与保留木纹的关系。九宫山镇横石村设有木雕传承基地。": "Tongshan carvers use grain, colour and relief to depict people, scenery and stories. Natural wood features participate in the composition, while depth and visual emphasis provide narrative clues. Hengshi Village in Jiugongshan Town has a training base for the craft.",
   "从木材的纹理与雕刻的层次出发，看传统题材如何在一块木头上展开。": "Tongshan carvers use grain, colour and relief to depict people, scenery and stories.",
   "观察木纹怎样参与造型。": "Observe grain within carved forms.",
   "寻找浮雕中的前后与主次。": "Find foreground, background and emphasis.",
@@ -1478,3 +1478,36 @@ Object.assign(englishUI,{"关闭图片":"Close image"});
 
 Object.assign(englishUI,{"参考影像":"Reference image","文化风景":"Cultural landscape"});
 
+Object.assign(englishUI,{
+  "唐代釉陶罐": "Tang dynasty glazed stoneware jar",
+  "器形参考 · 克利夫兰艺术博物馆藏": "Vessel-form reference · Cleveland Museum of Art",
+  "公布年份": "Listing year",
+  "项目编号": "Project number",
+  "名录级别": "Register level",
+  "十堰市级": "Shiyan municipal register",
+  "保护单位": "Safeguarding organisation",
+  "新增项目": "New entry",
+  "扩展项目": "Extension entry",
+  "十堰市级非遗保护单位名单（附件第58项）": "Shiyan municipal safeguarding list (entry 58)",
+  "湖北日报 · 竹溪夯土小镇与毛家窑陶艺": "Hubei Daily · Zhuxi rammed-earth town and Maojiayao pottery",
+  "湖北省市场监督管理局 · 通山木雕作品与传承基地": "Hubei Administration for Market Regulation · Tongshan woodcarving and training base",
+  "文化和旅游部 · 2026年保护单位调整名单": "Ministry of Culture and Tourism · 2026 safeguarding organisation changes",
+  "图鉴收录145条国家级项目地区记录与1个市级非遗专题。项目详情附有资料链接。": "The collection includes 145 regional records of national projects and one topic from the municipal register. Sources appear in each entry.",
+  "国务院 · 国家级第五批代表性项目（2021）": "State Council · Fifth national list (2021)",
+  "湖北省人民政府 · 省级第七批代表性项目（2024）": "Hubei Provincial Government · Seventh provincial list (2024)",
+  "湖北省文化和旅游厅 · 省级第一至第七批保护单位（2026）": "Hubei Department of Culture and Tourism · Provincial safeguarding organisations (2026)",
+  "文化和旅游部 · 国家级保护单位调整（2026）": "Ministry of Culture and Tourism · National safeguarding organisation changes (2026)"
+});
+
+Object.assign(englishUI,{
+  "馆方参观指南列有经省博南门进馆的公共交通路线。预约、开放入口和编钟演奏安排以馆方公告为准。": "The museum guide lists public transport routes to the south entrance. Check the museum for bookings, available entrances and chime performances.",
+  "湖北省博物馆 · 馆址": "Hubei Provincial Museum · Official address",
+  "中国政府采购网 · 随州市博物馆地址（2026）": "China Government Procurement · Suizhou Museum address (2026)",
+  "荆楚网 · 荆州博物馆参观地址": "Cnhubei · Jingzhou Museum visitor address",
+  "从青铜器、漆木器等实物认识楚文化，也可阅读馆方参与保护的绿松石雕专题。": "Explore Chu culture through bronzes and lacquerware, and read about the turquoise carving tradition safeguarded by the museum.",
+  "《天工》 · 数智时代通山木雕的发展路径研究（2026）": "Tiangong · Research on Tongshan woodcarving in the digital age (2026)",
+  "竹溪旅游 · 龙家坝村毛家窑实地报道": "Zhuxi Tourism · Maojiayao pottery in Longjiaba Village",
+  "毛家窑陶器烧制技艺是竹溪县龙坝镇龙家坝村的地方技艺。欣赏当地陶器时，可以从口沿、器颈与器腹的比例入手，观察器形怎样适应盛装、储藏等日常用途。": "Maojiayao pottery is a local craft of Longjiaba Village in Longba Town, Zhuxi County. Look at the proportions of the rim, neck and body to see how these vessels were shaped for everyday uses such as holding and storing goods.",
+  "观察釉面和器身的质感。": "Examine the glaze and the texture of the vessel.",
+  "十堰市级非遗": "Shiyan municipal heritage"
+});

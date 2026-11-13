@@ -10,10 +10,11 @@
     "coordinateSource": "https://api.openstreetmap.org/api/0.6/way/363656371/full",
     "coordinateMethod": "OpenStreetMap场馆要素边界节点的均值，仅作近似地图定位",
     "coordinateNote": "地图点用于认识场馆分布，不代表当前开放入口；到访前请在目的地官方渠道核对入口。",
-    "theme": "从青铜器、漆木器等实物认识楚文化，可与编钟制作、楚式漆器专题对照阅读。",
+    "theme": "从青铜器、漆木器等实物认识楚文化，也可阅读馆方参与保护的绿松石雕专题。",
     "topicFids": [
       3250,
-      2364
+      2364,
+      3502
     ],
     "sources": [
       {
@@ -23,10 +24,15 @@
       {
         "title": "湖北省博物馆 · 观众服务与交通",
         "url": "https://www.hbww.org.cn/fuwu/index.html"
+      },
+      {
+        "title": "湖北省博物馆 · 馆址",
+        "url": "https://www.hbww.org.cn/bwgzc/p/8026.html"
       }
     ],
-    "visitNote": "场馆设有不同入馆方向，请按预约提示确认开放入口。编钟演奏、临时展览等安排以馆方当日公告为准。",
-    "verifiedAt": "2026-10-29"
+    "visitNote": "馆方参观指南列有经省博南门进馆的公共交通路线。预约、开放入口和编钟演奏安排以馆方公告为准。",
+    "verifiedAt": "2026-10-29",
+    "addressVerifiedAt": "2026-11-13"
   },
   {
     "id": "yellow-crane",
@@ -116,10 +122,15 @@
       {
         "title": "湖北省外事办公室 · Suizhou Museum",
         "url": "https://www.fohb.gov.cn/info/2018-10/20181012102600_747.html"
+      },
+      {
+        "title": "中国政府采购网 · 随州市博物馆地址（2026）",
+        "url": "https://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260920_27364762.htm"
       }
     ],
     "visitNote": "地图为博物馆建筑近似中心。预约、开馆及编钟演艺安排以馆方最新公告为准。",
-    "verifiedAt": "2026-10-29"
+    "verifiedAt": "2026-10-29",
+    "addressVerifiedAt": "2026-11-13"
   },
   {
     "id": "jingzhou-museum",
@@ -144,10 +155,15 @@
       {
         "title": "荆州古城历史文化旅游区 · 电子地图与博物馆地址",
         "url": "https://www.jzgcly.com/tourismWeb/lyfw_dzdt-en.html"
+      },
+      {
+        "title": "荆楚网 · 荆州博物馆参观地址",
+        "url": "https://www.cnhubei.com/xwzt/2024/hshb/hshbagzyjyjd/hshbagzyjyjdjz/202503/t4750718.shtml"
       }
     ],
     "visitNote": "场馆藏品与技艺专题用于对照观察，不表示每项非遗均有固定现场表演或体验项目。到访前核对官方开放入口。",
-    "verifiedAt": "2026-10-29"
+    "verifiedAt": "2026-10-29",
+    "addressVerifiedAt": "2026-11-13"
   },
   {
     "id": "wudang-visitor",

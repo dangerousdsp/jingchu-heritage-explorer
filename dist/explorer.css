@@ -69,3 +69,11 @@ html[lang="en"] .hero h1{font-size:clamp(38px,4.3vw,58px);letter-spacing:-.015em
 .photo-type{position:absolute;left:14px;bottom:14px;font:12px/1.4 var(--sans);background:#f4f0e7ed;padding:5px 9px;color:#42543e;border-radius:2px}.detail-visual{position:relative}.detail-visual>.photo-type{display:none}.source-credit{padding:16px 0;border-bottom:1px solid #d5ddcc}.source-credit h3{font-size:20px}
 
 .detail-visual:has(.detail-photo-caption){display:flex;flex-direction:column;justify-content:flex-start;gap:12px;padding:28px}.detail-visual:has(.detail-photo-caption)>img{height:auto;max-height:380px;margin:auto 0 0;object-fit:contain}.detail-visual:has(.detail-photo-caption)>span{margin:0}.detail-visual:has(.detail-photo-caption)>.detail-photo-caption{margin:0 0 auto;padding:0}
+/* Collection photographs retain their original contrast and colour. */
+.exhibit-image-button>.entry-photo{position:absolute;inset:0;display:block;width:100%;max-width:none;height:100%;mix-blend-mode:normal;filter:none}
+.exhibit-image-button>.photo-contain,.photo-card>button>.photo-contain{object-fit:contain}
+.exhibit-image-button:has(>.entry-photo),.photo-card>button:has(>.photo-contain){background:#262521}
+.exhibit-image-button:has(>.entry-photo) .image-index{background:#f4f0e7ed;color:#42543e;border-radius:2px;padding:5px 9px;z-index:1}
+.exhibit-image-button:has(>.entry-photo) .image-open{background:#f4f0e7ed}
+.exhibit-image-button:hover>.photo-contain{transform:none}
+.hero-art>.hero-reference-photo{width:min(68%,325px);height:79%;max-height:345px;mix-blend-mode:normal;filter:none;transform:none;object-fit:contain}

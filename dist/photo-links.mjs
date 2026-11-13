@@ -2,6 +2,7 @@ import {photos} from './photo-data.mjs';
 const byId=new Map(photos.map(p=>[p.id,p]));
 // Only associate a photograph when its named subject or explicit context is relevant.
 const rules=[
+ ['pottery-reference',/毛家窑/],['woodcarving-reference',/通山木雕/],
  ['three-kingdoms',/三国/],['chu-opera',/楚剧/],['turquoise',/绿松石/],['huangmei',/黄梅戏/],
  ['lacquer',/漆器/],['wudang',/武当/],['shadow',/皮影/],['paper-cut',/剪纸/],['tea',/恩施玉露/],
  ['brick-tea-real',/黑茶|青砖|砖茶/],['weaving',/织锦|挑花/],['woodblock',/年画/],

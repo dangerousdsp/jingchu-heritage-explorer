@@ -30,7 +30,7 @@ The floral emblem is provided by the project team. Cartographic works are provid
 
 ## 摄影 / Photographs
 
-22张Wikimedia Commons图片按各自CC BY、CC BY-SA、CC0或公共领域条件展示。逐张作者、原文件页、授权与主题范围记录在[photo-data.mjs](dist/photo-data.mjs)，并显示在网站图片与来源页中。图片经尺寸和格式优化，卡片可能裁切。
+24张Wikimedia Commons图片按各自CC BY、CC BY-SA、CC0或公共领域条件展示。逐张作者、原文件页、授权与主题范围记录在[photo-data.mjs](dist/photo-data.mjs)，并显示在网站图片与来源页中。图片经尺寸和格式优化，卡片可能裁切。
 
 The 22 photographs retain their individual author credits, source links, subject scope and permissions in the image records and website. Resizing, format conversion and card crops do not replace the original licences.
 
