@@ -152,5 +152,9 @@ export const modelAssets=[...projectAssets,...openAssets];
 for(const id of themeOrder){const first=assetsFor(id)[0];if(first?.poster)themes[id].poster=first.poster;}
 export const roomExhibits=themeOrder.map(themeId=>({themeId,asset:assetsFor(themeId)[0]}));
 export function assetsFor(themeId){const selected=[...projectAssets.filter(asset=>asset.themeId===themeId),...openAssets.filter(asset=>asset.themeId===themeId&&asset.curated!==false)];return selected.length?selected:[studyAssets[themeId]].filter(Boolean);}
-export function themeForExhibit(id){if(id==='wood')return 'stone';return themeOrder.find(theme=>theme===id||themes[theme].exhibitId===id);}
+export function themeForExhibit(id) {
+  if (!id) return undefined;
+  if (id === 'wood') return 'stone';
+  return themeOrder.find(theme => theme === id || themes[theme].exhibitId === id);
+}
 export function museumHref({exhibit,mode,lang='zh',asset}={}){const url=new URL(exhibit==='opera'?'index.html':'museum.html',import.meta.url);if(exhibit==='opera')url.hash='media';const theme=themeForExhibit(exhibit);if(theme)url.searchParams.set('exhibit',theme);if(mode==='room')url.searchParams.set('view','room');url.searchParams.set('lang',lang==='en'?'en':'zh');if(asset&&/^[a-z0-9-]+$/i.test(asset))url.searchParams.set('asset',asset);return url.href;}

@@ -34,19 +34,20 @@ export function initExplore({openExhibit,notify,download}) {
   const credit=document.createElement('p');credit.id='video-credit';credit.setAttribute('data-no-i18n','');credit.style.cssText='font-size:12px;line-height:1.8;opacity:.8;margin:8px 0 16px';$('#video-status').after(credit);
   function videoLabels(){
     const en=getLanguage()==='en';
-    $('#load-video').disabled=false;
+    $('#load-video').hidden=!VIDEO_ENABLED;
     $('#load-video').textContent=en?(videoMode==='preview'?'Reload example video':'Open example video'):(videoMode==='preview'?'重新打开案例视频':'打开案例视频');
     $('#restore-video').textContent=en?'Return to example video':'返回案例视频';
-    $('#restore-video').hidden=videoMode!=='local';
-    const labels=en?{idle:'Jingzhou Huagu opera · Sanguantang · 3-minute excerpt',loading:'Opening the video…',preview:'Sanguantang · 03:00 excerpt. Use the player controls to start.',local:`Local preview: ${localName}. The file is not uploaded.`,error:'The video could not be opened. Please try again.'}:{idle:'荆州花鼓戏《三官堂》· 3分钟节选',loading:'正在打开视频…',preview:'《三官堂》· 03:00节选，点击画面播放。',local:`本地预览：${localName}。文件没有上传。`,error:'视频暂时未能打开，请稍后重试。'};
+    $('#restore-video').hidden=!VIDEO_ENABLED||videoMode!=='local';
+    const labels=en?{idle:VIDEO_ENABLED?'Jingzhou Huagu opera · Sanguantang · 3-minute excerpt':'Choose a video file to preview it here.',loading:'Opening the video…',preview:'Sanguantang · 03:00 excerpt. Use the player controls to start.',local:`Local preview: ${localName}. The file is not uploaded.`,error:'The video could not be opened. Please try again.'}:{idle:VIDEO_ENABLED?'荆州花鼓戏《三官堂》· 3分钟节选':'选择视频文件后即可在这里预览。',loading:'正在打开视频…',preview:'《三官堂》· 03:00节选，点击画面播放。',local:`本地预览：${localName}。文件没有上传。`,error:'视频暂时未能打开，请稍后重试。'};
     $('#video-status').textContent=labels[videoMode]||labels.idle;
     credit.hidden=videoMode==='local';credit.replaceChildren(document.createTextNode(en?'On-screen producer: 湖北省花鼓戏艺术研究院 · “名家传戏” (2018). ':'来源署名：湖北省花鼓戏艺术研究院 · “名家传戏”（2018年）。'));
     const sourceLink=document.createElement('a');sourceLink.href='project-notes.html#video-origin';sourceLink.textContent=en?'Video credits':'视频来源';credit.append(sourceLink);
   }
   function setVideoSource(url){video.pause();video.src=url;video.load();video.playbackRate=Number($('#video-speed').value);}
   async function openExcerpt(){
+    if(!VIDEO_ENABLED)return;
     videoMode='loading';videoLabels();
-    const candidates=VIDEO_ENABLED?[{url:previewURL,mode:'preview'}]:[];
+    const candidates=[{url:previewURL,mode:'preview'}];
     for(const candidate of candidates){
       try{const response=await fetch(candidate.url,{method:'HEAD'});if(!response.ok)continue;if(localURL){URL.revokeObjectURL(localURL);localURL=null;}setVideoSource(candidate.url);$('#local-video').value='';videoMode=candidate.mode;videoLabels();return;}
       catch{/* Try only the supplied local fallback; never an arbitrary external video. */}

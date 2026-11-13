@@ -158,7 +158,7 @@ export const englishUI = {
   "清空这本手记？": "Clear this notebook?",
   "将移除当前浏览器中的阅读标记和答题记录。展品资料与三维程序会保留。": "This removes reading and quiz records in this browser. Collection content and the 3D programme are retained.",
   "保留记录": "Keep records",
-  "请使用“启动展馆.cmd”或 Python 本地服务打开。直接双击 HTML 无法加载展品模块和三维程序。": "Open with the launcher or Python local server. Opening HTML directly cannot load application modules or the 3D runtime.",
+  "请在项目根目录运行 npm run serve。Windows 用户也可以双击“启动展馆.cmd”。": "Run npm run serve in the project directory. On Windows, you can also double-click 启动展馆.cmd.",
   "请启用 JavaScript 以浏览展品、记录手记和打开三维演示。": "Enable JavaScript to explore the collection, save learning records and open 3D scenes.",
   "传统技艺": "Traditional craftsmanship",
   "传统美术": "Traditional visual arts",

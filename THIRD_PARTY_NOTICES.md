@@ -19,9 +19,6 @@ Smithsonian models and photographs carry the CC0 terms recorded in their collect
 - Three.js 0.180.0，MIT：[许可证](dist/vendor/three/LICENSE)。
 - Draco，Apache-2.0：[许可证](dist/vendor/three/third-party-licenses/Draco-LICENSE)。
 - meshoptimizer decoder 0.22，MIT：[许可证](dist/vendor/three/third-party-licenses/Meshoptimizer-LICENSE.md)。
-- Basis Universal，Apache-2.0：[许可证](dist/vendor/three/third-party-licenses/BasisUniversal-LICENSE)。
-- ktx-parse，MIT：[许可证](dist/vendor/three/third-party-licenses/KTXParse-LICENSE)。
-- zstddec：[许可证与上游声明](dist/vendor/three/third-party-licenses/ZSTDDec-LICENSE)。
 
 ## 团队作品 / Team works
 

@@ -20,7 +20,7 @@ Use Node.js 18+ and a modern browser. From the project root:
 npm run serve
 ```
 
-Run `npm run museum` to open the bell directly. On Windows, use “打开轻量展馆.cmd”. Python 3.10+ remains supported with `python scripts/serve.py --open`.
+On Windows, double-click `启动展馆.cmd` to open the homepage. Run `npm run museum` to open the bell exhibit. With Python 3.10+, run `python scripts/serve.py --open`.
 
 See [resource credits](THIRD_PARTY_NOTICES.md) and [permissions](LICENSE_SCOPE.md).
 

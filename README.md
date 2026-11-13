@@ -20,7 +20,7 @@
 npm run serve
 ```
 
-直接打开编钟展区可运行 `npm run museum`，Windows也可双击“打开轻量展馆.cmd”。已有Python 3.10+时仍可运行 `python scripts/serve.py --open`。
+Windows 用户可以双击 `启动展馆.cmd` 打开首页。运行 `npm run museum` 可直达编钟展区。使用 Python 3.10+ 时，可运行 `python scripts/serve.py --open`。
 
 素材归属见[资源署名](THIRD_PARTY_NOTICES.md)，使用范围见[许可说明](LICENSE_SCOPE.md)。
 
